@@ -1,3 +1,9 @@
+// Load environment variables from a .env file into process.env.
+// Check out https://www.gatsbyjs.org/docs/environment-variables/ for more.
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -30,7 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `http://gatsbyd8.mcdev/`,
+        baseUrl: process.env.BASE_URL,
         apiBase: `jsonapi` // optional, defaults to `jsonapi`
       }
     }
