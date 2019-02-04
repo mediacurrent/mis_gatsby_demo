@@ -1,7 +1,7 @@
 // Load environment variables from a .env file into process.env.
 // Check out https://www.gatsbyjs.org/docs/environment-variables/ for more.
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env`
 });
 
 module.exports = {
