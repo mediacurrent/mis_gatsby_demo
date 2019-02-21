@@ -1,0 +1,49 @@
+// Font-face rules.
+
+@font-face {
+  font-family: Merriweather;
+  src: url('/fonts/merriweather-bold.woff2') format('woff2'),
+       url('/fonts/merriweather-bold.woff') format('woff'); // sass-lint:disable-line indentation
+  font-weight: 700;
+  font-display: swap; // sass-lint:disable-line no-misspelled-properties
+}
+
+@font-face {
+  font-family: Merriweather;
+  src: url('/fonts/merriweather-light.woff2') format('woff2'),
+       url('/fonts/merriweather-light.woff') format('woff'); // sass-lint:disable-line indentation
+  font-weight: 300;
+  font-display: swap; // sass-lint:disable-line no-misspelled-properties
+}
+
+@font-face {
+  font-family: Merriweather;
+  src: url('/fonts/merriweather-regular.woff2') format('woff2'),
+       url('/fonts/merriweather-regular.woff') format('woff'); // sass-lint:disable-line indentation
+  font-weight: 400;
+  font-display: swap; // sass-lint:disable-line no-misspelled-properties
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url('/fonts/raleway-bold.woff2') format('woff2'),
+       url('/fonts/raleway-bold.woff') format('woff'); // sass-lint:disable-line indentation
+  font-weight: 700;
+  font-display: swap; // sass-lint:disable-line no-misspelled-properties
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url('/fonts/raleway-light.woff2') format('woff2'),
+       url('/fonts/raleway-light.woff') format('woff'); // sass-lint:disable-line indentation
+  font-weight: 300;
+  font-display: swap; // sass-lint:disable-line no-misspelled-properties
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url('/fonts/raleway-regular.woff2') format('woff2'),
+       url('/fonts/raleway-regular.woff') format('woff'); // sass-lint:disable-line indentation
+  font-weight: 400;
+  font-display: swap; // sass-lint:disable-line no-misspelled-properties
+}

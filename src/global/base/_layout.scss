@@ -1,0 +1,48 @@
+// Global layout styling.
+
+.page {
+  @include clearfix;
+  background-color: $color-gray-lighter;
+  overflow: hidden;
+  position: relative;
+}
+
+.page__content-skip-link {
+  @include element-focusable;
+  background-color: $color-navy-blue;
+  color: $color-white;
+  display: block;
+  padding: 3px;
+  text-align: center;
+}
+
+.component-item {
+  margin-bottom: 50px;
+  background: $color-white;
+
+  @include breakpoint($bp-sm) {
+    margin-bottom: 75px;
+  }
+
+  // Removes bottom margin as spacing is being replaced by padding.
+  @include breakpoint($bp-md) {
+    margin-bottom: 100px;
+
+    &.breaker-50-50 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.component-item__inner {
+  margin: 0 auto;
+  max-width: calc(100% - 25px);
+
+  @include breakpoint($bp-sm) {
+    max-width: calc(100% - 140px);
+  }
+
+  @include breakpoint($bp-md) {
+    max-width: $c-max-width;
+  }
+}

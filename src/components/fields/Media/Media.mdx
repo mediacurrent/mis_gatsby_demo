@@ -1,0 +1,25 @@
+---
+name: Media
+route: /media
+---
+
+import {Playground, PropsTable} from 'docz';
+import Media from './index.js';
+
+# Media
+
+## Example
+<Playground>
+  <Media
+    image='<img class="lazy lazy-loaded" src="//via.placeholder.com/350x150" data-lazy-type="image" data-lazy-src="//via.placeholder.com/350x150">'
+    caption="This is a placeholder image."
+  />
+
+  <Media
+    video='<iframe width="560" height="315" src="https://www.youtube.com/embed/qeQznsiMLH4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    caption="This is a video"
+  />
+</Playground>
+
+## Props
+<PropsTable of={Media} />

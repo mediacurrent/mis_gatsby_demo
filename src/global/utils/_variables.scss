@@ -1,0 +1,40 @@
+//=======================================================
+// Variables
+//=======================================================
+
+$zi-highest: 50;
+$zi-high: 40;
+$zi-medium: 30;
+$zi-low: 20;
+$zi-lowest: 10;
+$zi-ground: 0;
+$zi-below-ground: -1;
+
+// hero height
+$hero-height-tall-sm: 550px;
+$hero-height-tall-md: 700px;
+$hero-height-short-sm: 420px;
+$hero-height-short-md: 540px;
+$hero-height-shorter-sm: 300px;
+$hero-height-shorter-md: 400px;
+
+// banner height
+$img-height-short: 373px;
+$img-height-medium: 550px;
+$img-height-tall: 600px;
+$img-height-tallest: 700px;
+
+// Max width of main content area.
+$c-max-width: 1150px;
+
+// Max width of body content.
+$b-max-width: calc(100% - 300px);
+
+// Extended max width of body content.
+// (primarily used on quote component)
+$b-x-max-width: calc(100% - 150px);
+
+// Transitions.
+$motion-fast: 200ms ease-in-out;
+$motion-standard: 400ms ease-in-out;
+$motion-slow: 800ms ease-in-out;

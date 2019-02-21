@@ -1,0 +1,8 @@
+// Basic grid configuration using 12 equal width columns.
+$grids: 12;
+
+// Column gutters are relative to the width of column.
+$gutters: 1/3;
+
+// Turn on debug to see grid if needed.
+@include sgs-change('debug', true);
