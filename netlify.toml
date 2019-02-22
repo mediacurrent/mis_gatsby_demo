@@ -3,3 +3,4 @@
   BASE_URL = "http://develop-gatsby-d8.pantheonsite.io/"
 [context.develop.environment]
   BASE_URL = "http://develop-gatsby-d8.pantheonsite.io/"
+HOME_ALIAS=/homepage/introducing-rain
