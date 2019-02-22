@@ -13,13 +13,18 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            menuLinks {
+              uri
+              title
+            }
           }
         }
       }
     `}
-    render={data => (
+    render={data => {
+      return(
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+          <Header {...data.site.siteMetadata} />
         <div
           style={{
             margin: `0 auto`,
@@ -32,7 +37,7 @@ const Layout = ({ children }) => (
         </div>
         <Footer />
       </>
-    )}
+    )}}
   />
 )
 

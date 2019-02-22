@@ -25,11 +25,11 @@ const Map = (props) => {
             width="600"
             title="Map"
             height="450"
-            frameborder="0"
+            frameBorder="0"
             scrolling="no"
-            marginheight="0"
-            marginwidth="0"
-            src={`https://maps.google.com/maps?q=${map.lat},${map.lng}&hl=es;z=14&amp;output=embed`}
+            marginHeight="0"
+            marginWidth="0"
+            src={`https://maps.google.com/maps?q=${map[0].lat},${map[0].lng}&hl=es;z=14&amp;output=embed`}
           />
         </div>
       </div>
@@ -46,10 +46,12 @@ const Map = (props) => {
 }
 
 Map.propTypes = {
-  map: PropTypes.shape({
-    lat: PropTypes.string,
-    lng:PropTypes.string
-  }).isRequired,
+  map: PropTypes.arrayOf(
+    PropTypes.shape({
+      lat: PropTypes.number,
+      lng:PropTypes.number
+    })
+  ).isRequired,
   body: PropTypes.shape({
     value: PropTypes.string
   }),

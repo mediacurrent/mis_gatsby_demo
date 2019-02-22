@@ -1,0 +1,167 @@
+@import 'src/global/utils/init';
+
+.main-menu__list {
+  @include font-primary;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  font-weight: $font-weight-normal;
+  width: 100%;
+
+  @include breakpoint($bp-sm) {
+    padding-bottom: 36px;
+  }
+
+  @include breakpoint($bp-lg) {
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+}
+
+.main-menu__item {
+  background-position: 2px 5px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding: 3px 0 8px 30px;
+  text-transform: uppercase;
+
+  @include breakpoint($bp-lg) {
+    display: flex;
+    position: relative;
+    padding: 3px 24px 3px 0;
+    white-space: nowrap;
+
+    &:hover,
+    &.js-open,
+    &.js-open {
+
+      >.main-menu__sublinks {
+        height: auto;
+      }
+
+      .header--solid &>.main-menu__sublinks {
+        padding-bottom: 5px;
+      }
+    }
+  }
+}
+
+.main-menu__sublink-item {
+  padding: 3px 0;
+  text-transform: none;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  @include breakpoint($bp-lg) {
+    text-transform: uppercase;
+
+    &:last-child {
+      padding-bottom: 3px;
+    }
+  }
+}
+
+.main-menu__link,
+.main-menu__sublink-link {
+  border-bottom: 1px solid transparent;
+  color: $color-green;
+  display: inline-block;
+  line-height: 1.2;
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &.active:focus,
+  &.active:hover {
+    border-color: $color-tundora;
+  }
+
+  &.active {
+    border-bottom: 1px solid $color-green;
+    font-weight: bold;
+  }
+
+  @include breakpoint($bp-lg) {
+    color: $color-tundora;
+
+    &.active {
+      border-color: $color-tundora;
+    }
+  }
+}
+
+.main-menu__sublink-toggle {
+  display: none;
+
+  @include breakpoint($bp-lg) {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    height: 20px;
+    justify-content: center;
+    margin: 0 0 0 3px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 20px;
+    display: flex;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    svg {
+      display: block;
+      fill: $color-white;
+      height: 10px;
+      margin-bottom: 3px;
+      width: 10px;
+      transition: transform $motion-fast;
+    }
+
+    .js-open>& svg,
+    .main-menu__item:hover &>svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.main-menu__sublink-toggle-text {
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+}
+
+.main-menu__sublinks {
+  padding-top: 6px;
+
+  @include breakpoint($bp-lg) {
+    height: 0;
+    left: 0;
+    min-width: 175px;
+    overflow: hidden;
+    padding: 3px 3px 3px 5px;
+    position: absolute;
+    top: 100%;
+
+    // Add blue bg to dropdown
+    .headroom--pinned & {
+      background: $color-green;
+    }
+
+    // When scrolled to the top, bg is removed
+    .headroom--top & {
+      background: transparent;
+    }
+
+
+    .header--solid & {
+      background-color: $color-green;
+      margin-left: -10px;
+      padding: 4px 10px 0;
+    }
+  }
+}

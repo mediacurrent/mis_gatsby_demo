@@ -1,23 +1,29 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React from "react";
 
-const Header = ({ siteTitle }) => (
-  <div>
-    <div>
-      <h1 style={{ margin: 0 }}>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
-    </div>
-  </div>
-)
+import './style.scss';
+
+const Header = ({ menuLinks }) => (
+  <nav className="main-menu" aria-label="Main Menu">
+    <ul className="main-menu__list">
+      {menuLinks.map((link, key) => (
+        <li className="main-menu__item" key={`main-menu--${key}`}>
+          <Link
+            to={link.uri}
+            className="main-menu__link"
+            activeClassName="active"
+          >
+            {link.title}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </nav>
+);
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  menuLinks: PropTypes.array.isRequired
 }
 
 export default Header

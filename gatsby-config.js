@@ -6,9 +6,22 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Demo`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`
+    title: `Rain`,
+    description: `.`,
+    author: `@mediacurrent`,
+    menuLinks: [
+      {
+        uri: '/',
+        title: 'Home'
+      },
+      {
+        uri: '/page/about-rain',
+        title: 'About Rain'
+      }, {
+        uri: '/page/partner-us',
+        title: 'Partner With Us'
+      },
+    ]
   },
   plugins: [
     {
