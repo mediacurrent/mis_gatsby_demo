@@ -1,13 +1,8 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's D8 Demo
-</h1>
+# Gatsby / Drupal Demo
 
-## Environment Variables
-
-BASE_URL (eg 'http://gatsbyd8.mcdev/')
+1. `nvm use` to set to v11.6.0 (nvm install may be needed)
+1. `npm install`
+1. Rename the default.env file to .env
+1. Update the BASE_URL to suit your needs.
+1. `gatsby develop`
+1. Get to work.
