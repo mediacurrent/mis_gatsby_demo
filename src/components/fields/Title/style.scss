@@ -1,0 +1,11 @@
+// Default styling for component title.
+@import '../../../global/utils/init';
+
+.title {
+  @include font-size-heading2;
+  margin-bottom: 10px;
+
+  @include breakpoint($bp-sm) {
+    margin-bottom: 20px;
+  }
+}

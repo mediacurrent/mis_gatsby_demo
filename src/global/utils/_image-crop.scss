@@ -1,0 +1,23 @@
+// Center crop image
+@mixin image-crop($height: 100%) {
+  height: $height;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  picture,
+  img {
+    height: 100%;
+    left: 50%;
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+  }
+
+  picture,
+  img {
+    width: 100%;
+  }
+}

@@ -6,11 +6,33 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`
+    title: `Rain`,
+    description: `.`,
+    author: `@mediacurrent`,
+    menuLinks: [
+      {
+        uri: '/',
+        title: 'Home'
+      },
+      {
+        uri: '/page/about-rain',
+        title: 'About Rain'
+      }, {
+        uri: '/page/partner-us',
+        title: 'Partner With Us'
+      },
+    ]
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: [
+          "node_modules",
+          "src/global"
+        ]
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -39,7 +61,8 @@ module.exports = {
         baseUrl: process.env.BASE_URL,
         apiBase: `jsonapi` // optional, defaults to `jsonapi`
       }
-    }
+    },
+    `gatsby-source-rain`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

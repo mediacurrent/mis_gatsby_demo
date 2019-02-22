@@ -1,0 +1,94 @@
+// Baseline styling for form elements.
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+input[type='date'],
+textarea,
+select {
+  @include font-primary;
+  appearance: none;
+  border: 2px solid $color-gray-bomber;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.7rem;
+  line-height: 1;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+}
+
+select {
+  background-image: url('/assets/icon-arrow-down.svg');
+  background-position: calc(100% - 20px) center;
+  background-repeat: no-repeat;
+  background-size: 1.3rem;
+  padding: 20px 50px 20px 20px;
+
+  &::-ms-expand { // sass-lint:disable-line no-vendor-prefixes
+    display: none;
+  }
+}
+
+input:focus,
+textarea:focus,
+textarea.mc-input-focus, // sass-lint:disable-line no-qualifying-elements
+select:focus,
+select.mc-input-focus { // sass-lint:disable-line no-qualifying-elements
+  box-shadow: 0 0 3px $color-bahama-blue, 0 0 7px $color-bahama-blue;
+}
+
+input.mc-input-success, // sass-lint:disable-line no-qualifying-elements
+textarea.mc-input-success, // sass-lint:disable-line no-qualifying-elements
+select.mc-input-success { // sass-lint:disable-line no-qualifying-elements
+  border: 2px solid $color-green;
+}
+
+.mc-input-error input,
+.mc-input-error textarea,
+.mc-input-error select {
+  border: 4px solid $color-red;
+}
+
+.mc-input-error-message {
+  color: $color-red;
+  display: block;
+  font-size: 1.7rem;
+  font-weight: $font-weight-bold;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+
+/**
+ * radio and checkbox styles.
+ */
+input[type='checkbox']:not(old),
+input[type='radio']:not(old) {
+  width: 28px;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+input[type='checkbox']:not(old) + label,
+input[type='radio']:not(old) + label {
+  background: url('/assets/icon-checkbox.svg') no-repeat 0 4px;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: -28px;
+  padding-left: 28px;
+}
+
+input[type='checkbox']:not(old):checked + label,
+input[type='radio']:not(old):checked + label {
+  background-image: url('/assets/icon-checkbox--checked.svg');
+}
+
+input[type='checkbox']:not(old):focus + label,
+input[type='radio']:not(old):focus + label {
+  outline-color: $color-bahama-blue;
+  outline-style: auto;
+  outline-width: 5px;
+}
