@@ -22,7 +22,6 @@ const NodeHomepageTemplate = ({data}) => {
 
         switch (section['__typename']) {
           case "paragraph__card":
-            console.log(section);
             return <Card {...section} key={datakey} />
           case "paragraph__card_list":
             section.items = section.r.items;

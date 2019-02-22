@@ -12,7 +12,7 @@ const Eyebrow = (props) => {
 
   return(
     <span className={classes}>
-      {props.text}
+      {(props.text) ? props.text : props.children}
     </span>
   );
 }

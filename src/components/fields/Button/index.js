@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './style.scss';
 
 const Button = (button) => {
-  console.log(button);
+
   const href = button.uri;
   const info = button.info || button.title;
   const buttonClasses = classNames({
@@ -26,7 +26,7 @@ const Button = (button) => {
       href={href}
       title={info}
       aria-label={info}
-      onClick={(e) => onClickCallback(e)}
+      onClick={onClickCallback}
     >
       {button.title}
     </Element>

@@ -14,8 +14,7 @@ const Heading = (props) => {
   })
   return(
     <Element className={classes}>
-      {props.url && (<a href={props.url} className="heading--link">{props.children }</a>)}
-      {!props.url && props.children}
+      {props.url ? (<a href={props.url} className="heading--link">{props.children }</a>) : props.children}
     </Element>
   )
 }

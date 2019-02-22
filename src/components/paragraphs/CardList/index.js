@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { uid } from 'react-uid';
 
 import Card from '../Card'
 
@@ -17,9 +18,11 @@ const CardList = (props) => {
     <>
       {props.title && <Heading level={2} classes="card-list__title">{props.title}</Heading>}
       <ul className={classes}>
-        {props.items.map((item, key) => {
+        {props.items.map((item, index) => {
           return(
-            <li className="card-list__item" key={key}>
+            <li
+              className="card-list__item"
+              key={uid(item, index)}>
               <Card {...item} />
             </li>
           )
