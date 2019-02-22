@@ -1,6 +1,7 @@
 # Point different environments to different Drupal endpoints.
 [context.production.environment]
   BASE_URL = "http://develop-gatsby-d8.pantheonsite.io/"
+  HOME_ALIAS=/homepage/introducing-rain
 [context.develop.environment]
   BASE_URL = "http://develop-gatsby-d8.pantheonsite.io/"
-HOME_ALIAS=/homepage/introducing-rain
+  HOME_ALIAS=/homepage/introducing-rain
