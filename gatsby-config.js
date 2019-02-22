@@ -48,7 +48,8 @@ module.exports = {
         baseUrl: process.env.BASE_URL,
         apiBase: `jsonapi` // optional, defaults to `jsonapi`
       }
-    }
+    },
+    `gatsby-source-rain`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
