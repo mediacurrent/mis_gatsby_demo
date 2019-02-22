@@ -41,7 +41,7 @@ exports.createPages = ({ actions, graphql }) => {
           if (!result.data) reject('No data found. Fix your GraphQL stuff');
           console.log('Creating Homepage Nodes');
           result.data.allNodeHomepage.edges.forEach(({ node }) => {
-            const path = (node.path.alias == '/home') ? '/' : node.path.alias;
+            const path = (node.path.alias == process.env.HOME_ALIAS) ? '/' : node.path.alias;
             createPage({
               path: path,
               component: homepageTemplate,
