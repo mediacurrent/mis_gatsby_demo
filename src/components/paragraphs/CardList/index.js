@@ -15,7 +15,7 @@ const CardList = (props) => {
     {[`${props.classes}`]: props.classes}
   );
   return(
-    <>
+    <section className="card-list--container">
       {props.title && <Heading level={2} classes="card-list__title">{props.title}</Heading>}
       <ul className={classes}>
         {props.items.map((item, index) => {
@@ -28,7 +28,7 @@ const CardList = (props) => {
           )
         })}
       </ul>
-    </>
+    </section>
   );
 }
 
