@@ -1,167 +1,387 @@
 @import 'src/global/utils/init';
+@import 'src/global/utils/init';
 
-.main-menu__list {
-  @include font-primary;
+.header {
+  position: relative;
+  z-index: $zi-highest;
+
+  // Removes header bg when scrolled to very top
+  .headroom--top {
+    background: transparent;
+  }
+}
+
+.header__container {
+  align-items: center;
   display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  z-index: $zi-high;
+
+  @include breakpoint($bp-lg) {
+    max-width: $c-max-width;
+  }
+}
+
+.header__brand {
+  background-color: $color-navy-blue;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
-  font-size: 1.6rem;
-  font-weight: $font-weight-normal;
+  justify-content: center;
+  position: relative;
+  transition: background-color $motion-fast;
+  height: 70px;
+  width: 100px;
+  z-index: $zi-highest;
+
+  @include breakpoint($bp-lg) {
+    margin-right: 30px;
+    width: 155px;
+    height: 100px;
+
+    // Updates styles when header is sticky
+    // and not at the very top of the chrome
+    .headroom--not-top.headroom--pinned & {
+      height: 65px;
+      bottom: 0;
+    }
+  }
+
+  .js-open & {
+    background-color: transparent;
+
+    @include breakpoint($bp-sm) {
+      background-color: $color-navy-blue;
+    }
+  }
+}
+
+.header__brand .icon-mc-logo {
+  display: block;
+  fill: $color-white;
+  height: 41px;
+  margin: 0 auto;
+  transition: fill $motion-fast;
+  width: 68px;
+
+  @include breakpoint($bp-lg) {
+    height: 62px;
+    width: 102px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    // Updates styles when header is sticky
+    // and not at the very top of the chrome
+    .headroom--not-top.headroom--pinned & {
+      height: 40px;
+      width: 65px;
+    }
+  }
+
+  .js-open & {
+    fill: $color-navy-blue;
+
+    @include breakpoint($bp-sm) {
+      fill: $color-white;
+    }
+  }
+}
+
+.header__nav-toggle {
+  background: transparent;
+  border: 0;
+  font-size: 1.2rem;
+  margin-left: auto;
+  margin-right: 20px;
+  overflow: hidden;
+  padding: 5px;
+  position: relative;
+  z-index: $zi-highest;
+
+  @include breakpoint($bp-sm) {
+    margin-right: 30px;
+  }
+
+  @include breakpoint($bp-lg) {
+    display: none;
+    left: -1000em;
+    margin: 0;
+    position: absolute;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: transparent;
+  }
+
+  .js-open & {
+    height: 54px;
+    width: 52px;
+  }
+}
+
+.header__nav-toggle-bar {
+  background-color: $color-white;
+  border-radius: 4px;
+  display: block;
+  height: 2px;
+  margin-bottom: 8px;
+  transition: transform $motion-fast;
+  width: 42px;
+
+  .js-open & {
+    background-color: $color-navy-blue;
+  }
+
+  .js-open &:first-child {
+    left: 5px;
+    position: absolute;
+    top: 25px;
+    transform: rotate(45deg);
+  }
+
+  .js-open &:nth-child(3) {
+    right: 5px;
+    position: absolute;
+    top: 25px;
+    transform: rotate(-45deg);
+  }
+
+  .js-open &:nth-child(2) {
+    opacity: 0;
+    transition: opacity $motion-fast;
+  }
+}
+
+.header__nav-toggle-text {
+  display: block;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: opacity $motion-fast;
+
+  .js-open & {
+    opacity: 0;
+  }
+}
+
+.header__nav-wrapper {
+  @include clearfix;
+  box-shadow: -1px 1px 10px $color-navy-blue;
+  background-color: $color-white;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 90px;
+  position: absolute;
+  justify-content: space-between;
+  right: -200%;
+  top: 0;
+  transition: right $motion-fast;
   width: 100%;
 
   @include breakpoint($bp-sm) {
-    padding-bottom: 36px;
+    border-radius: 0 0 0 10px;
+    display: block;
+    width: 66.66%;
   }
 
   @include breakpoint($bp-lg) {
-    flex-direction: row;
-    padding-bottom: 0;
-  }
-}
-
-.main-menu__item {
-  background-position: 2px 5px;
-  background-repeat: no-repeat;
-  background-size: 20px;
-  padding: 3px 0 8px 30px;
-  text-transform: uppercase;
-
-  @include breakpoint($bp-lg) {
+    box-shadow: none;
+    align-items: center;
+    background-color: transparent;
     display: flex;
-    position: relative;
-    padding: 3px 24px 3px 0;
-    white-space: nowrap;
+    flex-wrap: nowrap;
+    padding: 0;
+    position: static;
+    right: auto;
+    width: 100%;
+  }
 
-    &:hover,
-    &.js-open,
-    &.js-open {
+  &[hidden] {
+    visibility: hidden;
 
-      >.main-menu__sublinks {
-        height: auto;
-      }
+    @include breakpoint($bp-lg) {
+      visibility: visible;
+    }
+  }
 
-      .header--solid &>.main-menu__sublinks {
-        padding-bottom: 5px;
-      }
+  .js-open & {
+    right: 0;
+
+    @include breakpoint($bp-lg) {
+      right: auto;
     }
   }
 }
 
-.main-menu__sublink-item {
-  padding: 3px 0;
-  text-transform: none;
+.header__main-menu {
+  box-sizing: border-box;
+  order: 1;
+  padding: 0 20px;
+  width: 100%;
 
-  &:last-child {
-    padding-bottom: 0;
+  @include breakpoint($bp-sm) {
+    float: left;
+    padding: 0 40px;
+    width: 50%;
   }
 
   @include breakpoint($bp-lg) {
-    text-transform: uppercase;
+    flex: 1 0 auto;
+    float: none;
+    padding: 0;
+    width: auto;
 
-    &:last-child {
-      padding-bottom: 3px;
+    // Updates styles when header is sticky
+    // and not at the very top of the chrome
+    .headroom--not-top.headroom--pinned & {
+      margin-top: 0;
     }
   }
 }
 
-.main-menu__link,
-.main-menu__sublink-link {
-  border-bottom: 1px solid transparent;
-  color: $color-green;
-  display: inline-block;
-  line-height: 1.2;
-  text-decoration: none;
+.header__secondary-nav {
+  box-sizing: border-box;
+  order: 1;
+  padding: 0 20px;
+  width: 100%;
 
-  &:focus,
-  &:hover,
-  &.active:focus,
-  &.active:hover {
-    border-color: $color-tundora;
-  }
-
-  &.active {
-    border-bottom: 1px solid $color-green;
-    font-weight: bold;
+  @include breakpoint($bp-sm) {
+    float: left;
+    padding: 0 40px;
+    width: 50%;
   }
 
   @include breakpoint($bp-lg) {
-    color: $color-tundora;
-
-    &.active {
-      border-color: $color-tundora;
-    }
+    display: none;
+    left: -1000em;
+    position: absolute;
   }
 }
 
-.main-menu__sublink-toggle {
-  display: none;
+.header__utilities {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  order: 0;
+  padding: 0 20px;
+  width: 100%;
+
+  @include breakpoint($bp-sm) {
+    float: left;
+    order: 1;
+    padding: 0 40px;
+    width: 50%;
+  }
 
   @include breakpoint($bp-lg) {
     align-items: center;
-    background-color: transparent;
-    border: 0;
-    height: 20px;
-    justify-content: center;
-    margin: 0 0 0 3px;
-    overflow: hidden;
+    flex: 0 1 auto;
+    flex-direction: row;
+    float: none;
+    justify-content: flex-end;
     padding: 0;
-    position: relative;
-    width: 20px;
-    display: flex;
+    width: auto;
+  }
 
-    &:hover {
-      background-color: transparent;
+  @include breakpoint($bp-xlg) {
+    flex: 0 1 35%;
+  }
+}
+
+.header__search {
+  margin: 0 0 20px;
+
+  @include breakpoint($bp-lg) {
+    margin: 0;
+    padding-right: 12px;
+    width: 200px;
+
+    // Updates styles when header is sticky
+    // and not at the very top of the chrome
+    .headroom--not-top.headroom--pinned & {
+      margin: 0;
+    }
+  }
+
+  @include breakpoint($bp-xlg) {
+    padding-right: 0;
+    width: 100%;
+  }
+}
+
+.header__contact-button {
+  text-align: center;
+
+  @include breakpoint($bp-xlg) {
+    position: absolute;
+    right: -155px;
+    top: 32px;
+
+    .headroom--not-top.headroom--pinned & {
+      top: 12px;
+    }
+  }
+
+  .button {
+    display: block;
+    font-size: 1.4rem;
+    margin: 0 auto 20px;
+    max-width: 230px;
+    padding: 8px 20px;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+      border-color: $color-navy-blue;
+      background-color: $color-white;
+      color: $color-navy-blue;
     }
 
-    svg {
-      display: block;
-      fill: $color-white;
-      height: 10px;
-      margin-bottom: 3px;
-      width: 10px;
-      transition: transform $motion-fast;
+    @include breakpoint($bp-lg) {
+      @include cta-ghost;
+      display: inline-block;
+      text-align: center;
+      margin: 0;
+      width: auto;
     }
 
-    .js-open>& svg,
-    .main-menu__item:hover &>svg {
-      transform: rotate(180deg);
+    @include breakpoint($bp-xlg) {
+      width: 160px;
+      padding: 10px;
     }
   }
 }
 
-.main-menu__sublink-toggle-text {
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  width: 0;
+// Sticky header uses http://wicky.nillia.ms/headroom.js/
+.headroom {
+  will-change: transform;
+  transition: transform 0.6s linear;
 }
 
-.main-menu__sublinks {
-  padding-top: 6px;
+.headroom--top {
+  background: transparent;
+}
 
-  @include breakpoint($bp-lg) {
-    height: 0;
-    left: 0;
-    min-width: 175px;
-    overflow: hidden;
-    padding: 3px 3px 3px 5px;
-    position: absolute;
-    top: 100%;
+.headroom--pinned.headroom--not-top {
+  background: $color-navy-blue;
+  position: fixed;
+  transform: translateY(0%);
+  width: 100%;
+  transition: 300ms linear;
+}
 
-    // Add blue bg to dropdown
-    .headroom--pinned & {
-      background: $color-green;
-    }
+.headroom--unpinned {
+  transform: translateY(-100%);
 
-    // When scrolled to the top, bg is removed
-    .headroom--top & {
-      background: transparent;
-    }
-
-
-    .header--solid & {
-      background-color: $color-green;
-      margin-left: -10px;
-      padding: 4px 10px 0;
-    }
+  // Offsets space no longer taken by fixed header
+  // and removes jumping of page
+  body & {
+    margin-top: -70px;
   }
 }
