@@ -1,0 +1,321 @@
+@import 'src/global/utils/init';
+
+.footer {
+  background-color: $color-navy-blue;
+  color: $color-white;
+  position: relative;
+  max-width: 960px;
+  margin: 10px auto 0;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: $color-white;
+  }
+
+  .icon-hollow-arrow-right {
+    stroke: $color-white;
+  }
+}
+
+.footer__top--wrapper {
+  padding: 60px 0 0;
+
+  @include breakpoint($bp-sm) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @include breakpoint($bp-sm) {
+    flex-direction: row;
+  }
+}
+
+.footer__bottom--inner {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @include breakpoint($bp-md) {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  a:focus,
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.footer__legal-links {
+  order: 1;
+
+  @include breakpoint($bp-md) {
+    order: 2;
+  }
+}
+
+.footer__copyright {
+  order: 2;
+
+  @include breakpoint($bp-md) {
+    order: 1;
+  }
+}
+
+@media (max-width: $bp-md) {
+  .footer__top {
+    justify-content: space-between;
+  }
+}
+
+.footer__back-to-top {
+  background: $color-navy-blue;
+  border-radius: 50%;
+  display: block;
+  height: 75px;
+  padding: 20px;
+  position: absolute;
+  top: -30px;
+  left: calc(50% - 35px);
+  width: 75px;
+  z-index: $zi-high;
+
+  // Adjust position of back to top icon on IE 10+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { // sass-lint:disable-line no-vendor-prefixes
+    padding-top: 10px;
+  }
+
+  .icon {
+    fill: $color-white;
+    height: 22px;
+    width: 35px;
+  }
+
+  // Adds dimensions to icon to fix ie bugs.
+  a {
+    display: block;
+    width: 35px;
+    height: 35px;
+  }
+
+  a:focus,
+  a:hover {
+
+    .icon-arrow-up {
+      fill: $color-yellow;
+    }
+  }
+
+  span {
+    @include element-invisible;
+  }
+}
+
+.footer__bottom {
+  justify-content: space-between;
+  padding: 10px 10px 5px;
+  font-size: .75em;
+}
+
+.footer__brand {
+  flex: 0 0 25%;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  text-align: center;
+
+  @include breakpoint($bp-md) {
+    text-align: left;
+    flex: 0 0 20%;
+  }
+
+  .footer__logo-link {
+    display: block;
+  }
+
+  .icon-mc-logo {
+    fill: $color-white;
+    height: 60px;
+    margin: 30px auto;
+    width: 100px;
+  }
+
+  a:focus,
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.footer__menu--social {
+  margin-bottom: 20px;
+}
+
+.footer__menus {
+  display: none;
+
+  @include breakpoint($bp-md) {
+    display: flex;
+    flex: 0 0 50%;
+    justify-content: space-around;
+  }
+
+  a:focus,
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.footer__menu {
+  li {
+    line-height: 1.8;
+  }
+}
+
+.footer__menu--header {
+  font-size: 18px;
+  margin-bottom: 10px;
+
+  @include breakpoint($bp-md) {
+    width: 75%;
+  }
+}
+
+.footer__social-signup {
+  flex: 0 0 50%;
+
+  @include breakpoint($bp-md) {
+    flex: 0 0 30%;
+  }
+}
+
+.footer__social {
+  border-bottom: 1px solid $color-yellow;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+
+  .footer__menu--item {
+    margin: 0 10px 5px;
+  }
+}
+
+
+.footer__menu--legal {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  @include breakpoint($bp-md) {
+    display: flex;
+    margin-bottom: 0;
+  }
+}
+
+.footer__menu--link {
+  display: block;
+
+  .icon {
+    fill: $color-white;
+    height: 32px;
+    width: 32px;
+  }
+
+  &:focus,
+  &:hover {
+
+    .icon {
+      fill: $color-yellow;
+    }
+  }
+}
+
+.footer__menu--link > span {
+  @include element-invisible;
+}
+
+.footer__signup {
+  overflow: hidden;
+  position: relative;
+}
+
+.footer__signup--form {
+  display: flex;
+  margin-top: 20px;
+
+  .button {
+    border: 0;
+    border-radius: 0 3px 3px 0;
+    padding: 10px 15px;
+    height: 48px;
+    margin: 0;
+
+    .icon {
+      height: 25px;
+      width: 25px;
+    }
+  }
+
+  input[type='text'] {
+    width: calc(100% - 62px);
+    border: 0;
+    border-left: 2px solid $color-gray-bomber;
+    border-top: 2px solid $color-gray-bomber;
+    border-bottom: 2px solid $color-gray-bomber;
+    border-radius: 3px 0 0 3px;
+  }
+
+  label {
+    @include element-invisible;
+  }
+
+  &.js-hidden {
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    width: 0;
+  }
+}
+
+.signup-form {
+
+  iframe {
+    display: none;
+  }
+}
+
+.signup-form__confirmation {
+  color: $color-navy-blue;
+  font-size: 2.2rem;
+  font-weight: $font-weight-bold;
+  margin: 20px 0 0;
+
+  text-align: center;
+
+  .footer__signup & {
+    font-size: 1.8rem;
+    background-color: $color-yellow;
+    padding: 12px;
+  }
+}
+
+.signup--label {
+  @include element-invisible;
+}

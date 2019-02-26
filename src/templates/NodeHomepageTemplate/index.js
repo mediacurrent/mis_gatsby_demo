@@ -3,13 +3,9 @@ import { graphql } from 'gatsby';
 
 import Layout from '../../components/layouts/Layout';
 
-import Card from '../../components/paragraphs/Card';
-import CardList from '../../components/paragraphs/CardList';
-import Hero from '../../components/paragraphs/Hero';
+import Content from '../../components/fields/Content';
 
 import Heading from '../../components/fields/Heading';
-
-// @todo: Add paragraph and title components.
 
 const NodeHomepageTemplate = ({data}) => {
   const { title } = data.nodeHomepage;
@@ -17,22 +13,7 @@ const NodeHomepageTemplate = ({data}) => {
   return(
     <Layout>
       <Heading level={1}>{title}</Heading>
-      {content.map((section, i) => {
-        const datakey = `paragraph--section--${section['__typename']}--${i}`;
-
-        switch (section['__typename']) {
-          case "paragraph__card":
-            return <Card {...section} key={datakey} />
-          case "paragraph__card_list":
-            section.items = section.r.items;
-            return <CardList {...section} key={datakey} />;
-          case "paragraph__hero_media":
-            return <Hero {...section} key={datakey} />;
-          default:
-            console.log(section['__typename']);
-            return '';
-        }
-      })}
+      <Content content={content} />
     </Layout>
   );
 }

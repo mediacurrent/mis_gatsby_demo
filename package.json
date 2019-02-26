@@ -26,7 +26,8 @@
     "react-helmet": "^5.2.0",
     "react-parser": "^1.0.0",
     "react-uid": "^2.2.0",
-    "singularitygs": "^1.8.0"
+    "singularitygs": "^1.8.0",
+    "svg-sprite-loader": "^4.1.3"
   },
   "keywords": [
     "gatsby"

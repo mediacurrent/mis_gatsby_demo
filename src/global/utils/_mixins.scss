@@ -88,3 +88,48 @@
     font-size: 3rem;
   }
 }
+
+// Mixin for standard CTA button treatment.
+@mixin cta-default {
+  @include font-primary;
+  background-color: $color-ocean-blue;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: $color-white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: $font-weight-normal;
+  letter-spacing: 0.12rem;
+  line-height: 1;
+  padding: 10px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color $motion-fast;
+
+  &:hover {
+    background-color: $color-gold;
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  @include breakpoint($bp-sm) {
+    white-space: nowrap;
+  }
+}
+
+// Mixin for "ghost" style CTA button treatment.
+@mixin cta-ghost($color: $color-white) {
+  @include cta-default;
+  background: transparent;
+  border: 1px solid $color;
+  color: $color;
+  transition: border, color $motion-fast;
+
+  &:hover {
+    background: $color-white;
+    border: 1px solid $color-ocean-blue;
+    color: $color-ocean-blue;
+    text-decoration: none;
+  }
+}
