@@ -6,7 +6,7 @@ import Heading from '../../fields/Heading';
 
 import './style.scss';
 
-const Faq = (props) => {
+const ParagraphFaq = (props) => {
   const items = props.r.items.map(item => {
     return({
       heading: item.question,
@@ -21,7 +21,7 @@ const Faq = (props) => {
   </section>
 )}
 
-Faq.propTypes = {
+ParagraphFaq.propTypes = {
   title: PropTypes.string,
   /** Array of items. */
   r: PropTypes.shape({
@@ -34,4 +34,4 @@ Faq.propTypes = {
   })
 }
 
-export default Faq;
+export default ParagraphFaq;

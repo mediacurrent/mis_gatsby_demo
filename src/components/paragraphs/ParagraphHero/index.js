@@ -10,16 +10,22 @@ import Media from '../../fields/Media';
 
 import './style.scss';
 
-const Hero = (props) => {
+const ParagraphHero = (props) => {
   const classes = classNames(
     "hero",
     {[`${props.classes}`]: props.classes}
   );
   const card = props.r.cards[0];
-  const media = card.r.media.r.image.localFile.cis.fixed.src;
+  let media;
+  try {
+    media = card.r.media.r.image.localFile.cis.f.src;
+  }
+  catch {
+    media = null;
+  };
   return(
     <section className={classes}>
-      {media && <Media image={`<img src="${media}"/>`} />}
+      {media && <Media image={`<img src="${media}" alt="" />`} />}
       <div className="hero__content">
         {card.eyebrow && <Eyebrow text={card.eyebrow} classes="hero__eyebrow" />}
         {card.heading && <Heading>{card.heading}</Heading>}
@@ -30,7 +36,7 @@ const Hero = (props) => {
   );
 }
 
-Hero.propTypes = {
+ParagraphHero.propTypes = {
   heading: PropTypes.string,
   subhead: PropTypes.string,
   r: PropTypes.shape({
@@ -40,4 +46,4 @@ Hero.propTypes = {
   classes: PropTypes.string
 }
 
-export default Hero;
+export default ParagraphHero;

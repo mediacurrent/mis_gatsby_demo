@@ -7,6 +7,9 @@ export const nodeHomepageFragment = graphql`
     r:relationships {
       content:field_content {
         __typename
+        ... on paragraph__breaker {
+          ...breakerFragment
+        }
         ... on paragraph__card {
           ...cardFragment
         }
@@ -42,6 +45,9 @@ export const nodePageFragment = graphql`
     r:relationships {
       content:field_content {
         __typename
+        ... on paragraph__breaker {
+          ...breakerFragment
+        }
         ... on paragraph__card {
           ...cardFragment
         }

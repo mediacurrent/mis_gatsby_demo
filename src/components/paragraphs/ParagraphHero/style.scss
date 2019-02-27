@@ -11,6 +11,9 @@
   max-width: 95%;
   padding: 1rem;
   text-align: center;
+  -webkit-box-shadow: -200px 5px 0px -115px $color-sunshine-yellow;
+  -moz-box-shadow: -200px 5px 0px -115px $color-sunshine-yellow;
+  box-shadow: -200px 5px 0px -115px $color-sunshine-yellow;
 
   @include breakpoint($bp-xsm) {
     max-width: 750px;

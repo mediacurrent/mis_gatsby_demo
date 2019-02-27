@@ -11,10 +11,6 @@ module.exports = {
     author: `@mediacurrent`,
     menuLinks: [
       {
-        uri: '/',
-        title: 'Home'
-      },
-      {
         uri: '/page/about-rain',
         title: 'About Rain'
       }, {

@@ -8,9 +8,10 @@ import Eyebrow from '../../fields/Eyebrow';
 
 import './style.scss';
 
-const Map = (props) => {
+const ParagraphMap = (props) => {
   const {map} = props;
   const hasText = props.body || props.heading || props.eyebrow || props.link;
+  console.log(process.env.MAPS_KEY);
 
   const classes = classNames(
     'map',
@@ -29,7 +30,7 @@ const Map = (props) => {
             scrolling="no"
             marginHeight="0"
             marginWidth="0"
-            src={`https://maps.google.com/maps?q=${map[0].lat},${map[0].lng}&hl=es;z=14&amp;output=embed`}
+            src={`https://www.google.com/maps/embed/v1/place?q=${map[0].lat},${map[0].lng}&amp;key=${process.env.MAPS_KEY}`}
           />
         </div>
       </div>
@@ -45,7 +46,7 @@ const Map = (props) => {
   )
 }
 
-Map.propTypes = {
+ParagraphMap.propTypes = {
   map: PropTypes.arrayOf(
     PropTypes.shape({
       lat: PropTypes.number,
@@ -63,4 +64,4 @@ Map.propTypes = {
   })
 }
 
-export default Map;
+export default ParagraphMap;

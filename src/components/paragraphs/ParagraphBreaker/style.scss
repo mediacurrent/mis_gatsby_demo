@@ -1,0 +1,29 @@
+.breaker {
+  margin-top: 65px;
+  position: relative;
+
+  .breaker__hero {
+    max-height: 400px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .breaker__content-container {
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+    z-index: 100;
+
+    .breaker__cta {
+      margin-bottom: 30px;
+      text-align:center;
+    }
+
+    .breaker__heading {
+      font-size: 3rem;
+    }
+  }
+
+
+}

@@ -5,7 +5,7 @@ import Parser from 'html-react-parser';
 
 import './style.scss';
 
-const Quote = (props) => {
+const ParagraphQuote = (props) => {
 
   const classes = classNames(
     'quote',
@@ -30,7 +30,7 @@ const Quote = (props) => {
   )
 }
 
-Quote.propTypes = {
+ParagraphQuote.propTypes = {
   /** Quote string. HTML is Parsed. */
   quote: PropTypes.string.isRequired,
   /** Quote attribution. */
@@ -46,4 +46,4 @@ Quote.propTypes = {
   })
 }
 
-export default Quote;
+export default ParagraphQuote;

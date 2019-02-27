@@ -17,7 +17,7 @@ const Accordion = (props) => {
         const datakey = `accordion--${key}`;
         return(
           <article
-            className={`accordion ${toggle[datakey] && 'open'}`}
+            className={`accordion${(toggle[datakey]) ? ' open' : ''}`}
             key={datakey}
           >
             <button
