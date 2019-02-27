@@ -11,31 +11,50 @@
 // Import site utilities.
 @import 'src/global/utils/init';
 
-.button,
-input[type='submit'] {
-  background-color: $color-blue;
-  border: 2px solid $color-blue;
-  color: $color-white;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  text-align: center;
+.btn {
+  margin: 20px auto;
+  border: none;
+  padding: 10px 15px;
+  position: relative;
   text-decoration: none;
-  text-transform: uppercase;
-  transition: background-color 0.25s, color 0.25s;
+
+  &::before {
+    transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    content: '';
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  & .btn-text {
+    color: $color-navy-blue;
+    mix-blend-mode: darken;
+  }
 
   &:hover {
-    background-color: $color-white;
-    color: $color-blue;
+    &::before {
+      background: $color-sunshine-yellow;
+      width: 100%;
+    }
   }
 
-  @include breakpoint($bp-sm) {
-    font-size: 1rem;
-    padding: 1rem 2rem;
-  }
+  //rounded btn styles
+  &.rounded {
+    border-radius: 50px;
 
-  &.button--small {
-    font-size: 0.875rem;
-    padding: 0.5rem 1rem;
+    &::before {
+      border-radius: 50px;
+      width: 35%;
+      background: $color-sunshine-yellow;
+    }
+
+    &:hover {
+      &::before {
+        background: $color-sunshine-yellow;
+        width: 100%;
+      }
+    }
   }
 }

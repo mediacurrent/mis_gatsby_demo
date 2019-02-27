@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { uid } from 'react-uid';
 
-import Card from '../Card'
+import ParagraphCard from '../ParagraphCard'
 
 import Heading from '../../fields/Heading';
 
 import './style.scss';
 
-const CardList = (props) => {
+const ParagraphCardList = (props) => {
   const classes = classNames(
     'card-list',
     {[`${props.classes}`]: props.classes}
@@ -23,7 +23,7 @@ const CardList = (props) => {
             <li
               className="card-list__item"
               key={uid(item, index)}>
-              <Card {...item} />
+              <ParagraphCard {...item} />
             </li>
           )
         })}
@@ -32,7 +32,7 @@ const CardList = (props) => {
   );
 }
 
-CardList.propTypes = {
+ParagraphCardList.propTypes = {
   /** Optional Title */
   title: PropTypes.string,
   /** Array of Card Properties */
@@ -41,4 +41,4 @@ CardList.propTypes = {
   classes: PropTypes.string
 }
 
-export default CardList;
+export default ParagraphCardList;

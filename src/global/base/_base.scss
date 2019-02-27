@@ -492,6 +492,8 @@ h1 {
 
 h2 {
   @include font-size-heading2;
+  color: $color-navy-blue;
+  text-decoration: underline $color-sunshine-yellow;
 }
 
 h3 {

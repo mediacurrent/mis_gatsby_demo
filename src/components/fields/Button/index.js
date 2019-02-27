@@ -8,10 +8,11 @@ const Button = (button) => {
 
   const href = button.uri;
   const info = button.info || button.title;
-  const buttonClasses = classNames({
-    button: true,
-    [`button--${button.classes}`]: button.classes
-  });
+  const buttonClasses = classNames(
+    'btn',
+    'rounded',
+    {[`${button.classes}`]: button.classes}
+  );
   const Element = href ? 'a' : 'button';
   const onClickCallback = (e) => {
     if (typeof button.onClick === 'function') {
@@ -28,7 +29,7 @@ const Button = (button) => {
       aria-label={info}
       onClick={onClickCallback}
     >
-      {button.title}
+      <span className="btn-text">{button.title}</span>
     </Element>
   );
 };

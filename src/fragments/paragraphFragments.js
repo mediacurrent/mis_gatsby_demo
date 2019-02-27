@@ -1,5 +1,38 @@
 import { graphql } from 'gatsby';
 
+export const breakerFragment = graphql`
+  fragment breakerFragment on paragraph__breaker {
+    r:relationships {
+      cards:field_card {
+        classes:field_card_layout
+        heading:field_title
+        subhead:field_subhead
+        eyebrow:field_short_title
+        text:field_summary
+        link:field_link {
+          uri
+          title
+        }
+        r:relationships {
+          media:field_media {
+            r:relationships {
+              image:field_image {
+                localFile {
+                  cis:childImageSharp {
+                    f:fluid(maxHeight: 300) {
+                      src
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const cardFragment = graphql`
   fragment cardFragment on paragraph__card {
     classes:field_card_layout
@@ -21,6 +54,8 @@ export const cardFragment = graphql`
                   src
                 }
               }
+              extension
+              publicURL
             }
           }
         }
@@ -56,7 +91,30 @@ export const heroMediaFragment = graphql`
     subhead:field_subhead
     r:relationships {
       cards:field_card {
-        ...cardFragment
+        classes:field_card_layout
+        heading:field_title
+        subhead:field_subhead
+        eyebrow:field_short_title
+        text:field_summary
+        link:field_link {
+          uri
+          title
+        }
+        r:relationships {
+          media:field_media {
+            r:relationships {
+              image:field_image {
+                localFile {
+                  cis:childImageSharp {
+                    f:fluid(maxHeight: 500) {
+                      src
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

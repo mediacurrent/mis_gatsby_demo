@@ -1,0 +1,99 @@
+// Card
+//
+// This is the Card component.
+// 2 varaiations are included.
+//
+// .card--wide - A variation of the Card with row layout.
+//
+// Markup: card.twig
+//
+// Style guide: Components.Card
+
+// Import site utilities.
+@import '../../global/utils/init';
+
+.card {
+  clear:both;
+  margin: 10px 0;
+  &.wide_right {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  &.wide {
+    display: flex;
+
+    @include breakpoint($bp-xsm) {
+      flex-direction: row;
+    }
+  }
+
+  .card__content {
+    @include breakpoint($bp-xsm) {
+      margin: 0 0 0 1.5rem;
+    }
+  }
+}
+.card__media {
+  flex: 1;
+
+  .svg {
+    max-height: 100px;
+    margin-bottom: 10px;
+  }
+}
+
+.card__content {
+  flex: 1;
+
+  @include breakpoint($bp-xsm) {
+    margin: 0 0 0 1.5rem;
+  }
+}
+.wide {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($bp-xsm) {
+    flex-direction: row;
+  }
+
+
+
+  .card__eyebrow {
+    margin-top: 0;
+  }
+}
+
+.card__content {
+  margin: 2rem 0 0;
+}
+  // Styles for Wide variation of Card
+
+.card__eyebrow {
+  display: block;
+  font-size: 0.75rem;
+}
+
+.card__title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 1.5rem;
+
+  @include breakpoint($bp-sm) {
+    font-size: 2rem;
+  }
+}
+
+.card__subhead {
+  font-size: 1.25rem;
+  font-weight: normal;
+
+  @include breakpoint($bp-sm) {
+    font-size: 1.5rem;
+  }
+}
+
+.card__link {
+  display: block;
+  margin-top: 1.5rem;
+}

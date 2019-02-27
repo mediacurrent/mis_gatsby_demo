@@ -14,16 +14,15 @@
 }
 
 .accordion {
-  background: $color-alto;
   border-top: 0;
-  border-right: 1px solid $color-tundora;
-  border-bottom: 1px solid $color-tundora;
-  border-left: 1px solid $color-tundora;
+  border-right: 1px solid $color-basic-gray;
+  border-bottom: 1px solid $color-basic-gray;
+  border-left: 1px solid $color-basic-gray;
   padding: 1rem 1.5rem;
   transition: background 0.75s;
 
   &:first-of-type {
-    border: 1px solid $color-tundora;
+    border: 1px solid $color-basic-gray;
   }
 
   &.open {
@@ -58,9 +57,9 @@
 }
 
 .accordion__heading {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  line-height: 1.625;
+  line-height: 1.5rem;
 }
 
 .accordion__content {

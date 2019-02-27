@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Paragraphs
-import Card from '../../paragraphs/Card';
-import CardList from '../../paragraphs/CardList';
-import Faq from '../../paragraphs/Faq';
-import Hero from '../../paragraphs/Hero';
-import Map from '../../paragraphs/Map';
-import Quote from '../../paragraphs/Quote';
+import ParagraphBreaker from '../../paragraphs/ParagraphBreaker';
+import ParagraphCard from '../../paragraphs/ParagraphCard';
+import ParagraphCardList from '../../paragraphs/ParagraphCardList';
+import ParagraphFaq from '../../paragraphs/ParagraphFaq';
+import ParagraphHero from '../../paragraphs/ParagraphHero';
+import ParagraphMap from '../../paragraphs/ParagraphMap';
+import ParagraphQuote from '../../paragraphs/ParagraphQuote';
 
 const Content = ({content}) => (
   <>
@@ -15,19 +16,21 @@ const Content = ({content}) => (
       const datakey = `paragraph--section--${section['__typename']}--${i}`;
 
       switch (section['__typename']) {
+        case "paragraph__breaker":
+          return <ParagraphBreaker {...section} key={datakey} />;
         case "paragraph__card":
-          return <Card {...section} key={datakey} />
+          return <ParagraphCard {...section} key={datakey} />;
         case "paragraph__card_list":
           section.items = section.r.items;
-          return <CardList {...section} key={datakey} />;
+          return <ParagraphCardList {...section} key={datakey} />;
         case "paragraph__faq":
-          return <Faq {...section} key={datakey} />;
+          return <ParagraphFaq {...section} key={datakey} />;
         case "paragraph__hero_media":
-          return <Hero {...section} key={datakey} />;
+          return <ParagraphHero {...section} key={datakey} />;
         case "paragraph__map":
-          return <Map {...section} key={datakey} />;
+          return <ParagraphMap {...section} key={datakey} />;
         case "paragraph__quote":
-          return <Quote {...section} key={datakey} />;
+          return <ParagraphQuote {...section} key={datakey} />;
         default:
           console.log(section['__typename']);
           return '';
