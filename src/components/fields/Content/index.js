@@ -6,6 +6,7 @@ import ParagraphBreaker from '../../paragraphs/ParagraphBreaker';
 import ParagraphCard from '../../paragraphs/ParagraphCard';
 import ParagraphCardList from '../../paragraphs/ParagraphCardList';
 import ParagraphFaq from '../../paragraphs/ParagraphFaq';
+import ParagraphGalleryCarousel from '../../paragraphs/ParagraphGalleryCarousel';
 import ParagraphHero from '../../paragraphs/ParagraphHero';
 import ParagraphMap from '../../paragraphs/ParagraphMap';
 import ParagraphQuote from '../../paragraphs/ParagraphQuote';
@@ -25,6 +26,9 @@ const Content = ({content}) => (
           return <ParagraphCardList {...section} key={datakey} />;
         case "paragraph__faq":
           return <ParagraphFaq {...section} key={datakey} />;
+        case "paragraph__gallery_carousel":
+          section.items = section.r.items;
+          return <ParagraphGalleryCarousel {...section} key={datakey} />;
         case "paragraph__hero_media":
           return <ParagraphHero {...section} key={datakey} />;
         case "paragraph__map":

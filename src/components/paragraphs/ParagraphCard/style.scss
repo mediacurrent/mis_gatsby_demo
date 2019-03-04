@@ -56,11 +56,12 @@
   @include breakpoint($bp-xsm) {
     flex-direction: row;
   }
-
-
-
   .card__eyebrow {
     margin-top: 0;
+  }
+
+  .card__link {
+    display: initial;
   }
 }
 
