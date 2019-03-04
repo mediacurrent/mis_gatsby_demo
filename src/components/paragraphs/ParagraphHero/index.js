@@ -37,8 +37,6 @@ const ParagraphHero = (props) => {
 }
 
 ParagraphHero.propTypes = {
-  heading: PropTypes.string,
-  subhead: PropTypes.string,
   r: PropTypes.shape({
     cards: PropTypes.array
   }),

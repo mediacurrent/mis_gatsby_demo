@@ -4,6 +4,9 @@ export const nodeHomepageFragment = graphql`
   fragment nodeHomepageFragment on node__homepage {
     title
     nid:drupal_internal__nid
+    path {
+      alias
+    }
     r:relationships {
       content:field_content {
         __typename
@@ -42,6 +45,9 @@ export const nodePageFragment = graphql`
   fragment nodePageFragment on node__page {
     title
     nid:drupal_internal__nid
+    path {
+      alias
+    }
     r:relationships {
       content:field_content {
         __typename
@@ -56,6 +62,9 @@ export const nodePageFragment = graphql`
         }
         ... on paragraph__faq {
           ...faqFragment
+        }
+        ... on paragraph__gallery_carousel {
+          ...galleryCarouselFragment
         }
         ... on paragraph__hero_media {
           ...heroMediaFragment

@@ -85,10 +85,52 @@ export const faqFragment = graphql`
     }
   }
 `;
+
+export const galleryCarouselFragment = graphql`
+  fragment galleryCarouselFragment on paragraph__gallery_carousel {
+    title:field_title
+    subhead:field_subhead
+    pid:drupal_internal__id
+    r:relationships {
+      items:field_card {
+        title:field_title
+        subhead:field_subhead
+        eyebrow:field_short_title
+        link:field_link {
+          uri
+          title
+        }
+        r:relationships {
+          media:field_media {
+            r:relationships {
+              image:field_image {
+                file:localFile {
+                  cis:childImageSharp {
+                    fixed(height:300) {
+                      src
+                    }
+                  }
+                }
+              }
+            }
+          }
+          thumb:field_thumb {
+            file:localFile {
+              cis:childImageSharp {
+                fixed(height:100) {
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const heroMediaFragment = graphql`
   fragment heroMediaFragment on paragraph__hero_media {
-    heading:field_title
-    subhead:field_subhead
     r:relationships {
       cards:field_card {
         classes:field_card_layout
