@@ -10,8 +10,7 @@ import 'slick-carousel/slick/slick-theme.scss';
 import './style.scss';
 
 const ParagraphGalleryCarousel = (props) => {
-
-  const {title, subhead, items } = props;
+  const {title, subhead, items, pid } = props;
   const galleryItems = items.map(item => {
     const src = item.r.media.r.image.file.cis.fixed.src;
     const thumb = item.r.thumb.file.cis.fixed.src;
@@ -44,7 +43,7 @@ const ParagraphGalleryCarousel = (props) => {
       <Slider {...settings}>
         {galleryItems.map((item, key) => {
           return(
-            <div className="gallery-carousel-item" key={key}>
+            <div className="gallery-carousel-item" key={`gallery-carousel--${pid}--${key}`}>
               <img src={item.src} className="gallery-carousel-item__media" alt={item.alt } />
               <p className="gallery-carousel-item__text">{item.alt}</p>
             </div>
@@ -71,6 +70,10 @@ ParagraphGalleryCarousel.propTypes = {
       alt: PropTypes.string
     })
   }))
+}
+
+ParagraphGalleryCarousel.defaultProps = {
+  items: []
 }
 
 export default ParagraphGalleryCarousel;

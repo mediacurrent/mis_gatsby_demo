@@ -90,6 +90,7 @@ export const galleryCarouselFragment = graphql`
   fragment galleryCarouselFragment on paragraph__gallery_carousel {
     title:field_title
     subhead:field_subhead
+    pid:drupal_internal__id
     r:relationships {
       items:field_card {
         title:field_title

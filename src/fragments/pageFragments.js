@@ -19,9 +19,6 @@ export const nodeHomepageFragment = graphql`
         ... on paragraph__card_list {
           ...cardListFragment
         }
-        ... on paragraph__gallery_carousel {
-          ...galleryCarouselFragment
-        }
         ... on paragraph__hero_media {
           ...heroMediaFragment
         }
