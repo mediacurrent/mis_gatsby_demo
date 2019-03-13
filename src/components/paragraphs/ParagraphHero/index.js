@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -8,9 +8,82 @@ import Eyebrow from '../../fields/Eyebrow';
 import Heading from '../../fields/Heading';
 import Media from '../../fields/Media';
 
+// Homempage videos.
+import webm from './waves.webm'
+import mp4 from './waves.mp4'
+
 import './style.scss';
 
 const ParagraphHero = (props) => {
+
+  const videoRef = useRef(null);
+
+  // Load Video on homepage.
+  useEffect(() => {
+    if (
+      typeof Promise === 'undefined' ||
+      !videoRef.current ||
+      window.matchMedia('(prefers-reduced-motion)').matches ||
+      window.innerWidth < 992
+    ) {
+      return;
+    }
+    const video = videoRef.current;
+
+    const children = Array.prototype.slice.call(video.children);
+    children.forEach((child) => {
+      if (
+        child.tagName === 'SOURCE' &&
+        typeof child.dataset.src !== 'undefined'
+      ) {
+        child.setAttribute('src', child.dataset.src);
+      }
+    });
+    video.load();
+
+    // Promise resolves when video.canplaythrough event triggers.
+    const videoLoad = new Promise((resolve) => {
+      video.addEventListener('canplaythrough', () => {
+        resolve('can play');
+      });
+    });
+
+    // Promise resolves after a predetermined time (2sec)
+    const videoTimeout = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('The video timed out.');
+      }, 2000);
+    });
+
+    // Race the promises to see which one resolves first.
+    Promise.race([videoLoad, videoTimeout]).then((data) => {
+      if (data === 'can play') {
+        video.play();
+        setTimeout(() => {
+          video.classList.add('video-loaded');
+        }, 500);
+      }
+      else {
+        const children = Array.prototype.slice.call(video.children);
+        children.forEach((child) => {
+          if (
+            child.tagName === 'SOURCE' &&
+            typeof child.dataset.src !== 'undefined'
+          ) {
+            child.parentNode.removeChild(child);
+          }
+        });
+
+        // reload the video without <source> tags to stop downloading.
+        video.load();
+      }
+    });
+  });
+  const home_video_hero = {
+    webm,
+    mp4,
+  }
+
   const classes = classNames(
     "hero",
     {[`${props.classes}`]: props.classes}
@@ -23,9 +96,24 @@ const ParagraphHero = (props) => {
   catch {
     media = null;
   };
+
   return(
     <section className={classes}>
       {media && <Media image={`<img src="${media}" alt="" />`} />}
+      {props.home_video_hero && (
+        <div className="hero__background">
+          <video
+            loop
+            muted
+            autoPlay
+            className="hero__bgvideo hero__bg-video--playback-slow"
+            ref={videoRef}
+          >
+            <source data-src={home_video_hero.webm} type="video/webm" />
+            <source data-src={home_video_hero.mp4} type="video/mp4" />
+          </video>
+        </div>
+      )}
       <div className="hero__content">
         {card.eyebrow && <Eyebrow text={card.eyebrow} classes="hero__eyebrow" />}
         {card.heading && <Heading>{card.heading}</Heading>}

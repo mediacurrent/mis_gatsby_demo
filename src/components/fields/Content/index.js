@@ -30,6 +30,9 @@ const Content = ({content}) => (
           section.items = section.r.items;
           return <ParagraphGalleryCarousel {...section} key={datakey} />;
         case "paragraph__hero_media":
+          if (content.home_video_hero) {
+            section.home_video_hero = 1;
+          }
           return <ParagraphHero {...section} key={datakey} />;
         case "paragraph__map":
           return <ParagraphMap {...section} key={datakey} />;
