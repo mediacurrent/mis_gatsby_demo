@@ -31,7 +31,7 @@ const Content = ({content}) => (
           return <ParagraphGalleryCarousel {...section} key={datakey} />;
         case "paragraph__hero_media":
           if (content.home_video_hero) {
-            section.home_video_hero = 1;
+            section.home_video_hero = true;
           }
           return <ParagraphHero {...section} key={datakey} />;
         case "paragraph__map":
