@@ -35,7 +35,7 @@ const ParagraphBreaker = (props) => {
 
       <div className="breaker__container">
         <div className="breaker__content-container">
-          {(eyebrow) && (<Eyebrow value={eyebrow} classes="breaker__eyebrow" />)}
+          {(eyebrow) && (<Eyebrow text={eyebrow} classes="breaker__eyebrow" />)}
           {(heading) && (<Heading classes="breaker__heading">{heading}</Heading>)}
           {(text) && (
             <div
