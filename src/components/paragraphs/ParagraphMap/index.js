@@ -29,7 +29,7 @@ const GoogleMapWrapper = withScriptjs(
 );
 
 const ParagraphMap = (props) => {
-  console.log(props);
+
   const {map} = props;
   const hasText = props.body || props.heading || props.eyebrow || props.link;
 
