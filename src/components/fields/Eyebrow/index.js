@@ -19,7 +19,7 @@ const Eyebrow = (props) => {
 
 Eyebrow.propTypes = {
   classes: PropTypes.string,
-  text: PropTypes.string.isRequired
+  text: PropTypes.string
 }
 
 export default Eyebrow;

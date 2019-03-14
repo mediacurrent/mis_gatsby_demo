@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Mark Casias <mark.casias@mediacurrent.com>",
   "dependencies": {
+    "@types/googlemaps": "^3.30.18",
+    "@types/markerclustererplus": "^2.1.33",
     "breakpoint-sass": "^2.7.1",
     "classnames": "^2.2.6",
     "dotenv": "^6.2.0",
@@ -24,6 +26,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-google-maps": "^9.4.5",
     "react-headroom": "^2.2.8",
     "react-helmet": "^5.2.0",
     "react-parser": "^1.0.0",

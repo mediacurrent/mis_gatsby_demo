@@ -9,7 +9,7 @@
   flex-direction: column;
 
   @include breakpoint($bp-xsm) {
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
 
   .map__wrapper {
