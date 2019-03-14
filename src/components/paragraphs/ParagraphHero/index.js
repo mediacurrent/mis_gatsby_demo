@@ -79,7 +79,7 @@ const ParagraphHero = (props) => {
       }
     });
   });
-  const home_video_hero = {
+  const hero_videos = {
     webm,
     mp4,
   }
@@ -109,8 +109,8 @@ const ParagraphHero = (props) => {
             className="hero__bgvideo hero__bg-video--playback-slow"
             ref={videoRef}
           >
-            <source data-src={home_video_hero.webm} type="video/webm" />
-            <source data-src={home_video_hero.mp4} type="video/mp4" />
+            <source data-src={hero_videos.webm} type="video/webm" />
+            <source data-src={hero_videos.mp4} type="video/mp4" />
           </video>
         </div>
       )}
@@ -125,9 +125,13 @@ const ParagraphHero = (props) => {
 }
 
 ParagraphHero.propTypes = {
+  /** Relationships */
   r: PropTypes.shape({
+    /** Cards (should only be one.) */
     cards: PropTypes.array
   }),
+  /** Turn on videos */
+  home_video_hero: PropTypes.bool,
   /** Extra classes */
   classes: PropTypes.string
 }

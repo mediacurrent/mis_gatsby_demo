@@ -21,6 +21,49 @@
   }
 }
 
+.hero__image,
+.hero__background {
+  @include overlay(0.75);
+  @include vertical-horizontal-center;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  z-index: $zi-ground;
+
+  img {
+    @include vertical-horizontal-center;
+    height: 100%;
+    max-width: none;
+    z-index: $zi-ground;
+
+    @include breakpoint($bp-lg) {
+      height: 125%;
+    }
+  }
+
+  .hero--short & img {
+    height: 125%;
+
+    @include breakpoint($bp-xlg) {
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
+.hero__bgvideo {
+  @include vertical-horizontal-center;
+  z-index: 0;
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 0;
+  transition: opacity $motion-slow;
+
+  &.video-loaded {
+    opacity: 1;
+  }
+}
+
 .hero__heading {
   @include wire-large-heading;
   margin-bottom: 0.5rem;
