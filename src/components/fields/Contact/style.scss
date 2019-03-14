@@ -1,0 +1,73 @@
+@import '../../global/utils/init';
+
+.contact-us {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-us__contact-items {
+  display: flex
+}
+.contact-us__items {
+  flex: 1
+}
+
+.form-item {
+  position: relative;
+
+  +.form-item {
+    margin-top: 20px;
+  }
+}
+
+.form-item__input {
+  border: 1px solid $color-black;
+  font-size: 1rem;
+  padding: 1rem;
+  width: 100%;
+  color: $color-black;
+
+  &:focus {
+    border: 1px solid $color-blue;
+    box-shadow: 0 0 6px $color-blue;
+    outline: none;
+  }
+}
+
+.form-item__label {
+  left: 16px;
+  position: absolute;
+  top: 16px;
+  transition: transform 0.25s;
+
+  .floated &,
+  .form-item__input:focus+& {
+    transform: translate(-10px, -10px);
+    font-size: 0.5rem;
+  }
+}
+
+input[aria-invalid],
+textarea[aria-invalid] {
+
+  +span {
+    display: block;
+  }
+}
+
+.required-field {
+
+  &::after {
+    content: '*';
+    color: $color-req-red;
+    display: inline-block;
+  }
+}
+
+input[type='submit'] {
+  margin-top: 20px;
+}
+
+.visually-hidden {
+  display: none;
+}
