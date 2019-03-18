@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 // Layout
 import Layout from '../../components/layouts/Layout';
@@ -9,11 +10,14 @@ import Content from '../../components/fields/Content';
 import Heading from '../../components/fields/Heading';
 
 const NodePageTemplate = ({ data }) => {
-  const { title } = data.nodePage;
+  const { title, summary } = data.nodePage;
   const { content } = data.nodePage.r;
   return (
     <Layout>
-      <Heading level={1}>{title}</Heading>
+      <Helmet>
+        <title>{title} | Mediacurrent</title>
+        <meta name="description" content={summary} />
+      </Helmet>
       <Content content={content} />
     </Layout>
   )
