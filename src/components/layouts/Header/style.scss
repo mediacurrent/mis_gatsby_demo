@@ -4,6 +4,7 @@
 .header {
   position: relative;
   z-index: $zi-highest;
+  background: rgba( 255,255,255, 0.85 );
 
   // Removes header bg when scrolled to very top
   .headroom--top {
@@ -62,7 +63,7 @@
   }
 }
 
-.header__brand .icon-mc-logo {
+.header__brand {
   display: block;
   fill: $color-white;
   height: 41px;
@@ -85,7 +86,7 @@
   }
 
   .js-open & {
-    fill: $color-navy-blue;
+    fill: $color-white;
 
     @include breakpoint($bp-sm) {
       fill: $color-white;

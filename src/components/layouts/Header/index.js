@@ -13,7 +13,7 @@ const Header = ({ menuLinks }) => (
       <div className="section__container header__container" data-path="" >
         <div className="header__brand">
           <a className="header__logo-link" href="/">
-            <Icon name="icon-mc-logo" className="icon icon-mc-logo" />
+            <Icon name="RAIN-logo-navy-sm" className="icon icon-mc-logo" />
           </a>
         </div>
         <button className="header__nav-toggle" aria-expanded="false" aria-controls="main-nav-wrapper">

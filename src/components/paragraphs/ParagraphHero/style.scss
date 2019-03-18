@@ -6,17 +6,19 @@
 
 .hero__content {
   @include center-align(absolute);
-  background: $color-alto;
+  left: 33%;
+  background: $color-white;
   margin-right: -50%;
   max-width: 95%;
   padding: 1rem;
   text-align: center;
-  -webkit-box-shadow: -200px 5px 0px -115px $color-sunshine-yellow;
-  -moz-box-shadow: -200px 5px 0px -115px $color-sunshine-yellow;
-  box-shadow: -200px 5px 0px -115px $color-sunshine-yellow;
+  -webkit-box-shadow: -170px 25px 0px -5px $color-sunshine-yellow;
+  -moz-box-shadow: -170px 25px 0px -5px  $color-sunshine-yellow;
+  box-shadow: -170px 25px 0px -5px $color-sunshine-yellow;
+  text-align: left;
 
   @include breakpoint($bp-xsm) {
-    max-width: 750px;
+    max-width: 800px;
     padding: 2rem 3rem;
   }
 }
@@ -25,7 +27,7 @@
 .hero__background {
   @include overlay(0.75);
   @include vertical-horizontal-center;
-  height: 100%;
+  height: 800px;
   overflow: hidden;
   width: 100%;
   z-index: $zi-ground;
@@ -94,7 +96,7 @@
   margin-bottom: 0.5rem;
 
   @include breakpoint($bp-xsm) {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 3rem;
   }
 }

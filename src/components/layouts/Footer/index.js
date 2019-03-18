@@ -36,7 +36,7 @@ const Footer = (props) => {
           <div className="footer__top">
             <div className="footer__brand">
               <a className="footer__logo-link" href="/">
-                <Icon name="icon-mc-logo" className="icon icon-mc-logo" />
+                <Icon name="icon-RAIN-logo-navy-sm" className="icon icon-mc-logo" />
               </a>
 
             </div>
