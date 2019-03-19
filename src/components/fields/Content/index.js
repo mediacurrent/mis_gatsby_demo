@@ -14,7 +14,8 @@ import ParagraphQuote from '../../paragraphs/ParagraphQuote';
 const Content = ({content}) => (
   <>
     {content.map((section, i) => {
-      const datakey = `paragraph--section--${section['__typename']}--${i}`;
+      const datakey = `paragraph-${section['__typename']}--${i}`;
+      section.datakey = datakey;
 
       switch (section['__typename']) {
         case "paragraph__breaker":

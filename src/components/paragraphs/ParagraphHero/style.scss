@@ -10,22 +10,20 @@
   background: $color-white;
   margin-right: -50%;
   max-width: 95%;
-  padding: 1rem;
-  box-shadow:-33px 20px 0px 0px $color-sunshine-yellow;
+  padding: 2rem;
+  box-shadow:-33px 20px 0 0 $color-sunshine-yellow;
   text-align: left;
-  top: 100%;
+  top: 85%;
   left: 50%;
   margin-top: 3rem;
 
   @include breakpoint($bp-xsm) {
-    top: 50%;
+    top: 60%;
     left: 33%;
     max-width: 900px;
     padding: 4rem 5rem;
     margin-top: 0;
-    -webkit-box-shadow: -244px 27px 0px 0px $color-sunshine-yellow;
-    -moz-box-shadow: -244px 27px 0px 0px  $color-sunshine-yellow;
-    box-shadow: -244px 27px 0px 0px $color-sunshine-yellow;
+    box-shadow: -250px 27px 0 4px $color-sunshine-yellow;
     
   }
 }
@@ -86,9 +84,9 @@
 }
 
 .hero__eyebrow {
-  color: $color-tundora;
+  color: $color-navy-blue;
   display: block;
-  font-size: 1.5rem;
+  font-size: 0.85rem;
   font-weight: bold;
   letter-spacing: 0.15rem;
   margin-bottom: 0.5rem;

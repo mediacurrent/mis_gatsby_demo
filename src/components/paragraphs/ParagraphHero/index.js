@@ -9,8 +9,8 @@ import Heading from '../../fields/Heading';
 import Media from '../../fields/Media';
 
 // Homempage videos.
-import webm from './waves.webm'
-import mp4 from './waves.mp4'
+import webm from './rain.webm'
+import mp4 from './rain.mp4'
 
 import './style.scss';
 

@@ -4,6 +4,7 @@ export const nodeHomepageFragment = graphql`
   fragment nodeHomepageFragment on node__homepage {
     title
     nid:drupal_internal__nid
+    summary:field_summary
     path {
       alias
     }
@@ -44,6 +45,7 @@ export const nodeHomepageFragment = graphql`
 export const nodePageFragment = graphql`
   fragment nodePageFragment on node__page {
     title
+    summary:field_summary
     nid:drupal_internal__nid
     path {
       alias
