@@ -6,8 +6,6 @@ import Layout from '../../components/layouts/Layout';
 
 import Content from '../../components/fields/Content';
 
-import Heading from '../../components/fields/Heading';
-
 const NodeHomepageTemplate = ({data}) => {
   const { title, summary } = data.nodeHomepage;
   const { content } = data.nodeHomepage.r;

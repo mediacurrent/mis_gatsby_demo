@@ -7,7 +7,6 @@ import Layout from '../../components/layouts/Layout';
 
 // Fields
 import Content from '../../components/fields/Content';
-import Heading from '../../components/fields/Heading';
 
 const NodePageTemplate = ({ data }) => {
   const { title, summary } = data.nodePage;
