@@ -11,23 +11,21 @@ module.exports = {
     author: `@mediacurrent`,
     menuLinks: [
       {
-        uri: '/page/about-rain',
-        title: 'About Rain'
-      }, {
-        uri: '/page/partner-us',
-        title: 'Partner With Us'
+        uri: "/page/about-rain",
+        title: "About Rain"
       },
+      {
+        uri: "/page/partner-us",
+        title: "Partner With Us"
+      }
     ]
   },
   plugins: [
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        includePaths: [
-          "node_modules",
-          "src/global"
-        ]
-      },
+        includePaths: ["node_modules", "src/global"]
+      }
     },
     `gatsby-plugin-react-helmet`,
     {
@@ -42,13 +40,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `gatsby-starter-rain`,
+        short_name: `rain`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#EAEAEA`,
+        theme_color: `#EAEAEA`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+        icon: `src/images/rain-favicon.png` // This path is relative to the root of the site.
       }
     },
     {

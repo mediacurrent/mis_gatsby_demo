@@ -12,16 +12,16 @@ const Contact = () => {
   }
 
   return(
-    <section class="contact-us section breaker">
-      <div class="section__container breaker__content">
-        <h2 class="title breaker__title">Contact Us</h2>
-        <div class="contact-us__contact-items">
-          <div class="contact-us__items">
+    <section className="contact-us section breaker">
+      <div className="section__container breaker__content">
+        <h2 className="title breaker__title">Contact Us</h2>
+        <div className="contact-us__contact-items">
+          <div className="contact-us__items">
             <h3>What are your challenges?</h3>
             <p>We can show you how RAIN and other open source tools can increase efficiency within your digital ecosystem</p>
           </div>
-          <div class="contact-us__items">
-            <form onSubmit={formSubmit} class="form">
+          <div className="contact-us__items">
+            <form onSubmit={formSubmit} className="form">
               <div className="form-item form-item--text">
                 <input
                   id="first_name"

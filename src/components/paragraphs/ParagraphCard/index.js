@@ -12,6 +12,7 @@ import './style.scss';
 const ParagraphCard = (props) => {
   const classes = classNames(
     'card',
+    {[`${props.datakey}`]: props.datakey},
     {[`${props.classes}`]: props.classes}
   );
   let media = null;
