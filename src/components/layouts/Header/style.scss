@@ -4,7 +4,7 @@
 .header {
   position: relative;
   z-index: $zi-highest;
-  background: rgba( 255,255,255, 0.85 );
+  background: rgba( 255,255,255, 0.7 );
 
   // Removes header bg when scrolled to very top
   .headroom--top {
@@ -16,7 +16,6 @@
   align-items: center;
   display: flex;
   justify-content: space-around;
-  margin: 0 auto;
   max-width: 100%;
   padding: 0;
   position: relative;
@@ -25,27 +24,27 @@
 
   @include breakpoint($bp-lg) {
     max-width: $c-max-width;
+    height: 120px;
+    margin: 0 250px;
   }
 }
 
-.header__brand {
-  background-color: $color-navy-blue;
-  border-radius: 0 0 5px 5px;
-  display: flex;
-  flex: 0 0 auto;
+.logo-section {
+  background-color: $color-white;
+  display:flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
-  transition: background-color $motion-fast;
-  height: 70px;
+  text-align: center;
+  padding-top: 20px;
   width: 100px;
-  z-index: $zi-highest;
+  height: 100px;
+  box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.2);
+  margin-left: 10px;
 
   @include breakpoint($bp-lg) {
-    margin-right: 30px;
-    width: 155px;
-    height: 100px;
-
+    margin-left: 0;
+    width: 150px;
+    height: 150px;
     // Updates styles when header is sticky
     // and not at the very top of the chrome
     .headroom--not-top.headroom--pinned & {
@@ -385,4 +384,8 @@
   body & {
     margin-top: -70px;
   }
+}
+
+.icon-rain-logo {
+  width: 60%;
 }
