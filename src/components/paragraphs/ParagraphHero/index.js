@@ -116,7 +116,7 @@ const ParagraphHero = (props) => {
       )}
       <div className="hero__content">
         {card.eyebrow && <Eyebrow text={card.eyebrow} classes="hero__eyebrow" />}
-        {card.heading && <Heading>{card.heading}</Heading>}
+        {card.heading && <Heading level={1}>{card.heading}</Heading>}
         {card.text && <Body classes="hero__body" text={card.text}/>}
         {card.link && <Button {...card.link} />}
       </div>

@@ -11,11 +11,11 @@ const Header = ({ menuLinks }) => (
   <Headroom>
     <header className="section header site-header">
       <div className="section__container header__container" data-path="" >
-        <div className="header__brand">
-          <a className="header__logo-link" href="/">
-            <Icon name="icon-mc-logo" className="icon icon-mc-logo" />
+      <div className="logo-section">
+          <a href="/">
+            <Icon name="RAIN-logo-navy-sm" className="icon icon-rain-logo" />
           </a>
-        </div>
+          </div>
         <button className="header__nav-toggle" aria-expanded="false" aria-controls="main-nav-wrapper">
           <span className="header__nav-toggle-bar"></span>
           <span className="header__nav-toggle-bar"></span>
