@@ -38,8 +38,11 @@
   z-index: $zi-ground;
 
   @include breakpoint($bp-lg) {
-    height: 1000px;
+    height: 850px;
   }  
+  @include breakpoint($bp-xlg) {
+    height: 1100px;
+  } 
   img {
     @include vertical-horizontal-center;
     height: 100%;
