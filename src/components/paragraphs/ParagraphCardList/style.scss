@@ -1,18 +1,19 @@
 @import 'src/global/utils/init';
 
 .card-list--container {
-  padding-top: 100px;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-  .card-list__title {
+  .card-list--heading {
     @include wire-large-heading;
-    margin-bottom: 2rem;
-    padding-left: 550px;
-    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    padding-right: 200px;
   }
 
 

@@ -15,8 +15,9 @@ const ParagraphCardList = (props) => {
     {[`${props.classes}`]: props.classes}
   );
   return(
+    <>
     <section className="card-list--container">
-      {props.title && <Heading level={2}>{props.title}</Heading>}
+    {props.title && <Heading level={2}>{props.title}</Heading>}
       <ul className={classes}>
         {props.items.map((item, index) => {
           return(
@@ -29,6 +30,7 @@ const ParagraphCardList = (props) => {
         })}
       </ul>
     </section>
+    </>
   );
 }
 

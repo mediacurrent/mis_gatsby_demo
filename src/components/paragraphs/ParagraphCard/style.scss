@@ -30,12 +30,6 @@
       flex-direction: row;
     }
   }
-
-  .card__content {
-    @include breakpoint($bp-xsm) {
-      margin: 0 0 0 1.5rem;
-    }
-  }
 }
 .card__media {
   flex: 1;
@@ -53,13 +47,6 @@
   }
 }
 
-.card__content {
-  flex: 1;
-
-  @include breakpoint($bp-xsm) {
-    margin: 0 0 0 1.5rem;
-  }
-}
 .wide {
   display: flex;
   flex-direction: column;
@@ -74,10 +61,9 @@
 }
 
 .card__content {
-  margin: 2rem 0 0;
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
+  padding-top: 10px;
   text-align: center;
   align-items: center;
 
@@ -86,7 +72,7 @@
     margin-bottom: 20px;
     text-transform: uppercase;
     padding: 5px 0;
-    border-bottom: 2px solid $color-sunshine-yellow;
+    border-bottom: 3px solid $color-sunshine-yellow;
     width: fit-content;
     text-align: center;
   }
