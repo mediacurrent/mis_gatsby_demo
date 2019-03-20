@@ -1,7 +1,11 @@
 @import 'src/global/utils/init';
 
 .card-list--container {
-  margin-top: 200px;
+  margin-top: 50px;
+
+  @include breakpoint($bp-xsm) {
+    margin-top: 100px;
+  }
 }
 .card-list__title {
   @include wire-large-heading;
