@@ -3,19 +3,16 @@
 .card-list--container {
   padding-top: 50px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
+  max-width: 1150px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 
-  .card-list--heading {
-    @include wire-large-heading;
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
-    padding-right: 200px;
+  h2 {
+    margin-bottom: 50px;
+    flex-basis: 100%;
   }
-
+}
 
 .card-list {
   display: flex;
@@ -28,7 +25,6 @@
 }
 
 .card-list__item {
-  margin: 3rem 0 0;
   max-width: 300px;
 
   &:first-of-type {
