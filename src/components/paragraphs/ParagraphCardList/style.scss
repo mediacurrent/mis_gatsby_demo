@@ -1,16 +1,25 @@
 @import 'src/global/utils/init';
 
 .card-list--container {
-  margin-top: 200px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.card-list__title {
-  @include wire-large-heading;
-  margin-bottom: 2rem;
-}
+
+  .card-list__title {
+    @include wire-large-heading;
+    margin-bottom: 2rem;
+    padding-left: 550px;
+    padding-bottom: 50px;
+  }
+
 
 .card-list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   @include breakpoint($bp-xsm) {
     flex-direction: row;
@@ -19,6 +28,7 @@
 
 .card-list__item {
   margin: 3rem 0 0;
+  max-width: 300px;
 
   &:first-of-type {
     margin: 0;
