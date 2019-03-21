@@ -32,15 +32,15 @@
   }
 
   .card__icon {
-    flex: 1;
-    display: flex;
-    border: 2px solid $color-navy-blue;
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
     align-items: center;
+    border: 2px solid $color-navy-blue;
+    border-radius: 100%;
+    display: flex;
+    flex: 1;
+    height: 200px;
     justify-content: center;
-  
+    width: 200px;
+
     .svg {
       max-height: 100px;
       margin-bottom: 10px;
@@ -84,7 +84,7 @@
   h3 {
     font-weight: 100;
   }
-  
+
   .body-text {
     @include font-size-heading5;
   }
