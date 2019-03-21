@@ -30,22 +30,24 @@
       flex-direction: row;
     }
   }
-}
-.card__media {
-  flex: 1;
-  display: flex;
-  border: 2px solid $color-navy-blue;
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  align-items: center;
-  justify-content: center;
 
-  .svg {
-    max-height: 100px;
-    margin-bottom: 10px;
+  .card__icon {
+    flex: 1;
+    display: flex;
+    border: 2px solid $color-navy-blue;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+  
+    .svg {
+      max-height: 100px;
+      margin-bottom: 10px;
+    }
   }
 }
+
 
 .wide {
   display: flex;
@@ -75,6 +77,15 @@
     border-bottom: 3px solid $color-sunshine-yellow;
     width: fit-content;
     text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-weight: 100;
+  }
+  .body-text {
+    @include font-size-heading5;
   }
 }
   // Styles for Wide variation of Card
