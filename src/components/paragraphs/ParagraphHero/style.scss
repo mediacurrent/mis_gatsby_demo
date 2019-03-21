@@ -2,6 +2,14 @@
 
 .hero {
   position: relative;
+  margin-top: -100px;
+  padding-top: 230px;
+
+  @include breakpoint($bp-lg) {
+    margin-top: -130px;
+    padding-top: 130px;
+  
+  }
 }
 
 .hero__content {
@@ -13,17 +21,17 @@
   padding: 2rem;
   box-shadow:-33px 20px 0 0 $color-sunshine-yellow;
   text-align: left;
-  top: 85%;
+  top: 55%;
   left: 50%;
   margin-top: 3rem;
 
-  @include breakpoint($bp-xsm) {
-    top: 60%;
-    left: 33%;
+  @include breakpoint($bp-lg) {
+    top: 50%;
+    left: 30%;
     max-width: 900px;
     padding: 4rem 5rem;
     margin-top: 0;
-    box-shadow: -250px 27px 0 4px $color-sunshine-yellow;
+    box-shadow: -255px 27px 0 4px $color-sunshine-yellow;
     
   }
 }
@@ -32,14 +40,10 @@
 .hero__background {
   @include overlay(0.75);
   @include vertical-horizontal-center;
-  height: 500px;
+  height: 100%;
   overflow: hidden;
   width: 100%;
   z-index: $zi-ground;
-
-  @include breakpoint($bp-lg) {
-    height: 1000px;
-  }  
   img {
     @include vertical-horizontal-center;
     height: 100%;
