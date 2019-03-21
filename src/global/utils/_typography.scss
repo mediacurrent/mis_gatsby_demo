@@ -37,7 +37,7 @@ $font-weight-light: 300;
   }
 
   @include breakpoint($bp-md) {
-    font-size: 4.2rem;
+    font-size: 6rem;
   }
 }
 
@@ -66,10 +66,10 @@ $font-weight-light: 300;
 }
 // CHEEZ-76 ends at h4.
 @mixin font-size-heading5 {
-  font-size: 1rem;
+  font-size: 1.5rem;
 
   @include breakpoint($bp-xsm) {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }
 

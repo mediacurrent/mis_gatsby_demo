@@ -15,6 +15,10 @@
 .card {
   clear:both;
   margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   &.wide_right {
     display: flex;
     flex-direction: row-reverse;
@@ -27,37 +31,30 @@
     }
   }
 
-  .card__content {
-    @include breakpoint($bp-xsm) {
-      margin: 0 0 0 1.5rem;
+  .card__icon {
+    flex: 1;
+    display: flex;
+    border: 2px solid $color-navy-blue;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+  
+    .svg {
+      max-height: 100px;
+      margin-bottom: 10px;
     }
   }
 }
-.card__media {
-  flex: 1;
 
-  .svg {
-    max-height: 100px;
-    margin-bottom: 10px;
-  }
-}
 
-.card__content {
-  flex: 1;
-
-  @include breakpoint($bp-xsm) {
-    margin: 0 0 0 1.5rem;
-  }
-}
 .wide {
   display: flex;
   flex-direction: column;
 
   @include breakpoint($bp-xsm) {
     flex-direction: row;
-  }
-  .card__eyebrow {
-    margin-top: 0;
   }
 
   .card__link {
@@ -66,7 +63,30 @@
 }
 
 .card__content {
-  margin: 2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  text-align: center;
+  align-items: center;
+
+  .eyebrow {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    padding: 5px 0;
+    border-bottom: 3px solid $color-sunshine-yellow;
+    width: fit-content;
+    text-align: center;
+    @include font-size-heading5;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-weight: 100;
+  }
+  .body-text {
+    @include font-size-heading5;
+  }
 }
   // Styles for Wide variation of Card
 

@@ -31,7 +31,7 @@ const ParagraphCard = (props) => {
   return(
     <article className={classes}>
       {media && (
-        <div className="card__media">
+        <div className="card__icon">
           <img className={imageClass} src={media} alt={props.subhead} />
         </div>
       )}

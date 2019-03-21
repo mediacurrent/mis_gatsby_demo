@@ -1,20 +1,38 @@
 @import 'src/global/utils/init';
 
 .card-list--container {
-  margin-top: 50px;
+  padding-top: 100px;
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction: column;
 
   @include breakpoint($bp-xsm) {
-    margin-top: 100px;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 150px;
+    flex-wrap: wrap;
+    padding-bottom: 150px;
   }
-}
-.card-list__title {
-  @include wire-large-heading;
-  margin-bottom: 2rem;
+
+  h2 {
+    margin-bottom: 50px;
+    border-bottom: 10px solid #E4B038;
+    width: 350px;
+    text-align: center;
+
+    @include breakpoint($bp-xsm) {
+      width: fit-content;
+    }
+  }
 }
 
 .card-list {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  flex-basis: 100%;
 
   @include breakpoint($bp-xsm) {
     flex-direction: row;
@@ -22,7 +40,7 @@
 }
 
 .card-list__item {
-  margin: 3rem 0 0;
+  max-width: 300px;
 
   &:first-of-type {
     margin: 0;
