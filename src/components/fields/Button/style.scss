@@ -21,7 +21,7 @@
   &::before {
     transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     content: '';
-    width: 50%;
+    width: 30%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -31,6 +31,8 @@
   & .btn-text {
     color: $color-navy-blue;
     mix-blend-mode: darken;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 
   &:hover {
@@ -46,7 +48,7 @@
 
     &::before {
       border-radius: 50px;
-      width: 35%;
+      width: 30%;
       background: $color-sunshine-yellow;
     }
 
