@@ -21,7 +21,6 @@
   justify-content: center;
   &.wide_right {
     display: flex;
-    flex-direction: row-reverse;
   }
   &.wide {
     display: flex;
@@ -48,17 +47,175 @@
   }
 }
 
-
 .wide {
   display: flex;
   flex-direction: column;
+  max-width: 1300px;
+  justify-content: center;
+  margin-top: 50px;
 
   @include breakpoint($bp-xsm) {
     flex-direction: row;
+    margin: 0 auto;
   }
 
   .card__link {
     display: initial;
+    margin: 25px 0 25px 10px;
+  }
+
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 650px;
+    padding-top: 30px;
+
+    @include breakpoint($bp-xsm) {
+      align-items: flex-start;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 40px;
+    }
+
+    h3 {
+      font-size: 2.6rem;
+      margin-bottom: 25px;
+      border-bottom: 10px solid $color-sunshine-yellow;
+      font-weight: 700;
+
+      @include breakpoint($bp-xsm) {
+        font-size: 6rem;
+      }
+    }
+
+    h4 {
+      font-size: 2.6rem;
+      font-weight: 100;
+
+    }
+    .eyebrow {
+      border: 0;
+      margin-bottom: 5px;
+    }
+  }
+
+  h4 {
+    text-align: center;
+    padding-bottom: 10px;
+
+    @include breakpoint($bp-xsm) {
+      text-align: left;
+    }
+  }
+
+  .body-text {
+    text-align: center;
+    width: 400px;
+
+    @include breakpoint($bp-xsm) {
+      text-align: left;
+      width: 500px;
+    }
+  }
+
+  .card__icon {
+    border: 0;
+    
+    @include breakpoint($bp-xsm) {
+      margin-right: 50px;
+      max-width: 650px;
+    }
+  }
+  .png {
+    max-width: 650px;
+
+    @include breakpoint($bp-xsm) {
+      width: 650px;
+    }
+  }
+}
+
+.wide_right {
+  display: flex;
+  flex-direction: column;
+  max-width: 1300px;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 50px;
+
+  @include breakpoint($bp-xsm) {
+    flex-direction: row;
+    margin: 50px auto;
+  }
+
+  .card__link {
+    display: initial;
+    margin: 25px 0 25px 10px;
+  }
+
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    max-width: 650px;
+    padding-top: 30px;
+    
+
+    @include breakpoint($bp-xsm) {
+      padding-top: 10px;
+      padding-bottom: 40px;
+      margin-right: 50px;
+      align-items: flex-start;
+    }
+
+    h3 {
+      font-size: 2.6rem;
+      margin-bottom: 25px;
+      border-bottom: 10px solid $color-sunshine-yellow;
+      font-weight: 700;
+
+      @include breakpoint($bp-xsm) {
+        font-size: 6rem;
+      }
+    }
+
+    h4 {
+      font-size: 2.6rem;
+      font-weight: 100;
+    }
+    .eyebrow {
+      border: 0;
+      margin-bottom: 5px;
+    }
+  }
+
+  h4 {
+    text-align: left;
+    padding-bottom: 10px;
+  }
+
+  .body-text {
+    text-align: left;
+    width: 500px;
+  }
+
+  .card__icon {
+    border: 0;
+    
+    @include breakpoint($bp-xsm) {
+      margin-right: 50px;
+      max-width: 650px;
+    }
+  }
+  .png {
+    max-width: 650px;
+
+    @include breakpoint($bp-xsm) {
+      width: 650px;
+    }
   }
 }
 
