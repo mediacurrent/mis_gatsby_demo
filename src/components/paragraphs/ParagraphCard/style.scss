@@ -82,7 +82,7 @@
     h3 {
       font-size: 2.6rem;
       margin-bottom: 25px;
-      border-bottom: 10px solid #E4B038;
+      border-bottom: 10px solid $color-sunshine-yellow;
       font-weight: 700;
 
       @include breakpoint($bp-xsm) {
@@ -174,7 +174,7 @@
     h3 {
       font-size: 2.6rem;
       margin-bottom: 25px;
-      border-bottom: 10px solid #E4B038;
+      border-bottom: 10px solid $color-sunshine-yellow;
       font-weight: 700;
 
       @include breakpoint($bp-xsm) {
