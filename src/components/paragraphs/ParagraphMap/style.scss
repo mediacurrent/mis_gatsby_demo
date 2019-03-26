@@ -1,11 +1,24 @@
 // Import site utilities.
-@import '../../global/utils/init';
+@import 'src/global/utils/init';
 
+.map__container {
+  background-color: $color-barely-gray;
+  padding: 20px;
+}
+
+.map {
+  background-color: white;
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  -webkit-box-shadow: -2px 2px 2px 0px rgba($color-gray-overlay, 0.55);
+  -moz-box-shadow: -2px 2px 2px 0px rgba($color-gray-overlay, 0.55);
+  box-shadow: -2px 2px 2px 0px rgba($color-gray-overlay, 0.55);
+}
 // Styles for two-colum map layout.
 // Includes address text.
 .map--2col {
   align-items: center;
-  display: flex;
   flex-direction: column;
 
   @include breakpoint($bp-xsm) {
@@ -48,6 +61,16 @@
       margin: 0 0 0 4rem;
     }
 
+    h2 {
+      margin-bottom: 50px;
+      text-decoration: underline $color-sunshine-yellow;
+      font-size: 6rem;
+
+      @include breakpoint($bp-xsm) {
+        width: fit-content;
+      }
+    }
+
     .map__address {
       line-height: 1.625;
 
@@ -61,7 +84,7 @@
       font-weight: normal;
 
       @include breakpoint($bp-xsm) {
-        font-size: 2rem;
+        font-size: 6rem;
       }
     }
   }
@@ -103,4 +126,22 @@
       }
     }
   }
+}
+
+.map__text-eyebrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 5px 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.map__body {
+  display: flex;
+  justify-content: space-evenly;
 }
