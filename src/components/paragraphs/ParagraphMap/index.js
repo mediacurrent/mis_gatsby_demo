@@ -46,7 +46,7 @@ const ParagraphMap = (props) => {
       <div className="map__wrapper">
         <div className="map__embed">
           <GoogleMapWrapper
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCttm_EFDYSeMERXB856BdIPeuXZGkp3Ck"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiIlVXvHRR1eu14ObPbvoyuQhJwAULDDY"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
