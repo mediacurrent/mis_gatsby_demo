@@ -42,11 +42,11 @@ ParagraphCardList.propTypes = {
   items: PropTypes.array,
   /** Modifying classes */
   classes: PropTypes.string,
- /** CTA */
- link: PropTypes.shape({
-  url: PropTypes.string,
-  text: PropTypes.string
-})
+  /** CTA */
+  link: PropTypes.shape({
+    url: PropTypes.string,
+    text: PropTypes.string
+  })
 }
 
 export default ParagraphCardList;
