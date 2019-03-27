@@ -20,12 +20,14 @@ const Icon = (props) => {
     svgWidth,
     svgHeight,
     title,
+    border,
     name,
     classes,
     ariaHidden,
     ...rest
   } = props;
   const SVG = loadAssets(name);
+  console.log(border);
   if (SVG) {
     const attr = {
       width: svgWidth || null,
@@ -36,6 +38,13 @@ const Icon = (props) => {
     return (
       <svg {...attr} {...rest} >
         {title && <title>{title}</title>}
+        {border && (
+          <defs>
+            <filter id="shadow">
+              <feDropShadow dx={border.x} dy={border.y} stdDeviation={border.deviation} />
+            </filter>
+          </defs>
+        )}
         <use xlinkHref={`#${name}`} />
       </svg>
     );

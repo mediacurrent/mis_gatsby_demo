@@ -2,7 +2,28 @@
 
 .quote {
   text-align: center;
+  margin: 0 auto;
+  padding: 50px;
   margin-bottom: 1.875rem;
+  max-width: 1300px;
+  border-top: 1px solid $color-barely-gray;
+  border-left: 1px solid $color-barely-gray;
+  border-bottom: 1px solid $color-gray-overlay;
+  border-right: 1px solid $color-gray-overlay;
+  -webkit-box-shadow: -11px 7px 0px 0px rgba($color-oslo-gray, 0.75);
+  -moz-box-shadow: -11px 7px 0px 0px rgba($color-oslo-gray, 0.75);
+  box-shadow: -11px 7px 0px 0px rgba($color-oslo-gray, 0.75);
+  position: relative;
+}
+
+.quote__icon {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  height: 50px;
+  width: 50px;
+  fill: $color-sunshine-yellow;
+  filter:url(#shadow);
 }
 
 .quote__text {
@@ -12,7 +33,7 @@
   font-style: italic;
 
   @include breakpoint($bp-xsm) {
-    font-size: 1.75rem;
+    font-size: 3rem;
   }
 }
 
@@ -21,7 +42,7 @@
   line-height: 1.375;
 
   @include breakpoint($bp-xsm) {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
