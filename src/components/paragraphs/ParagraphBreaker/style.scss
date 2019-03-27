@@ -1,9 +1,17 @@
 @import '../../global/utils/init';
 
 .breaker {
-  margin-top: 65px;
+  margin-top: 50px;
   position: relative;
-  padding-top: 100px;
+
+  @include breakpoint($bp-xsm) {
+    margin-top: 50px;
+  }
+
+  @include breakpoint($bp-lg) {
+    margin-top: 100px;
+  }
+ 
 
   .breaker__hero {
     max-width: 1300px;
@@ -16,15 +24,30 @@
   }
 
   .breaker__content-container {
-    width: 51%;
+    width: 85%;
     margin: 0 auto;
     background-color: white;
     z-index: 100;
     box-shadow: -33px 20px 0 0 $color-basic-gray;
     position: absolute;
-    bottom: -4%;
-    left: 25%;
-    padding: 25px;
+    top: 76%;
+    left: 12%;
+    padding: 25px 25px 50px 25px;
+    border: 2px solid $color-basic-gray;
+
+    @include breakpoint($bp-sm) {
+      left: 10%;
+    }
+    @include breakpoint($bp-lg) {
+      width: 80%;
+      top: 78%;
+      left: 10%;
+    }
+
+    @include breakpoint($bp-xlg) {
+      width: 40%;
+      left: 31%;
+    }
 
     .breaker__cta {
       margin-bottom: 30px;
@@ -46,8 +69,11 @@
 
     .body-text {
       padding-bottom: 30px;
+      @include font-size-heading5;
+
+      @include breakpoint($bp-sm) {
+        @include font-size-heading4;
+      }
     }
   }
-
-
 }
