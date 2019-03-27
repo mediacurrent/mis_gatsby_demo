@@ -32,7 +32,7 @@
     position: absolute;
     top: 76%;
     left: 12%;
-    padding: 25px 25px 50px 25px;
+    padding: 25px 25px 50px;
     border: 2px solid $color-basic-gray;
 
     @include breakpoint($bp-sm) {
