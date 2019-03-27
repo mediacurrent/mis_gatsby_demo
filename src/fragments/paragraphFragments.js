@@ -67,6 +67,10 @@ export const cardFragment = graphql`
 export const cardListFragment = graphql`
   fragment cardListFragment on paragraph__card_list {
     title:field_title
+    link:field_link{
+      uri
+      title
+    }
     r:relationships {
       items:field_card {
         ...cardFragment

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { uid } from 'react-uid';
 
 import ParagraphCard from '../ParagraphCard'
-
+import Button from '../../fields/Button';
 import Heading from '../../fields/Heading';
 
 import './style.scss';
@@ -14,6 +14,7 @@ const ParagraphCardList = (props) => {
     'card-list',
     {[`${props.classes}`]: props.classes}
   );
+  console.log(props.link);
   return(
     <>
     <section className="card-list--container">
@@ -29,6 +30,7 @@ const ParagraphCardList = (props) => {
           )
         })}
       </ul>
+      {props.link && <Button {...props.link} classes="card__link" />}
     </section>
     </>
   );
@@ -40,7 +42,12 @@ ParagraphCardList.propTypes = {
   /** Array of Card Properties */
   items: PropTypes.array,
   /** Modifying classes */
-  classes: PropTypes.string
+  classes: PropTypes.string,
+ /** CTA */
+ link: PropTypes.shape({
+  url: PropTypes.string,
+  text: PropTypes.string
+})
 }
 
 export default ParagraphCardList;
