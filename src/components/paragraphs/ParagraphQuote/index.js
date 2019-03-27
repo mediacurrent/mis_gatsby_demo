@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Parser from 'html-react-parser';
 
+import Icon from '../../fields/Icon'
+
 import './style.scss';
 
 const ParagraphQuote = (props) => {
@@ -14,7 +16,8 @@ const ParagraphQuote = (props) => {
 
   return(
     <blockquote className={classes}>
-      <p className="quote__text">{Parser(props.quote)}</p>
+      <Icon className="quote__icon" name="icon-quote" border={{x: 0, y: 1, deviation: 1}} />
+      <p className="quote__text">“{Parser(props.quote)}”</p>
       <cite className="quote__cite">
         {props.image && (
           <div className="quote__cite-media">
