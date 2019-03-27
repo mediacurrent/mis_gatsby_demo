@@ -53,12 +53,24 @@ const Icon = (props) => {
 };
 
 Icon.propTypes = {
+  /** Icon Name */
   name: PropTypes.string.isRequired,
+  /** Optional Title text */
   title: PropTypes.string,
+  /** Optional Width */
   svgWidth: PropTypes.number,
+  /** Optional Height */
   svgHeight: PropTypes.number,
+  /** Identifying classes. */
   classes: PropTypes.string,
-  ariaHidden: PropTypes.bool
+  /** Hidden attribute */
+  ariaHidden: PropTypes.bool,
+  /** Optional Border definitions */
+  border: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number,
+    deviation: PropTypes.number
+  })
 };
 
 Icon.defaultProps = {
