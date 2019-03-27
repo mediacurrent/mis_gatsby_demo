@@ -1,19 +1,30 @@
+@import '../../global/utils/init';
+
 .breaker {
   margin-top: 65px;
   position: relative;
+  padding-top: 100px;
 
   .breaker__hero {
-    max-height: 400px;
+    max-width: 1300px;
+    text-align: center;
+    margin: 0 auto;
+
     img {
       width: 100%;
     }
   }
 
   .breaker__content-container {
-    width: 50%;
+    width: 51%;
     margin: 0 auto;
     background-color: white;
     z-index: 100;
+    box-shadow: -33px 20px 0 0 $color-basic-gray;
+    position: absolute;
+    bottom: -4%;
+    left: 25%;
+    padding: 25px;
 
     .breaker__cta {
       margin-bottom: 30px;
@@ -21,7 +32,20 @@
     }
 
     .breaker__heading {
-      font-size: 3rem;
+      border-bottom: 10px solid $color-sunshine-yellow;
+      margin: 25px 0;
+    }
+
+    .eyebrow {
+      @include font-size-heading5;
+      border: 0;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .body-text {
+      padding-bottom: 30px;
     }
   }
 
