@@ -7,13 +7,16 @@
   margin: 0 auto;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
 
-  @include breakpoint($bp-xsm) {
-    align-items: center;
+  @include breakpoint($bp-md) {
     flex-direction: row;
     padding-top: 150px;
     flex-wrap: wrap;
     padding-bottom: 150px;
+  }
+  @include breakpoint($bp-lg) {
+    justify-content: flex-start;
   }
 
   h2 {
@@ -33,25 +36,27 @@
   flex-direction: column;
   justify-content: space-around;
   flex-basis: 100%;
-
+  
   @include breakpoint($bp-xsm) {
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  @include breakpoint($bp-sm) {
+    justify-content: space-between;
   }
 }
 
 .card-list__item {
-  max-width: 300px;
-
-  &:first-of-type {
-    margin: 0;
-  }
 
   @include breakpoint($bp-xsm) {
-    margin: 0 0 0 1rem;
+    margin: 0 0 0 2.5rem;
+    flex: 0 0 45%;
   }
 
-  @include breakpoint($bp-sm) {
-    margin: 0 0 0 2.5rem;
+  @include breakpoint($bp-lg) {
+    flex: 0 0 22%;
   }
 }
 
