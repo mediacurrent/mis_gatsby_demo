@@ -8,9 +8,10 @@ import {
   Marker
 } from "react-google-maps";
 
-import Heading from '../../fields/Heading';
 import Body from '../../fields/Body';
+import Button from '../../fields/Button';
 import Eyebrow from '../../fields/Eyebrow';
+import Heading from '../../fields/Heading';
 
 import './style.scss';
 
@@ -40,11 +41,12 @@ const ParagraphMap = (props) => {
   );
 
   return (
-    <section className={classes}>
+    <section className="map__container">
+      <div className={classes}>
       <div className="map__wrapper">
         <div className="map__embed">
           <GoogleMapWrapper
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCttm_EFDYSeMERXB856BdIPeuXZGkp3Ck"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiIlVXvHRR1eu14ObPbvoyuQhJwAULDDY"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
@@ -56,16 +58,13 @@ const ParagraphMap = (props) => {
       </div>
       {hasText && (
         <div className="map__text">
-          {props.eyebrow && <Eyebrow text={props.eyebrow}></Eyebrow>}
+          {props.eyebrow && <Eyebrow text={props.eyebrow} classes="map__text-eyebrow"></Eyebrow>}
           {props.heading && <Heading level={2} classes="map__location">{props.heading}</Heading>}
-          {props.body && <Body text={props.body.value} />}
-          {props.link && (
-            <a href={props.link.uri} className="map__link">
-              {props.link.title}
-            </a>
-          )}
+          {props.body && <Body text={props.body.value} classes="map__body" />}
+          {props.link && <Button href={props.link.uri} title={props.link.title} className="map__link" />}
         </div>
       )}
+      </div>
     </section>
   );
 }
