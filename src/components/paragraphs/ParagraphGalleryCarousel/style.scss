@@ -1,9 +1,25 @@
 // Import site utilities.
 @import 'src/global/utils/init';
 
-// Theme styles
+.gallery-carousel {
+  position: relative;  
+}
+
+.gallery-carousel__container {
+  max-width: 1285px;
+  margin: 0 auto;
+  padding: 30px 0;
+
+  @include breakpoint($bp-sm) {
+    padding: 45px 0;
+  }
+
+  @include breakpoint($bp-md) {
+    padding: 60px 0;
+  }
+}
+
 .gallery-carousel__title {
-  @include wire-large-heading;
   text-align: center;
 }
 
@@ -12,7 +28,7 @@
   text-align: center;
 }
 
-.gallery-carousel {
+.gallery-carousel__carousel {
   margin-bottom: 2rem;
 
 }

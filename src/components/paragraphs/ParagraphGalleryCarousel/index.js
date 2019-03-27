@@ -28,7 +28,7 @@ const ParagraphGalleryCarousel = (props) => {
         </a>
       )
     },
-    className: "gallery-carousel",
+    className: "gallery-carousel__carousel",
     dots: true,
     infinite: true,
     speed: 500,
@@ -36,20 +36,22 @@ const ParagraphGalleryCarousel = (props) => {
     slidesToScroll: 1
   }
   return(
-    <section className="galery-carousel__container">
-      {title && <Heading level={2} classes="gallery-carousel__title">{title}</Heading>}
-      {subhead && <Heading level={3} classes="gallery-carousel__subhead">{subhead}</Heading>}
-      {props.intro && <Body classes="gallery-carousel__intro-text" text={props.intro}/>}
-      <Slider {...settings}>
-        {galleryItems.map((item, key) => {
-          return(
-            <div className="gallery-carousel-item" key={`gallery-carousel--${pid}--${key}`}>
-              <img src={item.src} className="gallery-carousel-item__media" alt={item.alt } />
-              <p className="gallery-carousel-item__text">{item.alt}</p>
-            </div>
-          )
-        })}
-      </Slider>
+    <section className="galery-carousel">
+      <div class="gallery-carousel__container">
+        {title && <Heading level={2} classes="gallery-carousel__title">{title}</Heading>}
+        {subhead && <Heading level={3} classes="gallery-carousel__subhead">{subhead}</Heading>}
+        {props.intro && <Body classes="gallery-carousel__intro-text" text={props.intro}/>}
+        <Slider {...settings}>
+          {galleryItems.map((item, key) => {
+            return(
+              <div className="gallery-carousel-item" key={`gallery-carousel--${pid}--${key}`}>
+                <img src={item.src} className="gallery-carousel-item__media" alt={item.alt } />
+                <p className="gallery-carousel-item__text">{item.alt}</p>
+              </div>
+            )
+          })}
+        </Slider>
+      </div>
     </section>
   );
 }

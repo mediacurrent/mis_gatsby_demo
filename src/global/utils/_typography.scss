@@ -3,11 +3,11 @@
 // Using Google Fonts.
 
 @mixin font-primary {
-  font-family: Raleway, sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 @mixin font-secondary {
-  font-family: Merriweather, serif;
+  font-family: "Merriweather", serif;
 }
 
 // Font weight vars.
@@ -18,7 +18,7 @@ $font-weight-light: 300;
 // Global styles for headings.
 // Font size setup to be 10px = 1rem.
 @mixin font-size-heading1 {
-  font-size: 4.6rem;
+  font-size: 3.8rem;
 
   @include breakpoint($bp-xsm) {
     font-size: 5.5rem;
@@ -30,53 +30,57 @@ $font-weight-light: 300;
 }
 
 @mixin font-size-heading2 {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
 
   @include breakpoint($bp-xsm) {
-    font-size: 3.6rem;
+    font-size: 4.2rem;
   }
 
   @include breakpoint($bp-md) {
-    font-size: 6rem;
+    font-size: 5.5rem;
   }
 }
 
 @mixin font-size-heading3 {
-  font-size: 2rem;
+  font-size: 2.4rem;
+
+  @include breakpoint($bp-xsm) {
+    font-size: 3.2rem;
+  }
+
+  @include breakpoint($bp-xsm) {
+    font-size: 4.2rem;
+  }
+}
+
+@mixin font-size-heading4 {
+  font-size: 2.0rem;
 
   @include breakpoint($bp-xsm) {
     font-size: 2.2rem;
   }
 
-  @include breakpoint($bp-xsm) {
+  @include breakpoint($bp-md) {
     font-size: 2.6rem;
   }
 }
 
-@mixin font-size-heading4 {
+@mixin font-size-heading5 {
   font-size: 1.6rem;
 
   @include breakpoint($bp-xsm) {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   @include breakpoint($bp-md) {
-    font-size: 2rem;
-  }
-}
-// CHEEZ-76 ends at h4.
-@mixin font-size-heading5 {
-  font-size: 1.5rem;
-
-  @include breakpoint($bp-xsm) {
-    font-size: 1.5rem;
+    font-size: 2.0rem;
   }
 }
 
 @mixin font-size-heading6 {
-  font-size: 1rem;
+  font-size: 1.2rem;
 
-  @include breakpoint($bp-xsm) {
-    font-size: 1rem;
+  @include breakpoint($bp-md) {
+    font-size: 1.4rem;
   }
 }
