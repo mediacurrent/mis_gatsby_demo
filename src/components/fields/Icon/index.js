@@ -27,7 +27,6 @@ const Icon = (props) => {
     ...rest
   } = props;
   const SVG = loadAssets(name);
-  console.log(border);
   if (SVG) {
     const attr = {
       width: svgWidth || null,
