@@ -14,7 +14,6 @@ const ParagraphCardList = (props) => {
     'card-list',
     {[`${props.classes}`]: props.classes}
   );
-  console.log(props.link);
   return(
     <>
     <section className="card-list--container">
