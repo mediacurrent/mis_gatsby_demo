@@ -31,10 +31,9 @@
 
   .breaker__content-container {
     background-color: white;
-    // box-shadow: -33px 20px 0 0 $color-basic-gray;
     padding: 25px 25px 50px;
     border: 2px solid $color-basic-gray;
-    margin: 0px -30px;
+    margin: 0 -30px;
     position: relative;
 
     @include breakpoint($bp-xsm) {
