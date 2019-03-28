@@ -1,21 +1,54 @@
+@import 'src/global/utils/init';
+
 .breaker {
-  margin-top: 65px;
+  margin-top: 50px;
   position: relative;
 
+  @include breakpoint($bp-xsm) {
+    margin-top: 50px;
+  }
+
+  @include breakpoint($bp-lg) {
+    margin-top: 100px;
+  }
+ 
+
   .breaker__hero {
-    max-height: 400px;
+    margin: 0 auto;
+    max-width: 1300px;
     overflow: hidden;
-    
+    text-align: center;
+
     img {
       width: 100%;
     }
   }
 
   .breaker__content-container {
-    width: 50%;
+    width: 85%;
     margin: 0 auto;
     background-color: white;
     z-index: 100;
+    box-shadow: -33px 20px 0 0 $color-basic-gray;
+    position: absolute;
+    top: 76%;
+    left: 12%;
+    padding: 25px 25px 50px;
+    border: 2px solid $color-basic-gray;
+
+    @include breakpoint($bp-sm) {
+      left: 10%;
+    }
+    @include breakpoint($bp-lg) {
+      width: 80%;
+      top: 78%;
+      left: 10%;
+    }
+
+    @include breakpoint($bp-xlg) {
+      width: 40%;
+      left: 31%;
+    }
 
     .breaker__cta {
       margin-bottom: 30px;
@@ -23,9 +56,25 @@
     }
 
     .breaker__heading {
-      font-size: 3rem;
+      border-bottom: 10px solid $color-sunshine-yellow;
+      margin: 25px 0;
+    }
+
+    .eyebrow {
+      @include font-size-heading5;
+      border: 0;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .body-text {
+      padding-bottom: 30px;
+      @include font-size-heading5;
+
+      @include breakpoint($bp-sm) {
+        @include font-size-heading4;
+      }
     }
   }
-
-
 }
