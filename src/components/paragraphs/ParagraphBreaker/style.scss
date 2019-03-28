@@ -3,6 +3,8 @@
 .breaker {
   margin-top: 50px;
   position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
 
   @include breakpoint($bp-xsm) {
     margin-top: 50px;
@@ -14,8 +16,6 @@
  
 
   .breaker__hero {
-    max-width: 1300px;
-    text-align: center;
     margin: 0 auto;
 
     img {
@@ -23,30 +23,33 @@
     }
   }
 
+  .breaker__container {
+    margin: -100px 60px 0;
+    position: relative;
+    z-index: 10;
+  }
+
   .breaker__content-container {
-    width: 85%;
-    margin: 0 auto;
     background-color: white;
-    z-index: 100;
-    box-shadow: -33px 20px 0 0 $color-basic-gray;
-    position: absolute;
-    top: 76%;
-    left: 12%;
     padding: 25px 25px 50px;
     border: 2px solid $color-basic-gray;
+    margin: 0 -30px;
+    position: relative;
 
-    @include breakpoint($bp-sm) {
-      left: 10%;
-    }
-    @include breakpoint($bp-lg) {
-      width: 80%;
-      top: 78%;
-      left: 10%;
+    @include breakpoint($bp-xsm) {
+      margin: 0 60px;
     }
 
-    @include breakpoint($bp-xlg) {
-      width: 40%;
-      left: 31%;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      height: 112px;
+      width: 100%;
+      z-index: -10;
+      background-color: $color-basic-gray;
     }
 
     .breaker__cta {
@@ -57,6 +60,7 @@
     .breaker__heading {
       border-bottom: 10px solid $color-sunshine-yellow;
       margin: 25px 0;
+      width: fit-content;
     }
 
     .eyebrow {
