@@ -19,22 +19,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  &.wide_right {
-    display: flex;
-    flex-direction: column;
+  // &.wide_right {
+  //   display: flex;
+  //   flex-direction: column;
 
-    @include breakpoint($bp-lg) {
-      flex-direction: row;
-    }
-  }
-  &.wide {
-    display: flex;
-    flex-direction: column;
+  //   @include breakpoint($bp-lg) {
+  //     flex-direction: row;
+  //   }
+  // }
+  // &.wide {
+  //   display: flex;
+  //   flex-direction: column;
 
-    @include breakpoint($bp-lg) {
-      flex-direction: row;
-    }
-  }
+  //   @include breakpoint($bp-lg) {
+  //     flex-direction: row;
+  //   }
+  // }
 
   .card__icon {
     align-items: center;
@@ -78,6 +78,7 @@
     align-items: center;
     text-align: center;
     padding-top: 30px;
+    width: calc(50% - 70px);
 
     @include breakpoint($bp-xsm) {
       align-items: flex-start;
@@ -85,7 +86,6 @@
       padding-top: 10px;
       padding-bottom: 40px;
       padding-left: 60px;
-      width: calc(50% - 60px);
     }
 
     h3 {
@@ -93,12 +93,11 @@
       margin-bottom: 25px;
       border-bottom: 10px solid $color-sunshine-yellow;
       font-weight: 700;
-      max-width: 300px;
       text-align: center;
 
       @include breakpoint($bp-sm) {
         font-size: 6rem; 
-        max-width: 650px;
+        text-align: left;
       }
     }
 
@@ -124,28 +123,18 @@
 
   .body-text {
     text-align: center;
-    max-width: 300px;
 
     @include breakpoint($bp-xsm) {
       text-align: left;
-      max-width: 500px;
     }
   }
 
   .card__icon {
     border: 0;
-    
-    @include breakpoint($bp-xsm) {
-      margin-right: 50px;
-      width: 100%
-    }
+    width: 100%;
   }
   .png {
-    width: 650px;
-
-    @include breakpoint($bp-xsm) {
-      width: 100%;
-    }
+    width: 100%;
   }
 }
 
@@ -169,20 +158,17 @@
   }
 
   .card__content {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    max-width: 300px;
     padding-top: 30px;
-    
 
     @include breakpoint($bp-xsm) {
-      max-width: 650px;
       padding-top: 10px;
       padding-bottom: 40px;
       margin: 0 auto;
-      align-items: flex-start;
+    }
+
+    @include breakpoint($bp-md) {
+      width: calc(50% - 70px);
+      order: 1;
     }
 
     h3 {
@@ -190,25 +176,21 @@
       margin-bottom: 25px;
       border-bottom: 10px solid $color-sunshine-yellow;
       font-weight: 700;
-      max-width: 300px;
       text-align: center;
 
       @include breakpoint($bp-xsm) {
         font-size: 6rem;
         text-align: left;
-        max-width: 500px;
       }
     }
 
     h4 {
       font-size: 2.6rem;
       font-weight: 100;
-      max-width: 300px;
       text-align: center;
 
       @include breakpoint($bp-xsm) {
         text-align: left;
-        max-width: 500px;
       }
     }
     .eyebrow {
@@ -223,63 +205,57 @@
   }
 
   .body-text {
-    max-width: 300px;
     text-align: center;
 
     @include breakpoint($bp-xsm) {
-      max-width: 500px;
+      text-align: left;
     }
   }
 
   .card__icon {
     border: 0;
-    
-    @include breakpoint($bp-xsm) {
-      margin-right: 50px;
-      max-width: 650px;
+  
+    @include breakpoint($bp-md) {
+      order: 2;
+      width: 50%;
     }
   }
   .png {
-    max-width: 650px;
-
-    @include breakpoint($bp-xsm) {
-      width: 650px;
-    }
+    max-width: 100%;
   }
 }
 
-.card__content {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding-top: 10px;
-  text-align: center;
+// .card__content {
+//   align-items: center;
+//   display: flex;
+//   flex-direction: column;
+//   padding-top: 10px;
+//   text-align: center;
 
-  .eyebrow {
-    @include font-size-heading5;
-    border-bottom: 3px solid $color-sunshine-yellow;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 20px;
-    padding: 5px 0;
-    text-align: center;
-    text-transform: uppercase;
-    width: fit-content;
-  }
+//   .eyebrow {
+//     @include font-size-heading5;
+//     border-bottom: 3px solid $color-sunshine-yellow;
+//     font-weight: bold;
+//     margin-top: 0;
+//     margin-bottom: 20px;
+//     padding: 5px 0;
+//     text-align: center;
+//     text-transform: uppercase;
+//     width: fit-content;
+//   }
 
-  h3 {
-    font-weight: 100;
-  }
+//   h3 {
+//     font-weight: 100;
+//   }
 
-  .body-text {
-    @include font-size-heading5;
+//   .body-text {
+//     @include font-size-heading5;
 
-    @include breakpoint($bp-xsm) {
-      max-width: 500px;
-      text-align: left;
-    }
-  }
-}
+//     @include breakpoint($bp-xsm) {
+//       text-align: left;
+//     }
+//   }
+// }
   // Styles for Wide variation of Card
 
 .card__eyebrow {
