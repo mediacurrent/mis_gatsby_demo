@@ -11,14 +11,15 @@
 
 .accordion__wrapper {
   max-width: 725px;
+  box-shadow: 2px 4px $color-light-gray;
 }
 
 .accordion {
   border-top: 0;
-  border-right: 1px solid $color-basic-gray;
+  border: 1px solid $color-basic-gray;
   border-bottom: 1px solid $color-basic-gray;
   border-left: 1px solid $color-basic-gray;
-  padding: 1rem 1.5rem;
+  padding: 3rem 1.5rem;
   transition: background 0.75s;
 
   &:first-of-type {
@@ -42,17 +43,15 @@
 
   &::after {
     content: url('./assets/accordion__plus.png');
-    height: 0;
+    height: 45px;
+    width: 44px;
+    border: 2px solid $color-barely-gray;
+    border-radius: 100%;
     position: absolute;
     right: 0;
     top: -10px;
     transition: transform 0.35s, top 0.35s;
     will-change: transform;
-
-    .open & {
-      transform: rotate(-180deg);
-      top: 18px;
-    }
   }
 }
 
