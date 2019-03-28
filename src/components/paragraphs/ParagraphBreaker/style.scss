@@ -3,6 +3,8 @@
 .breaker {
   margin-top: 50px;
   position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
 
   @include breakpoint($bp-xsm) {
     margin-top: 50px;
@@ -14,44 +16,26 @@
  
 
   .breaker__hero {
-    max-width: 1300px;
-    text-align: center;
-    margin: 0 auto 550px;
-
-    @include breakpoint($bp-xsm) {
-      margin: 0 auto 350px;
-    }
+    margin: 0 auto;
 
     img {
       width: 100%;
     }
   }
 
+  .breaker__container {
+    margin: -100px 60px 0;
+    position: relative;
+    z-index: 10;
+  }
+
   .breaker__content-container {
-    width: 85%;
-    margin: 0 auto;
     background-color: white;
     z-index: 100;
     box-shadow: -33px 20px 0 0 $color-basic-gray;
-    position: absolute;
-    top: 76%;
-    left: 12%;
     padding: 25px 25px 50px;
     border: 2px solid $color-basic-gray;
-
-    @include breakpoint($bp-sm) {
-      left: 10%;
-    }
-    @include breakpoint($bp-lg) {
-      width: 80%;
-      top: 78%;
-      left: 10%;
-    }
-
-    @include breakpoint($bp-xlg) {
-      width: 40%;
-      left: 31%;
-    }
+    margin: 0 60px;
 
     .breaker__cta {
       margin-bottom: 30px;
