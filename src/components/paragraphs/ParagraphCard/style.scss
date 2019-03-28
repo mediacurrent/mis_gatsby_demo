@@ -12,30 +12,16 @@
 // Import site utilities.
 @import '../../global/utils/init';
 
-.card {
-  clear:both;
-  margin: 10px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  // &.wide_right {
-  //   display: flex;
-  //   flex-direction: column;
-
-  //   @include breakpoint($bp-lg) {
-  //     flex-direction: row;
-  //   }
-  // }
-  // &.wide {
-  //   display: flex;
-  //   flex-direction: column;
-
-  //   @include breakpoint($bp-lg) {
-  //     flex-direction: row;
-  //   }
-  // }
-
+// Styling for the cards with the icons.
+.card-list {
+  .card {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
   .card__icon {
     align-items: center;
     border: 2px solid $color-navy-blue;
@@ -45,6 +31,7 @@
     height: 200px;
     justify-content: center;
     width: 200px;
+    margin-bottom: 20px;
 
     .svg {
       max-height: 100px;
@@ -52,109 +39,25 @@
       margin-bottom: 10px;
     }
   }
-}
-
-.wide {
-  display: flex;
-  flex-direction: column;
-  max-width: 1300px;
-  justify-content: center;
-  margin-top: 50px;
-  padding-top: 50px;
-
-  @include breakpoint($bp-xsm) {
-    flex-direction: row;
-    margin: 0 auto;
-  }
-
-  .card__link {
-    display: initial;
-    margin: 25px 0 25px 10px;
-  }
-
   .card__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    padding-top: 30px;
-    width: calc(50% - 70px);
-
-    @include breakpoint($bp-xsm) {
-      align-items: flex-start;
-      text-align: center;
-      padding-top: 10px;
-      padding-bottom: 40px;
-      padding-left: 60px;
-    }
-
-    h3 {
-      font-size: 2.6rem;
-      margin-bottom: 25px;
-      border-bottom: 10px solid $color-sunshine-yellow;
-      font-weight: 700;
-      text-align: center;
-
-      @include breakpoint($bp-sm) {
-        font-size: 6rem; 
-        text-align: left;
-      }
-    }
-
-    h4 {
-      font-size: 2.6rem;
-      font-weight: 100;
-
-    }
-    .eyebrow {
-      border: 0;
-      margin-bottom: 5px;
-    }
-  }
-
-  h4 {
-    text-align: center;
-    padding-bottom: 10px;
-
-    @include breakpoint($bp-xsm) {
-      text-align: left;
-    }
-  }
-
-  .body-text {
-    text-align: center;
-
-    @include breakpoint($bp-xsm) {
-      text-align: left;
-    }
-  }
-
-  .card__icon {
-    border: 0;
-    width: 100%;
-  }
-  .png {
-    width: 100%;
   }
 }
 
-.wide_right {
+
+// Styles for the wide cards.
+.card.wide,
+.card.wide_right {
   display: flex;
   flex-direction: column;
   max-width: 1300px;
   justify-content: center;
-  margin: 0 auto;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  align-items: center;
+  margin: 40px 20px;
 
   @include breakpoint($bp-md) {
     flex-direction: row;
     margin: 50px auto;
-  }
-
-  .card__link {
-    display: initial;
-    margin: 25px 0 25px 10px;
   }
 
   .card__content {
@@ -168,7 +71,6 @@
 
     @include breakpoint($bp-md) {
       width: calc(50% - 70px);
-      order: 1;
     }
 
     h3 {
@@ -177,6 +79,7 @@
       border-bottom: 10px solid $color-sunshine-yellow;
       font-weight: 700;
       text-align: center;
+      width: fit-content;
 
       @include breakpoint($bp-xsm) {
         font-size: 6rem;
@@ -216,7 +119,6 @@
     border: 0;
   
     @include breakpoint($bp-md) {
-      order: 2;
       width: 50%;
     }
   }
@@ -225,64 +127,39 @@
   }
 }
 
-// .card__content {
-//   align-items: center;
-//   display: flex;
-//   flex-direction: column;
-//   padding-top: 10px;
-//   text-align: center;
+.card.wide_right {
 
-//   .eyebrow {
-//     @include font-size-heading5;
-//     border-bottom: 3px solid $color-sunshine-yellow;
-//     font-weight: bold;
-//     margin-top: 0;
-//     margin-bottom: 20px;
-//     padding: 5px 0;
-//     text-align: center;
-//     text-transform: uppercase;
-//     width: fit-content;
-//   }
+  .card__content {
 
-//   h3 {
-//     font-weight: 100;
-//   }
-
-//   .body-text {
-//     @include font-size-heading5;
-
-//     @include breakpoint($bp-xsm) {
-//       text-align: left;
-//     }
-//   }
-// }
-  // Styles for Wide variation of Card
-
-.card__eyebrow {
-  display: block;
-  font-size: 0.75rem;
-}
-
-.card__title {
-  font-size: 1.5rem;
-  font-weight: normal;
-  margin-top: 1.5rem;
-
-  @include breakpoint($bp-sm) {
-    font-size: 2rem;
+    @include breakpoint($bp-md) {
+      order: 1;
+    }
   }
-}
 
-.card__subhead {
-  font-size: 1.25rem;
-  font-weight: normal;
-
-  @include breakpoint($bp-sm) {
-    font-size: 1.5rem;
+  .card__icon {
+    @include breakpoint($bp-md) {
+      order: 2;
+      padding-left: 50px;
+    }
   }
 }
 
 .card__link {
-  display: block;
+  display: initial;
   margin-top: 1.5rem;
+}
+
+.card.eyebrow {
+  color: $color-navy-blue;
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+
+  @include breakpoint($bp-xsm) {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
 }
