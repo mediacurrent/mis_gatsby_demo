@@ -21,11 +21,17 @@
   justify-content: center;
   &.wide_right {
     display: flex;
+    flex-direction: column;
+
+    @include breakpoint($bp-lg) {
+      flex-direction: row;
+    }
   }
   &.wide {
     display: flex;
+    flex-direction: column;
 
-    @include breakpoint($bp-xsm) {
+    @include breakpoint($bp-lg) {
       flex-direction: row;
     }
   }
@@ -54,6 +60,7 @@
   max-width: 1300px;
   justify-content: center;
   margin-top: 50px;
+  padding-top: 50px;
 
   @include breakpoint($bp-xsm) {
     flex-direction: row;
@@ -70,7 +77,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 650px;
+    max-width: 300px;
     padding-top: 30px;
 
     @include breakpoint($bp-xsm) {
@@ -78,6 +85,7 @@
       text-align: center;
       padding-top: 10px;
       padding-bottom: 40px;
+      max-width: 650px;
     }
 
     h3 {
@@ -85,9 +93,12 @@
       margin-bottom: 25px;
       border-bottom: 10px solid $color-sunshine-yellow;
       font-weight: 700;
+      max-width: 300px;
+      text-align: center;
 
-      @include breakpoint($bp-xsm) {
-        font-size: 6rem;
+      @include breakpoint($bp-sm) {
+        font-size: 6rem; 
+        max-width: 650px;
       }
     }
 
@@ -113,11 +124,11 @@
 
   .body-text {
     text-align: center;
-    width: 400px;
+    max-width: 300px;
 
     @include breakpoint($bp-xsm) {
       text-align: left;
-      width: 500px;
+      max-width: 500px;
     }
   }
 
@@ -145,8 +156,9 @@
   justify-content: center;
   margin: 0 auto;
   padding-top: 50px;
+  padding-bottom: 50px;
 
-  @include breakpoint($bp-xsm) {
+  @include breakpoint($bp-md) {
     flex-direction: row;
     margin: 50px auto;
   }
@@ -161,14 +173,15 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    max-width: 650px;
+    max-width: 300px;
     padding-top: 30px;
     
 
     @include breakpoint($bp-xsm) {
+      max-width: 650px;
       padding-top: 10px;
       padding-bottom: 40px;
-      margin-right: 50px;
+      margin: 0 auto;
       align-items: flex-start;
     }
 
@@ -177,15 +190,26 @@
       margin-bottom: 25px;
       border-bottom: 10px solid $color-sunshine-yellow;
       font-weight: 700;
+      max-width: 300px;
+      text-align: center;
 
       @include breakpoint($bp-xsm) {
         font-size: 6rem;
+        text-align: left;
+        max-width: 500px;
       }
     }
 
     h4 {
       font-size: 2.6rem;
       font-weight: 100;
+      max-width: 300px;
+      text-align: center;
+
+      @include breakpoint($bp-xsm) {
+        text-align: left;
+        max-width: 500px;
+      }
     }
     .eyebrow {
       border: 0;
@@ -199,8 +223,12 @@
   }
 
   .body-text {
-    text-align: left;
-    width: 500px;
+    max-width: 300px;
+    text-align: center;
+
+    @include breakpoint($bp-xsm) {
+      max-width: 500px;
+    }
   }
 
   .card__icon {
@@ -245,6 +273,11 @@
 
   .body-text {
     @include font-size-heading5;
+
+    @include breakpoint($bp-xsm) {
+      max-width: 500px;
+      text-align: left;
+    }
   }
 }
   // Styles for Wide variation of Card

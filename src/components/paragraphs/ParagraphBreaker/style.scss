@@ -16,7 +16,11 @@
   .breaker__hero {
     max-width: 1300px;
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 550px;
+
+    @include breakpoint($bp-xsm) {
+      margin: 0 auto 350px;
+    }
 
     img {
       width: 100%;

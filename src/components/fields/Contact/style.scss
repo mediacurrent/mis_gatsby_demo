@@ -3,17 +3,7 @@
 .contact-us {
   max-width: 800px;
   margin: 0 auto;
-  padding-top: 400px;
-
-  @include breakpoint($bp-xsm) {
-    padding-top: 250px;
-  }
-  @include breakpoint($bp-sm) {
-    padding-top: 325px;
-  }
-  @include breakpoint($bp-md) {
-    padding-top: 350px;
-  }
+  padding-top: 100px;
 }
 
 .contact-us__contact-items {
