@@ -19,8 +19,8 @@ export const breakerFragment = graphql`
               image:field_image {
                 localFile {
                   cis:childImageSharp {
-                    f:fluid(maxHeight: 300) {
-                      src
+                    f:fluid(srcSetBreakpoints: [480, 640, 960, 1280, 2560]) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }
@@ -110,8 +110,8 @@ export const galleryCarouselFragment = graphql`
               image:field_image {
                 file:localFile {
                   cis:childImageSharp {
-                    fixed(height:300) {
-                      src
+                    f:fluid(srcSetBreakpoints: [480, 640, 960, 1280, 2560]) {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }

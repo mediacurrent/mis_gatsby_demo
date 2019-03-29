@@ -1,37 +1,48 @@
 // Import site utilities.
 @import 'src/global/utils/init';
 
-// Theme styles
 .gallery-carousel__title {
-  @include wire-large-heading;
+  color: $color-sunshine-yellow;
+  margin-bottom: 16px;
   text-align: center;
+  text-decoration: underline;
+
+  @include breakpoint($bp-md) {
+    margin-bottom: 20px;
+  }
+
+  span {
+    color: $color-navy-blue;
+    position: relative;
+  }
 }
 
 .gallery-carousel__intro-text {
-  margin-bottom: 1.5rem;
+  margin: 0 auto 20px;
+  max-width: 800px;
   text-align: center;
 }
 
-.gallery-carousel {
+.gallery-carousel__carousel {
   margin-bottom: 2rem;
 
 }
 
-.gallery-carousel-item {
+.gallery-carousel__item {
 
   &:hover {
 
-    > .gallery-carousel-item__text {
+    > .gallery-carousel__item-text {
       opacity: 0.8;
     }
   }
 }
 
-.gallery-carousel-item__media {
+.gallery-carousel__item-media {
   margin: 0 auto;
 }
 
-.gallery-carousel-item__text {
+.gallery-carousel__item-text {
   background: $color-white;
   bottom: 0;
   opacity: 0;
@@ -49,21 +60,6 @@
 }
 
 .gallery-carousel__nav-item {
-  border: 3px solid transparent;
-  margin: 0 0.25rem;
-  position: relative;
-
-  @include breakpoint($bp-xsm) {
-    margin: 0 0.5rem;
-  }
-
-  &.slick-current,
-  &:active,
-  &:hover,
-  &:focus {
-    border: 3px solid $color-blue;
-    outline: none;
-  }
 
   &.slick-current {
 
@@ -113,7 +109,24 @@
 }
 
 .slick-dots {
+  position: relative;
+
   li {
-    width: 100px;
+    border: 2px solid $color-silver;
+    height: auto;
+    margin: 0 5px;
+    padding: 10px;
+    width: auto;
+  }
+
+  li button {
+    height: auto;
+    max-width: 90px;
+    padding: 0;
+    width: auto;
+  }
+
+  li button::before {
+    display: none;
   }
 }

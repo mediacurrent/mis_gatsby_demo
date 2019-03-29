@@ -9,6 +9,36 @@
 // Import site utilities.
 @import '../../global/utils/init';
 
+.heading {
+  @include font-secondary;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.heading-1 {
+  @include font-size-heading1;
+}
+
+.heading-2 {
+  @include font-size-heading2;
+}
+
+.heading-3 {
+  @include font-size-heading3;
+}
+
+.heading-4 {
+  @include font-size-heading4;
+}
+
+.heading-5 {
+  @include font-size-heading5;
+}
+
+.heading-6 {
+  @include font-size-heading6;
+}
+
 .heading--link {
   text-decoration: none;
 
@@ -16,3 +46,4 @@
     text-decoration: underline;
   }
 }
+
