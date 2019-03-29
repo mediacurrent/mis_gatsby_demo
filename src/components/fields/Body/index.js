@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Parser from 'html-react-parser'
+import classNames from 'classnames';
 
 import './style.scss';
 
 const Body = (props) => {
-  const classes = props.classes || 'body-text';
+  const bodyClasses = classNames(
+    'body-text',
+    {[`${props.classes}`] : props.classes}
+  );
   return(
-  <div className={classes}>
+  <div className={bodyClasses}>
     {(props.text) ? Parser(props.text) : props.children}
   </div>
 )};

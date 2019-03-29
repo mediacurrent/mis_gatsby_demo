@@ -1,0 +1,24 @@
+// Standard component section structural styling.
+
+.section {
+  position: relative;
+}
+
+.section__container {
+  margin: 0 auto;
+  padding: 30px 0;
+
+  @include breakpoint($bp-sm) {
+    padding: 45px 0;
+  }
+
+  @include breakpoint($bp-md) {
+    max-width: 1280px;
+    padding: 60px 0;
+  }
+}
+
+.section__content-container {
+  margin: 0 auto;
+  max-width: calc(100% - 30px);
+}

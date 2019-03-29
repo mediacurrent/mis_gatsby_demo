@@ -12,10 +12,12 @@ import './style.scss';
 const ParagraphGalleryCarousel = (props) => {
   const {title, subhead, items, pid } = props;
   const galleryItems = items.map(item => {
-    const src = item.r.media.r.image.file.cis.fixed.src;
+    const src = item.r.media.r.image.file.cis.f.src;
+    const srcSet = item.r.media.r.image.file.cis.f.srcSet;
     const thumb = item.r.thumb.file.cis.fixed.src;
     return {
       src,
+      srcSet,
       alt: '',
       thumb,
     }
@@ -23,9 +25,9 @@ const ParagraphGalleryCarousel = (props) => {
   const settings = {
     customPaging: (i) => {
       return(
-        <a className="gallery-carousel__nav-item" href="/">
+        <button className="gallery-carousel__nav-item">
           <img src={galleryItems[i].thumb} alt="" />
-        </a>
+        </button>
       )
     },
     className: "gallery-carousel__carousel",
@@ -36,17 +38,18 @@ const ParagraphGalleryCarousel = (props) => {
     slidesToScroll: 1
   }
   return(
-    <section className="galery-carousel">
-      <div class="gallery-carousel__container">
-        {title && <Heading level={2} classes="gallery-carousel__title">{title}</Heading>}
-        {subhead && <Heading level={3} classes="gallery-carousel__subhead">{subhead}</Heading>}
-        {props.intro && <Body classes="gallery-carousel__intro-text" text={props.intro}/>}
+    <section className="section gallery-carousel">
+      <div class="section__container gallery-carousel__container">
+        <div class="section__content-container">
+          {title && <Heading level={2} classes="gallery-carousel__title"><span>{title}</span></Heading>}
+          {subhead && <Body classes="gallery-carousel__intro-text" text={subhead}/>}
+        </div>
         <Slider {...settings}>
           {galleryItems.map((item, key) => {
             return(
-              <div className="gallery-carousel-item" key={`gallery-carousel--${pid}--${key}`}>
-                <img src={item.src} className="gallery-carousel-item__media" alt={item.alt } />
-                <p className="gallery-carousel-item__text">{item.alt}</p>
+              <div className="gallery-carousel__item" key={`gallery-carousel--${pid}--${key}`}>
+                <img src={item.src} className="gallery-carousel__item-media" srcSet={item.srcSet} alt="" sizes="100vw" />
+                {(item.alt) && (<p className="gallery-carousel__item-text">{item.alt}</p>)}
               </div>
             )
           })}
@@ -62,7 +65,7 @@ ParagraphGalleryCarousel.propTypes = {
   /** Optional Title level. Defaults to 2 */
   title_level: PropTypes.number,
   /** Optional Intro */
-  intro: PropTypes.string,
+  subhead: PropTypes.string,
   /** Array of items [{src, alt, thumb:[{src, alt}]}] */
   items: PropTypes.arrayOf(PropTypes.shape({
     src: PropTypes.string,
