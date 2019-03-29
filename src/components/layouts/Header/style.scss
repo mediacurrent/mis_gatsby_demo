@@ -9,10 +9,17 @@
 
 
 }
+
+.headroom-wrapper {
+  position: relative;
+  z-index: $zi-highest;
+}
+
 // Removes header bg when scrolled to very top
 .headroom {
   background: transparent;
 }
+
 .headroom--pinned {
   background: white;
 }
