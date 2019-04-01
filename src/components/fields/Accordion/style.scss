@@ -36,7 +36,7 @@
   background: transparent;
   cursor: pointer;
   outline: inherit;
-  padding: 0 32px 0 0;
+  padding: 0 45px 0 0;
   position: relative;
   text-align: left;
   width: 100%;
@@ -44,8 +44,8 @@
   &::after {
     content: url('./assets/accordion__plus.png');
     height: 45px;
-    width: 44px;
-    border: 2px solid $color-barely-gray;
+    width: 45px;
+    border: 3px solid $color-barely-gray;
     border-radius: 100%;
     position: absolute;
     right: 0;
