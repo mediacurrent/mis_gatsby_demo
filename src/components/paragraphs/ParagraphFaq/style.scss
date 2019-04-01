@@ -10,10 +10,31 @@
 @import '../../global/utils/init';
 
 .faq {
-  max-width: 700px;
+  max-width: 1300px;
   margin: 0 auto;
+  padding-top: 50px;
+
   h2 {
     text-align: center;
+    border-bottom: 10px solid #E4B038;
+    width: fit-content;
+    margin: 0 auto 30px;
+  }
+
+  .accordion__wrapper {
+    max-width: 800px;
+    margin: 0 20px;
+
+    @include breakpoint($bp-md) {
+      margin: 0 auto;
+    }
+  }
+
+  .accordion__heading {
+    @include font-size-heading4;
+    font-weight: 100;
+    font-family: Merriweather;
+    color: $color-navy-blue;
   }
 }
 

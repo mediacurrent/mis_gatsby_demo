@@ -11,14 +11,13 @@
 
 .accordion__wrapper {
   max-width: 725px;
+  box-shadow: 2px 4px $color-light-gray;
 }
 
 .accordion {
   border-top: 0;
-  border-right: 1px solid $color-basic-gray;
-  border-bottom: 1px solid $color-basic-gray;
-  border-left: 1px solid $color-basic-gray;
-  padding: 1rem 1.5rem;
+  border: 1px solid $color-basic-gray;
+  padding: 3rem 1.5rem;
   transition: background 0.75s;
 
   &:first-of-type {
@@ -35,24 +34,22 @@
   background: transparent;
   cursor: pointer;
   outline: inherit;
-  padding: 0 32px 0 0;
+  padding: 0 45px 0 0;
   position: relative;
   text-align: left;
   width: 100%;
 
   &::after {
-    content: url('./assets/accordion__arrow.svg');
-    height: 0;
+    content: url('./assets/accordion__plus.png');
+    height: 45px;
+    width: 45px;
+    border: 3px solid $color-barely-gray;
+    border-radius: 100%;
     position: absolute;
     right: 0;
-    top: 8px;
+    top: -10px;
     transition: transform 0.35s, top 0.35s;
     will-change: transform;
-
-    .open & {
-      transform: rotate(-180deg);
-      top: 18px;
-    }
   }
 }
 
