@@ -34,37 +34,37 @@ export const breakerFragment = graphql`
 `;
 
 export const cardFragment = graphql`
-         fragment cardFragment on paragraph__card {
-           classes: field_card_layout
-           heading: field_title
-           subhead: field_subhead
-           eyebrow: field_short_title
-           text: field_summary
-           link: field_link {
-             uri
-             title
-           }
-           r: relationships {
-             media: field_media {
-               r: relationships {
-                 image: field_image {
-                   localFile {
-                     cis: childImageSharp {
-                       f: fluid(
-                         srcSetBreakpoints: [480, 640, 960, 1280, 2560]
-                       ) {
-                         ...GatsbyImageSharpFluid
-                       }
-                     }
-                     extension
-                     publicURL
-                   }
-                 }
-               }
-             }
-           }
-         }
-       `;
+  fragment cardFragment on paragraph__card {
+    classes: field_card_layout
+    heading: field_title
+    subhead: field_subhead
+    eyebrow: field_short_title
+    text: field_summary
+    link: field_link {
+      uri
+      title
+    }
+    r: relationships {
+      media: field_media {
+        r: relationships {
+          image: field_image {
+            localFile {
+              cis: childImageSharp {
+                f: fluid(
+                  srcSetBreakpoints: [480, 640, 960, 1280, 2560]
+                ) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+              extension
+              publicURL
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export const cardListFragment = graphql`
          fragment cardListFragment on paragraph__card_list {
