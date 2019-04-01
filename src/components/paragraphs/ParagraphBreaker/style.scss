@@ -1,83 +1,103 @@
 @import 'src/global/utils/init';
 
-.breaker {
-  margin-top: 50px;
-  position: relative;
-  max-width: 1300px;
+.breaker__hero {
+  left: 0;
   margin: 0 auto;
-
-  @include breakpoint($bp-xsm) {
-    margin-top: 50px;
+  min-height: 180px;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: $zi-ground;
+  
+  @include breakpoint($bp-sm) {
+    min-height: 285px;
   }
-
-  @include breakpoint($bp-lg) {
-    margin-top: 100px;
+  
+  @include breakpoint($bp-md) {
+    min-height: 626px;
   }
- 
+  
+  img {
+    @include horizontal-align(absolute);
+    top: 0;
 
-  .breaker__hero {
-    margin: 0 auto;
-
-    img {
-      width: 100%;
+    @include breakpoint($bp-md) {
+      @include center-align(absolute);
+      height: 100%;
+      max-width: none;
     }
   }
+}
 
-  .breaker__container {
-    margin: -100px 60px 0;
+.breaker__content-wrapper {
+  margin: 0 auto;
+  position: relative;
+  z-index: $zi-lowest;
+  
+  @include breakpoint($bp-sm) {
+    max-width: calc(100% - 136px);
+    margin-top: -80px;
+  }
+  
+  @include breakpoint($bp-md) {
+    max-width: calc(100% - 456px);
+    margin-top: -128px;
+  }
+  
+  &::after {
+    background-color: $color-basic-gray;
+    content: '';
+    display: block;
+    height: 96px;
+    left: -16px;
+    position: absolute;
+    top: -16px;
+    width: 100%;
+    z-index: $zi-ground;
+
+    @include breakpoint($bp-md) {
+      height: 144px;
+    }
+  }
+}
+
+.breaker__content-container {
+  background-color: white;
+  box-shadow: 0 2px 7px 0 rgba($color-black, 0.4);
+  padding: 25px;
+  position: relative;
+  z-index: $zi-lowest;
+}
+
+.breaker__heading {
+  color: $color-sunshine-yellow;
+  margin-bottom: 16px;
+  text-decoration: underline;
+
+  @include breakpoint($bp-md) {
+    margin-bottom: 20px;
+  }
+
+  span {
+    color: $color-navy-blue;
     position: relative;
-    z-index: 10;
   }
+}
 
-  .breaker__content-container {
-    background-color: white;
-    padding: 25px 25px 50px;
-    border: 2px solid $color-basic-gray;
-    margin: 0 -30px;
-    position: relative;
+.breaker__eyebrow {
+  margin-bottom: 5px;
+}
 
-    @include breakpoint($bp-xsm) {
-      margin: 0 60px;
-    }
+.breaker__body {
+  margin-bottom: 16px;
 
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      height: 112px;
-      width: 100%;
-      z-index: -10;
-      background-color: $color-basic-gray;
-    }
-
-    .breaker__cta {
-      margin-bottom: 30px;
-      text-align:center;
-    }
-
-    .breaker__heading {
-      border-bottom: 10px solid $color-sunshine-yellow;
-      margin: 25px 0;
-      width: fit-content;
-    }
-
-    .eyebrow {
-      @include font-size-heading5;
-      border: 0;
-      margin-bottom: 5px;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-
-    .body-text {
-      padding-bottom: 30px;
-      @include font-size-heading5;
-
-      @include breakpoint($bp-sm) {
-        @include font-size-heading4;
-      }
-    }
+  @include breakpoint($bp-md) {
+    margin-bottom: 20px;
   }
+}
+
+.breaker__cta {
+  display: inline-block;
+  margin: 16px 0;
 }

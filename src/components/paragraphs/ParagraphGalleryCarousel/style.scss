@@ -1,119 +1,168 @@
 // Import site utilities.
 @import 'src/global/utils/init';
 
-// Theme styles
 .gallery-carousel__title {
-  @include wire-large-heading;
-  text-align: center;
+  color: $color-sunshine-yellow;
+  margin-bottom: 16px;
+  
+  text-decoration: underline;
+  
+  @include breakpoint($bp-sm) {
+    text-align: center;
+  }
+
+  @include breakpoint($bp-md) {
+    margin-bottom: 20px;
+  }
+
+  span {
+    color: $color-navy-blue;
+    position: relative;
+  }
 }
 
 .gallery-carousel__intro-text {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
+  margin: 0 auto 20px;
+  max-width: 800px;
 
-.gallery-carousel {
-  margin-bottom: 2rem;
-
-}
-
-.gallery-carousel-item {
-
-  &:hover {
-
-    > .gallery-carousel-item__text {
-      opacity: 0.8;
-    }
+  @include breakpoint($bp-sm) {
+    text-align: center;
   }
 }
 
-.gallery-carousel-item__media {
+.gallery-carousel__carousel {
+  margin-bottom: 2rem;
+}
+
+.gallery-carousel__item-media {
   margin: 0 auto;
 }
 
-.gallery-carousel-item__text {
-  background: $color-white;
-  bottom: 0;
-  opacity: 0;
-  padding: 1rem;
-  position: absolute;
-  transition: opacity 0.25s;
+.gallery-carousel__item-text {
+  background-color: $color-white;
+  font-size: 1.6rem;
+  padding: 20px 50px;
   width: 100%;
-}
 
-.gallery-carousel__nav {
-
-  .slick-track {
-    padding: 20px 0;
+  @include breakpoint($bp-sm) {
+    border-top: 2px solid $color-basic-gray;
+    padding: 30px 150px
   }
 }
 
-.gallery-carousel__nav-item {
-  border: 3px solid transparent;
-  margin: 0 0.25rem;
-  position: relative;
-
-  @include breakpoint($bp-xsm) {
-    margin: 0 0.5rem;
-  }
-
-  &.slick-current,
-  &:active,
-  &:hover,
-  &:focus {
-    border: 3px solid $color-blue;
-    outline: none;
-  }
-
-  &.slick-current {
-
-    &::before {
-      content: '\25B2';
-      position: absolute;
-      top: -26px;
-      color: $color-blue;
-      font-size: 1.75rem;
-      left: 50%;
-      margin-left: -12px;
-    }
-  }
-
-  img:focus {
-    outline: none;
-  }
+.gallery-carousel__nav .slick-track {
+  align-items: center;
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
 }
 
-// Slick overrides
+// Main Slick list overrides.
+.gallery-carousel .slick-list {
+  box-shadow: 0 2px 7px 0 rgba($color-black, 0.4);
+}
+
+// Slick prev/next button overrides
 .gallery-carousel {
+
   .slick-prev,
   .slick-next {
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     z-index: 1;
 
-    &::before {
-      color: $color-blue;
-      font-size: 48px;
+    @include breakpoint($bp-sm) {
+      height: 40px;
+      width: 40px;
     }
+
+    @include breakpoint($bp-md) {
+      height: 50px;
+      width: 50px;
+    }
+
+    &::before {
+      color: $color-gray-overlay;
+      font-size: 3rem;
+      opacity: 0.25;
+
+      @include breakpoint($bp-sm) {
+        font-size: 4rem;
+      }
+
+      @include breakpoint($bp-md) {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .slick-prev:hover::before,
+  .slick-next:hover::before,
+  .slick-prev:focus::before,
+  .slick-next:focus::before {
+    opacity: 0.75;
   }
 
   .slick-prev {
-    left: 0;
+    left: 10px;
   }
 
   .slick-next {
-    right: 0;
-  }
-
-  .slick-track {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    right: 10px;
   }
 }
 
-.slick-dots {
+// Lower pager.
+.gallery-carousel .slick-dots {
+  padding: 20px 0 0;
+  position: relative;
+  top: 0;
+
   li {
-    width: 100px;
+    height: auto;
+    margin: 0 5px 10px;
+    padding: 10px;
+    width: auto;
+  }
+
+  li::before {
+    background-color: transparent;
+    content: '';
+    display: block;
+    height: calc(100% - 8px);
+    left: 4px;
+    position: absolute;
+    z-index: $zi-ground;
+    top: 4px;
+    transition: background-color $motion-fast;
+    width: calc(100% - 26px);
+  }
+
+  li.slick-active::before {
+    background-color: $color-sunshine-yellow;
+  }
+
+  li .gallery-carousel__nav-item {
+    background-color: $color-white;
+    border: 2px solid $color-silver;
+    box-shadow: 0 1px 3px 0 rgba($color-black, 0.4);
+    height: auto;
+    max-width: 90px;
+    padding: 0;
+    position: relative;
+    width: auto;
+    z-index: $zi-low;
+
+    @include breakpoint($bp-sm) {
+      max-width: 100px;
+    }
+    
+    @include breakpoint($bp-md) {
+      max-width: 140px;
+    }
+  }
+
+  li .gallery-carousel__nav-item::before {
+    display: none;
   }
 }

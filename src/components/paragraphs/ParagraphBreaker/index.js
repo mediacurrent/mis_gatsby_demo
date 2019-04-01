@@ -13,13 +13,14 @@ const ParagraphBreaker = (props) => {
   const {classes, eyebrow, heading, text, link, r} = props.r.cards[0];
   let media;
   try {
-    media = r.media.r.image.localFile.cis.f.src;
+    media = r.media.r.image.localFile.cis.f;
   }
   catch {
     media = null;
   };
 
   const breakerClasses = classNames(
+    'section',
     'breaker',
     {[`with-hero`]: media},
     {[`${classes}`] : classes}
@@ -27,23 +28,24 @@ const ParagraphBreaker = (props) => {
 
   return(
     <section className={breakerClasses}>
-      {media && (
-        <div className="breaker__hero">
-          <img src={media} alt="" />
-        </div>
-      )}
-
-      <div className="breaker__container">
-        <div className="breaker__content-container">
-          {(eyebrow) && (<Eyebrow text={eyebrow} classes="breaker__eyebrow" />)}
-          {(heading) && (<Heading classes="breaker__heading">{heading}</Heading>)}
-          {(text) && (
-            <div
-              className="breaker__body body-text"
-              dangerouslySetInnerHTML={{ __html: text }}
-            />
-          )}
-          {(link) && (<Button {...link} classes="breaker__cta" />)}
+      <div className="section__container breaker__container">
+        {media && (
+          <div className="breaker__hero">
+            <img src={media.src} srcSet={media.srcSet} alt="" sizes="100vw" />
+          </div>
+        )}
+        <div class="breaker__content-wrapper">
+          <div className="breaker__content-container">
+            {(eyebrow) && (<Eyebrow text={eyebrow} classes="breaker__eyebrow" />)}
+            {(heading) && (<Heading classes="breaker__heading"><span>{heading}</span></Heading>)}
+            {(text) && (
+              <div
+                className="breaker__body body-text"
+                dangerouslySetInnerHTML={{ __html: text }}
+              />
+            )}
+            {(link) && (<Button {...link} classes="breaker__cta" />)}
+          </div>
         </div>
       </div>
     </section>
