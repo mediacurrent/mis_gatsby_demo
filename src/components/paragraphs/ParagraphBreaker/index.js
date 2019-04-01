@@ -34,7 +34,7 @@ const ParagraphBreaker = (props) => {
             <img src={media.src} srcSet={media.srcSet} alt="" sizes="100vw" />
           </div>
         )}
-        <div class="breaker__content-wrapper">
+        <div className="breaker__content-wrapper">
           <div className="breaker__content-container">
             {(eyebrow) && (<Eyebrow text={eyebrow} classes="breaker__eyebrow" />)}
             {(heading) && (<Heading classes="breaker__heading"><span>{heading}</span></Heading>)}

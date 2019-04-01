@@ -22,6 +22,9 @@ const ParagraphCard = (props) => {
     if (imageClass === 'svg') {
       media = props.r.media.r.image.localFile.publicURL;
     }
+    else if (props.r.media.r.image.localFile.cis.f) {
+      media = props.r.media.r.image.localFile.cis.f.src
+    }
     else {
       media = props.r.media.r.image.localFile.cis.fixed.src
     }

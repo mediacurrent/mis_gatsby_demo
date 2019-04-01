@@ -39,8 +39,8 @@ const ParagraphGalleryCarousel = (props) => {
   }
   return(
     <section className="section gallery-carousel">
-      <div class="section__container gallery-carousel__container">
-        <div class="section__content-container">
+      <div className="section__container gallery-carousel__container">
+        <div className="section__content-container">
           {title && <Heading level={2} classes="gallery-carousel__title"><span>{title}</span></Heading>}
           {subhead && <Body classes="gallery-carousel__intro-text" text={subhead}/>}
         </div>

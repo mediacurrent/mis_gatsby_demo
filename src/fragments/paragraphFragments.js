@@ -35,23 +35,25 @@ export const breakerFragment = graphql`
 
 export const cardFragment = graphql`
   fragment cardFragment on paragraph__card {
-    classes:field_card_layout
-    heading:field_title
-    subhead:field_subhead
-    eyebrow:field_short_title
-    text:field_summary
-    link:field_link {
+    classes: field_card_layout
+    heading: field_title
+    subhead: field_subhead
+    eyebrow: field_short_title
+    text: field_summary
+    link: field_link {
       uri
       title
     }
-    r:relationships {
-      media:field_media {
-        r:relationships {
-          image:field_image {
+    r: relationships {
+      media: field_media {
+        r: relationships {
+          image: field_image {
             localFile {
-              cis:childImageSharp {
-                fixed(height:220) {
-                  src
+              cis: childImageSharp {
+                f: fluid(
+                  srcSetBreakpoints: [480, 640, 960, 1280, 2560]
+                ) {
+                  ...GatsbyImageSharpFluid
                 }
               }
               extension
@@ -62,22 +64,47 @@ export const cardFragment = graphql`
       }
     }
   }
-`
+`;
 
 export const cardListFragment = graphql`
-  fragment cardListFragment on paragraph__card_list {
-    title:field_title
-    link:field_link{
-      uri
-      title
-    }
-    r:relationships {
-      items:field_card {
-        ...cardFragment
-      }
-    }
-  }
-`
+         fragment cardListFragment on paragraph__card_list {
+           title: field_title
+           link: field_link {
+             uri
+             title
+           }
+           r: relationships {
+             items: field_card {
+               classes: field_card_layout
+               heading: field_title
+               subhead: field_subhead
+               eyebrow: field_short_title
+               text: field_summary
+               link: field_link {
+                 uri
+                 title
+               }
+               r: relationships {
+                 media: field_media {
+                   r: relationships {
+                     image: field_image {
+                       localFile {
+                         cis: childImageSharp {
+                           fixed(height: 220) {
+                             src
+                           }
+                         }
+                         extension
+                         publicURL
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `;
 export const faqFragment = graphql`
   fragment faqFragment on paragraph__faq {
     title:field_title
