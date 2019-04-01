@@ -24,8 +24,8 @@
     width: 30%;
     height: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -4px;
+    left: -3px;
   }
 
   & .btn-text {
@@ -33,6 +33,7 @@
     mix-blend-mode: darken;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 1.7rem;
   }
 
   &:hover {
@@ -45,10 +46,12 @@
   //rounded btn styles
   &.rounded {
     border-radius: 50px;
+    background-color: white;
 
     &::before {
       border-radius: 50px;
-      width: 45px;
+      width: 50px;
+      height: 50px;
       background: $color-sunshine-yellow;
     }
 

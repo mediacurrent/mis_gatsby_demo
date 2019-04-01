@@ -3,13 +3,67 @@
 .contact-us {
   max-width: 800px;
   margin: 0 auto;
-}
 
+  .title {
+    border-bottom: 10px solid $color-sunshine-yellow;
+    width: fit-content;
+    margin: 0;
+  }
+}
+.contact__content-wrapper {
+  margin: 0 auto;
+  position: relative;
+  z-index: $zi-lowest;
+  
+  @include breakpoint($bp-sm) {
+    max-width: calc(100% - 100px);
+  }
+  
+  @include breakpoint($bp-md) {
+    max-width: calc(100% - 0px);
+  }
+  
+  &::after {
+    background-color: $color-basic-gray;
+    content: '';
+    display: block;
+    height: 40px;
+    right: 0;
+    position: absolute;
+    top: -16px;
+    width: 61%;
+    z-index: $zi-ground;
+
+    @include breakpoint($bp-sm) {
+      height: 40px;
+      width: calc(100% - 298px);
+    }
+    @include breakpoint($bp-md) {
+      height: 40px;
+      width: calc(100% - 298px);
+    }
+  }
+}
 .contact-us__contact-items {
-  display: flex
+  display: flex;
+  background-color: $color-white;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
+  padding: 25px;
+  position: relative;
+  z-index: 10;
+  flex-direction: column;
+
+  @include breakpoint($bp-md) {
+    flex-direction: row;
+  }
+
+  h4 {
+    font-weight: 100;
+  }
 }
 .contact-us__items {
-  flex: 1
+  flex: 1;
+  padding: 15px;
 }
 
 .form-item {
@@ -21,7 +75,6 @@
 }
 
 .form-item__input {
-  border: 1px solid $color-black;
   font-size: 1rem;
   padding: 1rem;
   width: 100%;
@@ -39,6 +92,8 @@
   position: absolute;
   top: 16px;
   transition: transform 0.25s;
+  color: $color-gray-overlay;
+  font-weight: 100;
 
   .floated &,
   .form-item__input:focus+& {
@@ -70,4 +125,12 @@ input[type='submit'] {
 
 .visually-hidden {
   display: none;
+}
+
+textarea#message {
+  height: 100px;
+}
+
+.contact-button-submit {
+  text-align: center;
 }

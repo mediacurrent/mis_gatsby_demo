@@ -9,8 +9,7 @@ textarea,
 select {
   @include font-primary;
   appearance: none;
-  border: 2px solid $color-gray-bomber;
-  border-radius: 3px;
+  border: 2px solid $color-basic-gray;
   box-sizing: border-box;
   display: block;
   font-size: 1.7rem;
