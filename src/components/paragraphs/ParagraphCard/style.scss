@@ -78,23 +78,18 @@
       margin-bottom: 25px;
       border-bottom: 10px solid $color-sunshine-yellow;
       font-weight: 700;
-      text-align: center;
+      text-align: left;
       width: fit-content;
 
       @include breakpoint($bp-xsm) {
         font-size: 6rem;
-        text-align: left;
       }
     }
 
     h4 {
       font-size: 2.6rem;
       font-weight: 100;
-      text-align: center;
-
-      @include breakpoint($bp-xsm) {
-        text-align: left;
-      }
+      text-align: left;
     }
     .eyebrow {
       border: 0;
@@ -108,11 +103,8 @@
   }
 
   .body-text {
-    text-align: center;
-
-    @include breakpoint($bp-xsm) {
-      text-align: left;
-    }
+    text-align: left;
+    margin-bottom: 35px;
   }
 
   .card__icon {
