@@ -27,7 +27,7 @@
   }
   
   @include breakpoint($bp-md) {
-    max-width: calc(100% - 0px);
+    max-width: 100%;
   }
   
   &::after {
