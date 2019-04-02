@@ -36,20 +36,40 @@ const Footer = (props) => {
           <div className="footer__top">
             <div className="footer__brand">
               <a className="footer__logo-link" href="/">
-                <Icon name="icon-RAIN-logo-navy-sm" className="icon icon-mc-logo" />
+                <Icon name="mc-logo" className="icon icon-mc-logo" />
               </a>
 
             </div>
+            <div className="footer-content">
             <div className="footer__address">
-              <h3 className="footer__menu--header">How can we help?</h3>
-              <a href="tel:866-507-0005" aria-label="Call Mediacurrent">866-507-0005</a>
+              <ul className="footer__brand--menu footer__menu">
+                  <li className="footer__brand--item">
+                    3180 North Point Parkway
+                  </li>
+                  <li className="footer__brand--item">
+                    Building 200. Suite 208
+                  </li>
+                  <li className="footer__brand--item">
+                    Alpharetta, Georgia 30005
+                  </li>
+              </ul>
             </div>
             <div className="footer__contact">
               <ul className="footer__brand--menu footer__menu">
                 <li className="footer__brand--item">
-                  <a href="/contact-us" className="footer-contact">Contact Us</a>
+                  info@mediacurrent.com
+                </li>
+                <li className="footer__brand--item">
+                  Phone: 678.580.1690
+                </li>
+                <li className="footer__brand--item">
+                  Toll Free: 866.507.0005
+                </li>
+                <li className="footer__brand--item">
+                  Fax: 770.360.5776
                 </li>
               </ul>
+            </div>
             </div>
             <div className="footer__social-signup">
               <nav className="footer__menu--social">
