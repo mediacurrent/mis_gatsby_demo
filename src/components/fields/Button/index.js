@@ -6,7 +6,7 @@ import './style.scss';
 
 const Button = (button) => {
 
-  const href = button.uri;
+  const href = button.uri ? button.uri.replace(/^internal:/, "") : '';
   const info = button.info || button.title;
   const buttonClasses = classNames(
     'btn',
@@ -24,7 +24,7 @@ const Button = (button) => {
   return(
     <Element
       className={buttonClasses}
-      href={href}
+      href={href.replace(/^internal:/, '')}
       title={info}
       aria-label={info}
       onClick={onClickCallback}
