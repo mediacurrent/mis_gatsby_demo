@@ -24,7 +24,7 @@ const Button = (button) => {
   return(
     <Element
       className={buttonClasses}
-      href={href.replace(/^internal:/, '')}
+      href={href}
       title={info}
       aria-label={info}
       onClick={onClickCallback}
