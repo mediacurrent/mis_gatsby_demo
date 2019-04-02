@@ -3,36 +3,57 @@
 .hero {
   position: relative;
   margin-top: -100px;
-  padding-top: 230px;
 
-  @include breakpoint($bp-lg) {
-    margin-top: -130px;
-    padding-top: 130px;
-  
+  @include breakpoint($bp-xsm) {
+    margin-top: -330px;
+  }
+}
+
+.hero__content-wrapper {
+  margin-top: 3rem;
+  position: relative;
+  z-index: 0;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: flex-end;
+
+  @include breakpoint($bp-xsm) {
+    justify-content: flex-start;
+    padding-left: 318px;
+    padding-bottom: 0;
+    top: -250px;
+  }
+
+
+  &::after {
+    content: '';
+    height: 250px;
+    background-color: $color-sunshine-yellow;
+    left: -61px;
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    z-index: 0;
+
+    @include breakpoint($bp-xsm) {
+      width: calc(100% - 800px);
+      height: 350px;
+      bottom: -26px;
+    }
   }
 }
 
 .hero__content {
-  @include center-align(absolute);
-  left: 33%;
-  background: $color-white;
-  margin-right: -50%;
-  max-width: 95%;
-  padding: 2rem;
-  box-shadow: -33px 20px 0 0 $color-sunshine-yellow;
-  text-align: left;
-  top: 55%;
-  left: 50%;
-  margin-top: 3rem;
+  background-color: $color-white;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
+  width: calc(100% - 25px);
+  position: relative;
+  z-index: 10;
+  padding: 25px;
 
-  @include breakpoint($bp-lg) {
-    top: 50%;
-    left: 30%;
-    max-width: 900px;
-    padding: 4rem 5rem;
-    margin-top: 0;
-    box-shadow: -255px 27px 0 4px $color-sunshine-yellow;
-    
+  @include breakpoint($bp-md) {
+    padding: 40px 50px;
+    width: calc(100% - 800px);
   }
 }
 
@@ -103,9 +124,10 @@
 }
 
 .hero__body {
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.625;
-  margin-bottom: 0.5rem;
+  margin-bottom: 25px;
+  margin-top: 25px;
 
   @include breakpoint($bp-xsm) {
     font-size: 2rem;
