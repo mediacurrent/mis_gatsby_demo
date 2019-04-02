@@ -6,7 +6,7 @@ import './style.scss';
 
 const Button = (button) => {
 
-  const href = button.uri;
+  const href = button.uri ? button.uri.replace(/^internal:/, "") : '';
   const info = button.info || button.title;
   const buttonClasses = classNames(
     'btn',
