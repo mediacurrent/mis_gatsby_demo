@@ -8,6 +8,13 @@
     border-bottom: 10px solid $color-sunshine-yellow;
     width: fit-content;
     margin: 0;
+
+    @include breakpoint($bp-sm) {
+      margin-left: 50px;
+    }
+    @include breakpoint($bp-md) {
+      margin-left: 0;
+    }
   }
 }
 .contact__content-wrapper {
@@ -31,15 +38,17 @@
     right: 0;
     position: absolute;
     top: -16px;
-    width: 61%;
+    width: calc(100% - 175px);
     z-index: $zi-ground;
 
+    @include breakpoint($bp-xsm) {
+      width: calc(100% - 229px);
+    }
+
     @include breakpoint($bp-sm) {
-      height: 40px;
-      width: calc(100% - 298px);
+      width: calc(100% - 228px);
     }
     @include breakpoint($bp-md) {
-      height: 40px;
       width: calc(100% - 298px);
     }
   }
