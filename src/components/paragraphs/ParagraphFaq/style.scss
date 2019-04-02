@@ -15,10 +15,15 @@
   padding-top: 50px;
 
   h2 {
-    text-align: center;
+    text-align: left;
     border-bottom: 10px solid #E4B038;
     width: fit-content;
-    margin: 0 auto 30px;
+    margin: 0 20px 45px;
+
+    @include breakpoint($bp-md) {
+      margin: 0 auto 45px;
+    }
+
   }
 
   .accordion__wrapper {
