@@ -4,8 +4,7 @@
   background-color: $color-navy-blue;
   color: $color-white;
   position: relative;
-  max-width: 960px;
-  margin: 10px auto 0;
+  width: 100%;
 
   li {
     list-style: none;
@@ -32,11 +31,17 @@
 .footer__top {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 
-  @include breakpoint($bp-sm) {
+  @include breakpoint($bp-md) {
     flex-direction: row;
   }
+}
+
+.component-item__inner {
+  max-width: 1150px;
+  margin: 30px auto 0;
 }
 
 .footer__bottom--inner {
@@ -66,6 +71,7 @@
 
 .footer__copyright {
   order: 2;
+  text-transform: uppercase;
 
   @include breakpoint($bp-md) {
     order: 1;
@@ -97,7 +103,7 @@
 
   .icon {
     fill: $color-white;
-    height: 22px;
+    height: 35px;
     width: 35px;
   }
 
@@ -123,14 +129,12 @@
 
 .footer__bottom {
   justify-content: space-between;
-  padding: 10px 10px 5px;
+  padding: 10px 10px 25px;
   font-size: .75em;
 }
 
 .footer__brand {
   flex: 0 0 25%;
-  margin-top: -30px;
-  margin-bottom: 40px;
   text-align: center;
 
   @include breakpoint($bp-md) {
@@ -144,9 +148,8 @@
 
   .icon-mc-logo {
     fill: $color-white;
-    height: 60px;
-    margin: 30px auto;
-    width: 100px;
+    height: 120px;
+    width: 190px;
   }
 
   a:focus,
@@ -177,6 +180,8 @@
 .footer__menu {
   li {
     line-height: 1.8;
+    font-weight: 100;
+    font-size: 1.5rem;
   }
 }
 
@@ -198,13 +203,23 @@
 }
 
 .footer__social {
-  border-bottom: 1px solid $color-yellow;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   margin-bottom: 14px;
+
+  @include breakpoint($bp-xlg) {
+    justify-content: center;
+  }
 
   .footer__menu--item {
     margin: 0 10px 5px;
+    border: 1px solid $color-white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -231,6 +246,7 @@
 
 .footer__menu--link {
   display: block;
+  margin-bottom: -5px;
 
   .icon {
     fill: $color-white;
@@ -318,4 +334,28 @@
 
 .signup--label {
   @include element-invisible;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 10px;
+
+  @include breakpoint($bp-md) {
+    flex-direction: row;
+  }
+}
+
+.footer__contact {
+  margin-top: 0;
+  margin-left: 20px;
+
+  @include breakpoint($bp-sm) {
+    margin-top: 0;
+  }
+
+  @include breakpoint($bp-md) {
+    margin-left: 100px;
+    margin-top: 0;
+  }
 }
