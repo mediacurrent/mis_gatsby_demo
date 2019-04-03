@@ -74,9 +74,9 @@
     width: auto;
     z-index: $zi-ground;
 
-    @include breakpoint($bp-lg-dwn) {
+    @include breakpoint($bp-lg) {
       width: auto;
-      height: 100%
+      height: 100%;
     }
     @include breakpoint($bp-xlg) {
       width: 100%;
