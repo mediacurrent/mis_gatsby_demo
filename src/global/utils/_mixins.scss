@@ -134,6 +134,7 @@
   }
 }
 
+
 // allows to add opacity overlay to elements
 @mixin overlay($opacity: 0.75, $color: $color-navy-blue, $top: 0) {
   &::before {
@@ -158,4 +159,21 @@
   transform: translate(-50%, -50%);
   transform-origin: 50% 50%;
   z-index: $zi-low;
+}
+
+// Center crop image
+@mixin image-crop {
+  overflow: hidden;
+  position: relative;
+
+  picture,
+  img {
+    height: 100%;
+    left: 50%;
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+  }
 }

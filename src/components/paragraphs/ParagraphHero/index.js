@@ -91,7 +91,7 @@ const ParagraphHero = (props) => {
   const card = props.r.cards[0];
   let media;
   try {
-    media = card.r.media.r.image.localFile.cis.f.src;
+    media = card.r.media.r.image.localFile.cis.f;
   }
   catch {
     media = null;
@@ -99,7 +99,7 @@ const ParagraphHero = (props) => {
 
   return(
     <section className={classes}>
-      {media && <Media image={`<img src="${media}" alt="" />`} />}
+      {media && <Media classes="hero__image" image={`<img src="${media.src}" srcset="${media.srcSet}" sizes="100vw" alt="" />`} />}
       {props.home_video_hero && (
         <div className="hero__background">
           <video
@@ -116,12 +116,12 @@ const ParagraphHero = (props) => {
       )}
       <div className="hero__content-wrapper">
         <div className="hero__content">
-        <div className="hero__content-container">
-          {card.eyebrow && <Eyebrow text={card.eyebrow} classes="hero__eyebrow" />}
-          {card.heading && <Heading level={1}>{card.heading}</Heading>}
-          {card.text && <Body classes="hero__body" text={card.text}/>}
-          {card.link && <Button {...card.link} />}
-        </div>
+          <div className="hero__content-container">
+            {card.eyebrow && <Eyebrow text={card.eyebrow} classes="hero__eyebrow" />}
+            {card.heading && <Heading level={1}>{card.heading}</Heading>}
+            {card.text && <Body classes="hero__body" text={card.text}/>}
+            {card.link && <Button {...card.link} />}
+          </div>
         </div>
       </div>
     </section>

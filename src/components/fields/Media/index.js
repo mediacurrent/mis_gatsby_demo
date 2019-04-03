@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import './style.scss';
 
 const Media = (props) => {
+  const classes = classNames('media-item', {[`${props.classes}`]: props.classes})
   return(
-    <div className="media-item">
+    <div className={classes}>
       {props.video  && (
         <div
           className="media-item__responsive-video"

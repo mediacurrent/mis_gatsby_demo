@@ -2,15 +2,9 @@
 
 .hero {
   position: relative;
-  // margin-top: -100px;
-
-  // @include breakpoint($bp-xsm) {
-  //   margin-top: -185px;
-  // }
 }
 
 .hero__content-wrapper {
-  // margin-top: 3rem;
   position: relative;
   z-index: 10;
   display: flex;
@@ -20,8 +14,6 @@
   @include breakpoint($bp-sm) {
     justify-content: flex-start;
     padding-bottom: 0;
-    // padding-left: 100px;
-    // min-height: 800px;
   }
 }
 
@@ -67,7 +59,6 @@
 .hero__image,
 .hero__background {
   @include overlay(0.75);
-  // @include vertical-horizontal-center;
   overflow: hidden;
   z-index: $zi-ground;
   position: absolute;
@@ -80,11 +71,18 @@
     @include vertical-horizontal-center;
     height: 100%;
     max-width: none;
+    width: auto;
     z-index: $zi-ground;
 
-    @include breakpoint($bp-lg) {
-      height: 125%;
+    @include breakpoint($bp-lg-dwn) {
+      width: auto;
+      height: 100%
     }
+    @include breakpoint($bp-xlg) {
+      width: 100%;
+      height: auto;
+    }
+
   }
 
   .hero--short & img {
@@ -95,6 +93,10 @@
       width: 100%;
     }
   }
+}
+
+.hero__image {
+  @include overlay(0.25);
 }
 
 .hero__bgvideo {
