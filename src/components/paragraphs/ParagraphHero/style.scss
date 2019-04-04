@@ -1,71 +1,83 @@
 @import '../../global/utils/init';
 
 .hero {
+  padding: 0 0 0 25px;
   position: relative;
+
+  @include breakpoint($bp-sm) {
+    padding: 0 25px;
+  } 
 }
 
 .hero__content-wrapper {
-  position: relative;
-  z-index: 10;
   display: flex;
   justify-content: flex-end;
-  min-height: 750px;
+  min-height: 460px;
+  position: relative;
+  z-index: $zi-lowest;
 
   @include breakpoint($bp-sm) {
     justify-content: flex-start;
+    min-height: 560px;
     padding-bottom: 0;
+  }
+
+  @include breakpoint($bp-md) {
+    min-height: 660px;
   }
 }
 
 .hero__content {
   @include vertical-align(absolute);
-  left: 20px;
-
-  &::before {
-    content: '';
-    height: 100%;
-    background-color: $color-sunshine-yellow;
-    right: 10px;
-    position: absolute;
-    top: 25px;
-    width: 200vw;
-    z-index: 0;
-  }
-
-  @include breakpoint($bp-sm) {
-    left: 100px;
-    right: 100px;
-    width: 800px;
-  }
-
-  @include breakpoint($bp-lg) {
-    left: 20%;
-  }
-
-  @include breakpoint($bp-xlg) {
-    width: 800px;
-    right: inherit;
-  }
+  left: 0;
+  top: calc(50% - 12px);
+  width: 100%;
 }
 
 .hero__content-container {
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  z-index: $zi-lowest;
+
+  &::before {
+    background-color: $color-sunshine-yellow;
+    content: '';
+    height: 100%;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 200vw;
+    z-index: $zi-ground;
+
+    @include breakpoint($bp-sm) {
+      right: calc(25% + 25px);
+    }
+  }
+}
+
+.hero__content-container-inner {
   background-color: $color-white;
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
   padding: 25px;
   position: relative;
-  z-index: 10;
+  z-index: $zi-lowest;
+
+  @include breakpoint($bp-sm) {
+    width: 75%;
+  }
 }
 
 .hero__image,
 .hero__background {
   @include overlay(0.75);
-  overflow: hidden;
-  z-index: $zi-ground;
-  position: absolute;
-  top: -120px;
-  right: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: -120px;
+  z-index: $zi-ground;
 
   img {
     @include vertical-horizontal-center;
@@ -75,14 +87,13 @@
     z-index: $zi-ground;
 
     @include breakpoint($bp-lg) {
-      width: auto;
       height: 100%;
+      width: auto;
     }
     @include breakpoint($bp-xlg) {
-      width: 100%;
       height: auto;
+      width: 100%;
     }
-
   }
 
   .hero--short & img {
@@ -101,11 +112,11 @@
 
 .hero__bgvideo {
   @include vertical-horizontal-center;
-  z-index: 0;
   min-height: 100%;
   min-width: 100%;
   opacity: 0;
   transition: opacity $motion-slow;
+  z-index: 0;
 
   &.video-loaded {
     opacity: 1;
