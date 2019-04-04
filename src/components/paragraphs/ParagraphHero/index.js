@@ -97,9 +97,16 @@ const ParagraphHero = (props) => {
     media = null;
   };
 
-  return(
+  return (
     <section className={classes}>
-      {media && <Media classes="hero__image" image={`<img src="${media.src}" srcset="${media.srcSet}" sizes="100vw" alt="" />`} />}
+      {media && (
+        <Media
+          classes="hero__image"
+          image={`<img src="${media.srcWebp}" srcset="${
+            media.srcSetWebp
+          }" sizes="100vw" alt="" />`}
+        />
+      )}
       {props.home_video_hero && (
         <div className="hero__background">
           <video
@@ -118,9 +125,11 @@ const ParagraphHero = (props) => {
         <div className="hero__content">
           <div className="section__container hero__content-container">
             <div className="hero__content-container-inner">
-              {card.eyebrow && <Eyebrow text={card.eyebrow} classes="hero__eyebrow" />}
+              {card.eyebrow && (
+                <Eyebrow text={card.eyebrow} classes="hero__eyebrow" />
+              )}
               {card.heading && <Heading level={1}>{card.heading}</Heading>}
-              {card.text && <Body classes="hero__body" text={card.text}/>}
+              {card.text && <Body classes="hero__body" text={card.text} />}
               {card.link && <Button {...card.link} />}
             </div>
           </div>

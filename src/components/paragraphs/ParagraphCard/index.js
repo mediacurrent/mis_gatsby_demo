@@ -23,19 +23,23 @@ const ParagraphCard = (props) => {
       media = props.r.media.r.image.localFile.publicURL;
     }
     else if (props.r.media.r.image.localFile.cis.f) {
-      media = props.r.media.r.image.localFile.cis.f.src
+      media = props.r.media.r.image.localFile.cis.f.srcWebp;
     }
     else {
-      media = props.r.media.r.image.localFile.cis.fixed.src
+      media = props.r.media.r.image.localFile.cis.fixed.srcWebp;
     }
   }
   catch{}
 
-  return(
+  return (
     <article className={classes}>
       {media && (
         <div className="card__icon">
-          <img className={imageClass} src={media} alt={props.subhead} />
+          <img
+            className={imageClass}
+            src={media}
+            alt={props.subhead}
+          />
         </div>
       )}
       <div className="card__content">
@@ -46,7 +50,7 @@ const ParagraphCard = (props) => {
         {props.link && <Button {...props.link} classes="card__link" />}
       </div>
     </article>
-  )
+  );
 }
 
 ParagraphCard.propTypes = {
