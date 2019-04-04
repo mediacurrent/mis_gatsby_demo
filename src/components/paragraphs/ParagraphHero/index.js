@@ -116,11 +116,13 @@ const ParagraphHero = (props) => {
       )}
       <div className="hero__content-wrapper">
         <div className="hero__content">
-          <div className="hero__content-container">
-            {card.eyebrow && <Eyebrow text={card.eyebrow} classes="hero__eyebrow" />}
-            {card.heading && <Heading level={1}>{card.heading}</Heading>}
-            {card.text && <Body classes="hero__body" text={card.text}/>}
-            {card.link && <Button {...card.link} />}
+          <div className="section__container hero__content-container">
+            <div className="hero__content-container-inner">
+              {card.eyebrow && <Eyebrow text={card.eyebrow} classes="hero__eyebrow" />}
+              {card.heading && <Heading level={1}>{card.heading}</Heading>}
+              {card.text && <Body classes="hero__body" text={card.text}/>}
+              {card.link && <Button {...card.link} />}
+            </div>
           </div>
         </div>
       </div>
