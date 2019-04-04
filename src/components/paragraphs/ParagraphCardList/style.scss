@@ -23,8 +23,7 @@
   h2 {
     margin-bottom: 50px;
     border-bottom: 10px solid #E4B038;
-    width: 350px;
-    text-align: center;
+    text-align: left;
 
     @include breakpoint($bp-xsm) {
       width: fit-content;

@@ -6,13 +6,10 @@
 
 .section__container {
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 0px 20px;
+  max-width: 100%;
 
-  @include breakpoint($bp-sm) {
-    padding: 45px 0;
-  }
-
-  @include breakpoint($bp-md) {
+  @include breakpoint($bp-lg) {
     max-width: 1280px;
     padding: 60px 0;
   }
