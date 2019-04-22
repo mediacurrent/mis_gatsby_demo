@@ -22,10 +22,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-netlify-cache",
-      options: {}
-    },
-    {
       resolve: `gatsby-plugin-sass`,
       options: {
         includePaths: ["node_modules", "src/global"]
