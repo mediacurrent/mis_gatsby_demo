@@ -27,7 +27,6 @@
     border: 2px solid $color-navy-blue;
     border-radius: 100%;
     display: flex;
-    flex: 1;
     height: 200px;
     justify-content: center;
     width: 200px;
@@ -41,6 +40,23 @@
   }
   .card__content {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      @include font-secondary;
+      font-size: 2.6rem;
+      margin: 2rem;
+      font-weight: normal;
+      text-align: center;
+      width: fit-content;
+      align-items: center;
+    }
+
+    .eyebrow {
+      border-bottom: 3px solid $color-sunshine-yellow;
+    }
   }
 }
 
@@ -73,33 +89,26 @@
       width: calc(50% - 70px);
     }
 
-    h3 {
+    .card__heading {
+      @include font-secondary;
       font-size: 2.6rem;
       margin-bottom: 25px;
       border-bottom: 10px solid $color-sunshine-yellow;
-      font-weight: 700;
+      font-weight: normal;
       text-align: left;
       width: fit-content;
-
-      @include breakpoint($bp-xsm) {
-        font-size: 6rem;
-      }
     }
 
     h4 {
       font-size: 2.6rem;
       font-weight: 100;
       text-align: left;
+      padding-bottom: 10px;
     }
     .eyebrow {
       border: 0;
       margin-bottom: 5px;
     }
-  }
-
-  h4 {
-    text-align: left;
-    padding-bottom: 10px;
   }
 
   .body-text {
@@ -149,9 +158,23 @@
   letter-spacing: 0.15rem;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
+  border-bottom: 3px solid $color-sunshine-yellow;
 
   @include breakpoint($bp-xsm) {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
+  }
+}
+
+.card.wide {
+
+  h3 {
+    border-bottom: 10px solid $color-sunshine-yellow;
+    width: fit-content;
+    margin-bottom: 20px;
+  }
+
+  .eyebrow {
+    padding-bottom: 10px;
   }
 }
