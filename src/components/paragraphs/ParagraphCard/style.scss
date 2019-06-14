@@ -103,16 +103,12 @@
       font-size: 2.6rem;
       font-weight: 100;
       text-align: left;
+      padding-bottom: 10px;
     }
     .eyebrow {
       border: 0;
       margin-bottom: 5px;
     }
-  }
-
-  h4 {
-    text-align: left;
-    padding-bottom: 10px;
   }
 
   .body-text {
@@ -167,5 +163,18 @@
   @include breakpoint($bp-xsm) {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
+  }
+}
+
+.card.wide {
+
+  h3 {
+    border-bottom: 10px solid $color-sunshine-yellow;
+    width: fit-content;
+    margin-bottom: 20px;
+  }
+
+  .eyebrow {
+    padding-bottom: 10px;
   }
 }
