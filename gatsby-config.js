@@ -61,9 +61,10 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-drupal`,
+      resolve: `gatsby-source-drupal-preview`,
       options: {
         baseUrl: process.env.BASE_URL,
+        preview: true,
         apiBase: `jsonapi` // optional, defaults to `jsonapi`
       }
     },
