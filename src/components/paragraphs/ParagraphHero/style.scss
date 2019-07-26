@@ -6,7 +6,7 @@
 
   @include breakpoint($bp-sm) {
     padding: 0 25px;
-  } 
+  }
 }
 
 .hero__content-wrapper {
@@ -107,7 +107,7 @@
 }
 
 .hero__image {
-  @include overlay(0.25);
+  @include overlay(0.50, $color-gray-overlay);
 }
 
 .hero__bgvideo {
