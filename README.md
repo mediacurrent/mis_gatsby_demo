@@ -5,5 +5,5 @@
 1. Rename the default.env file to .env
 1. Update the BASE_URL to suit your needs.
 1. Update the HOME_ALIAS to suit your needs.
-1. `gatsby develop`
+1. `npm run develop`
 1. Get to work.
