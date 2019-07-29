@@ -1,7 +1,7 @@
 @import 'src/global/utils/init';
 
 .card-list--container {
-  padding-top: 100px;
+  padding: 100px 25px;
   display: flex;
   max-width: 1300px;
   margin: 0 auto;
@@ -36,7 +36,7 @@
   flex-direction: column;
   justify-content: space-around;
   flex-basis: 100%;
-  
+
   @include breakpoint($bp-xsm) {
     flex-direction: row;
     flex-wrap: wrap;
