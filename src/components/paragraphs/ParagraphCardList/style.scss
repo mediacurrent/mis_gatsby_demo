@@ -22,8 +22,22 @@
 
   h2 {
     margin-bottom: 50px;
-    border-bottom: 10px solid #E4B038;
     text-align: left;
+    display: inline-block;
+    clear: both;
+    position: relative;
+
+    &:before {
+      content: "";
+      height: 10px;
+      background-color: #E4B038;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 1px;
+      z-index: -1;
+    }
 
     @include breakpoint($bp-xsm) {
       width: fit-content;
