@@ -27,18 +27,10 @@
 }
 
 .quote__text {
-  font-size: 1.375rem;
   line-height: 1.25;
-  margin-bottom: 1.875rem;
-  font-style: italic;
-
-  @include breakpoint($bp-xsm) {
-    font-size: 3rem;
-  }
 }
 
 .quote__cite {
-  font-size: 0.875rem;
   line-height: 1.375;
 
   @include breakpoint($bp-xsm) {
