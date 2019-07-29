@@ -36,6 +36,7 @@
   flex-direction: column;
   justify-content: space-around;
   flex-basis: 100%;
+  padding-bottom: 20px;
 
   @include breakpoint($bp-xsm) {
     flex-direction: row;
