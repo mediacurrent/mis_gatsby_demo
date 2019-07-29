@@ -148,6 +148,15 @@
 .card__link {
   display: initial;
   margin-top: 1.5rem;
+
+  &::after {
+    content: ' >';
+    color: $color-navy-blue;
+    mix-blend-mode: darken;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.7rem;
+  }
 }
 
 .card.eyebrow {
