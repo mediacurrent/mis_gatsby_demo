@@ -55,7 +55,7 @@
     flex: 0 0 45%;
   }
 
-  @include breakpoint($bp-lg) {
+  @include breakpoint($bp-md) {
     flex: 0 0 22%;
   }
 }
