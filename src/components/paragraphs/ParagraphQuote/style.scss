@@ -32,10 +32,18 @@
 
 .quote__cite {
   line-height: 1.375;
+  font-style: unset;
 
   @include breakpoint($bp-xsm) {
     font-size: 1.5rem;
   }
+}
+
+.quote__cite-name,
+.quote__cite-job {
+  font-size: 1.45rem;
+  text-transform: uppercase;
+  @include font-primary;
 }
 
 .quote--left {
