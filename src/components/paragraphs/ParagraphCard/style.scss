@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .card__icon {
     align-items: center;
     border: 2px solid $color-navy-blue;
@@ -43,6 +43,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 300px;
 
     h3 {
       @include font-secondary;
@@ -118,7 +119,7 @@
 
   .card__icon {
     border: 0;
-  
+
     @include breakpoint($bp-md) {
       width: 50%;
     }
