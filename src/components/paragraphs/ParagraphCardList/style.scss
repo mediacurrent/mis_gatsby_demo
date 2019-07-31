@@ -50,6 +50,7 @@
   flex-direction: column;
   justify-content: space-around;
   flex-basis: 100%;
+  padding-bottom: 20px;
 
   @include breakpoint($bp-xsm) {
     flex-direction: row;
@@ -60,6 +61,7 @@
   @include breakpoint($bp-sm) {
     justify-content: space-between;
   }
+
 }
 
 .card-list__item {
@@ -69,7 +71,7 @@
     flex: 0 0 45%;
   }
 
-  @include breakpoint($bp-lg) {
+  @include breakpoint($bp-md) {
     flex: 0 0 22%;
   }
 }
