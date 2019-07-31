@@ -17,7 +17,7 @@ const ParagraphQuote = (props) => {
   return(
     <blockquote className={classes}>
       <Icon className="quote__icon" name="icon-quote" border={{x: 0, y: 1, deviation: 1}} />
-      <p className="quote__text">“{Parser(props.quote)}”</p>
+      <h3 className="quote__text">“{Parser(props.quote)}”</h3>
       <cite className="quote__cite">
         {props.image && (
           <div className="quote__cite-media">
@@ -25,8 +25,8 @@ const ParagraphQuote = (props) => {
           </div>
         )}
         <div className="quote__cite-text">
-          <p className="quote__cite-name">{props.name}</p>
-          {props.job && <p className="quote__cite-job">{props.job}</p>}
+          <h6 className="quote__cite-name">{props.name}</h6>
+          {props.job && <h6 className="quote__cite-job">{props.job}</h6>}
         </div>
       </cite>
     </blockquote>
