@@ -23,6 +23,7 @@
 
   @include breakpoint($bp-xsm) {
     flex-direction: row-reverse;
+    padding: 20px;
   }
 
   .map__wrapper {
@@ -144,5 +145,4 @@
 
 .map__body {
   display: flex;
-  justify-content: space-evenly;
 }
