@@ -1,7 +1,7 @@
 @import 'src/global/utils/init';
 
 .card-list--container {
-  padding-top: 100px;
+  padding: 100px 25px;
   display: flex;
   max-width: 1300px;
   margin: 0 auto;
@@ -22,8 +22,22 @@
 
   h2 {
     margin-bottom: 50px;
-    border-bottom: 10px solid #E4B038;
     text-align: left;
+    display: inline-block;
+    clear: both;
+    position: relative;
+
+    &:before {
+      content: "";
+      height: 10px;
+      background-color: $color-yellow;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 1px;
+      z-index: -1;
+    }
 
     @include breakpoint($bp-xsm) {
       width: fit-content;
@@ -36,7 +50,8 @@
   flex-direction: column;
   justify-content: space-around;
   flex-basis: 100%;
-  
+  padding-bottom: 20px;
+
   @include breakpoint($bp-xsm) {
     flex-direction: row;
     flex-wrap: wrap;
@@ -46,6 +61,7 @@
   @include breakpoint($bp-sm) {
     justify-content: space-between;
   }
+
 }
 
 .card-list__item {
@@ -55,7 +71,7 @@
     flex: 0 0 45%;
   }
 
-  @include breakpoint($bp-lg) {
+  @include breakpoint($bp-md) {
     flex: 0 0 22%;
   }
 }

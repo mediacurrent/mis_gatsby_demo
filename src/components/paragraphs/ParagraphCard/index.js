@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import Eyebrow from '../../fields/Eyebrow';
 import Heading from '../../fields/Heading';
 import Body from '../../fields/Body';
-import Button from '../../fields/Button';
 
 import './style.scss';
 
@@ -47,7 +45,6 @@ const ParagraphCard = (props) => {
         {props.heading && <Heading level={3}>{props.heading}</Heading>}
         {props.subhead && <Heading level={4}>{props.subhead}</Heading>}
         {props.text && <Body>{props.text}</Body>}
-        {props.link && <Button {...props.link} classes="card__link" />}
       </div>
     </article>
   );

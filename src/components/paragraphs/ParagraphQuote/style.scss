@@ -2,8 +2,7 @@
 
 .quote {
   text-align: center;
-  margin: 0 auto;
-  padding: 50px;
+  margin: 0 50px;
   margin-bottom: 1.875rem;
   max-width: 1300px;
   border-top: 1px solid $color-barely-gray;
@@ -14,36 +13,66 @@
   -moz-box-shadow: -11px 7px 0px 0px rgba($color-oslo-gray, 0.75);
   box-shadow: -11px 7px 0px 0px rgba($color-oslo-gray, 0.75);
   position: relative;
+  padding: 35px;
+
+  @include breakpoint($bp-md) {
+    padding: 65px;
+  }
+
+  @include breakpoint($bp-lg) {
+    padding: 85px;
+    margin: 0 auto;
+  }
 }
 
 .quote__icon {
   position: absolute;
-  top: -30px;
-  left: 50%;
-  height: 50px;
-  width: 50px;
+  top: -40px;
+  left: 47%;
+  height: 65px;
+  width: 60px;
   fill: $color-sunshine-yellow;
   filter:url(#shadow);
-}
 
-.quote__text {
-  font-size: 1.375rem;
-  line-height: 1.25;
-  margin-bottom: 1.875rem;
-  font-style: italic;
+  @include breakpoint($bp-md) {
+    top: -50px;
+    left: 47%;
+    height: 75px;
+    width: 80px;
+  }
 
-  @include breakpoint($bp-xsm) {
-    font-size: 3rem;
+  @include breakpoint($bp-lg) {
+    top: -60px;
+    left: 47%;
+    height: 85px;
+    width: 80px;
   }
 }
 
+.quote__text {
+  line-height: 1.25;
+}
+
 .quote__cite {
-  font-size: 0.875rem;
   line-height: 1.375;
+  font-style: unset;
+  display: block;
+  margin-top: 35px;
 
   @include breakpoint($bp-xsm) {
     font-size: 1.5rem;
   }
+
+  @include breakpoint($bp-md) {
+    margin-top: 45px;
+  }
+}
+
+.quote__cite-name,
+.quote__cite-job {
+  font-size: 1.45rem;
+  text-transform: uppercase;
+  @include font-primary;
 }
 
 .quote--left {

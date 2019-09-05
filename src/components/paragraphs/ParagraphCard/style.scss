@@ -15,13 +15,13 @@
 // Styling for the cards with the icons.
 .card-list {
   .card {
-    margin: 10px 0;
+    margin: 25px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  
+
   .card__icon {
     align-items: center;
     border: 2px solid $color-navy-blue;
@@ -33,8 +33,8 @@
     margin-bottom: 20px;
 
     .svg {
-      max-height: 100px;
-      max-width: 100px;
+      max-height: 120px;
+      max-width: 120px;
       margin-bottom: 10px;
     }
   }
@@ -43,6 +43,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 300px;
 
     h3 {
       @include font-secondary;
@@ -118,9 +119,10 @@
 
   .card__icon {
     border: 0;
-  
+
     @include breakpoint($bp-md) {
       width: 50%;
+      order: 2;
     }
   }
   .png {
@@ -148,6 +150,15 @@
 .card__link {
   display: initial;
   margin-top: 1.5rem;
+
+  &::after {
+    content: ' >';
+    color: $color-navy-blue;
+    mix-blend-mode: darken;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.7rem;
+  }
 }
 
 .card.eyebrow {
