@@ -61,7 +61,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-drupal-preview`,
+      resolve: `gatsby-source-drupal`,
       options: {
         baseUrl: process.env.BASE_URL,
         preview: true,
