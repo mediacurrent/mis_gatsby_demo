@@ -14,7 +14,7 @@ const Contact = (props) => {
   return(
     <section className="contact-us section breaker">
       <div className="section__container breaker__content">
-        <h2 className="title breaker__title">Contact Us</h2>
+        <h2 className="title breaker__title">Contact Us!</h2>
         <div className="contact__content-wrapper">
           <div className="contact-us__contact-items">
             <div className="contact-us__items">
@@ -88,7 +88,7 @@ const Contact = (props) => {
                   <label htmlFor="message" className="form-item__label required-field">Message</label>
                 </div>
                 <div className="contact-button-submit">
-                <Button {...props} classes="card__link" title="Connect With Us" />
+                <Button {...props} classes="card__link" title="Connect With Us >" />
                 </div>
               </form>
             </div>
